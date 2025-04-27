@@ -1,3 +1,7 @@
+/* 引入網絡字體（如果需要） */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap');
+/* 注意：Howdy Lemon和「圓體-繁」、「翩翩體-繁」可能需要另外加載或通過@font-face定義 */
+
 /* 基本重置 */
 * {
     margin: 0;
@@ -93,12 +97,14 @@ main {
 }
 
 .calculator-header h1 {
+    font-family: 'Howdy Lemon', cursive; /* 更改標題字型 */
     font-size: 2.5rem;
     margin-bottom: 1rem;
     color: #222;
 }
 
 .calculator-header p {
+    font-family: '翩翩體-繁', sans-serif; /* 更改說明文字字型 */
     color: #666;
     max-width: 800px;
     margin: 0 auto;
@@ -170,11 +176,14 @@ main {
 }
 
 .tool-name {
+    font-family: '圓體-繁', sans-serif; /* 更改工具名稱字型 */
     font-size: 1.1rem;
     font-weight: 600;
     background-color: white;
     border-radius: 20px;
     padding: 0.5rem 1rem;
+    letter-spacing: 0.5em; /* 增加字間距，設置為半個字元寬度 */
+    padding-right: 0.5em; /* 調整右側內邊距，補償增加的字間距 */
 }
 
 /* 頁尾 */
@@ -184,4 +193,23 @@ footer {
     margin-top: 2rem;
     background-color: #f1f1f1;
     color: #666;
+}
+
+/* 添加自定義字體 */
+@font-face {
+    font-family: '圓體-繁';
+    src: url('fonts/rounded-mplus-1c-medium.ttf') format('truetype');
+    /* 注意：您需要找到並提供實際的字體文件 */
+}
+
+@font-face {
+    font-family: '翩翩體-繁';
+    src: url('fonts/pianpianttti.ttf') format('truetype');
+    /* 注意：您需要找到並提供實際的字體文件 */
+}
+
+@font-face {
+    font-family: 'Howdy Lemon';
+    src: url('fonts/howdy-lemon.ttf') format('truetype');
+    /* 注意：您需要找到並提供實際的字體文件 */
 }
