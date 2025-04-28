@@ -220,19 +220,20 @@ main {
     align-items: center;
     justify-content: center;
     margin-bottom: 0.5rem;
-    border-radius: 10px;
     padding: 0;
     position: relative;
-    overflow: hidden;
-    box-shadow: none;
-    background-color: transparent; /* 與頁面背景相同的顏色 */
+    overflow: visible; /* 改為可見，讓內容不被裁剪 */
+    background-color: transparent; /* 完全透明背景 */
+    box-shadow: none; /* 完全移除陰影 */
+    border: none; /* 確保沒有邊框 */
+    border-radius: 0; /* 移除圓角 */
 }
 
 .tool-icon img {
-    width: 102%;
-    height: 102%;
+    width: 110%;
+    height: 110%;
     object-fit: contain; /* 使圖標保持原比例 */
-    /* 移除背景色 */
+    background-color: transparent; /* 確保圖片背景透明 */
 }
 
 .tool-name {
