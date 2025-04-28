@@ -248,7 +248,7 @@ main {
     padding: 0.5rem 1rem;
     letter-spacing: 0.5em; /* 增加字間距為半個字元 */
     padding-right: 0.5em; /* 補償增加的字間距 */
-    width: 100%;
+    width: 97%;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
