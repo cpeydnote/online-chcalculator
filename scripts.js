@@ -45,14 +45,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // 聯絡我們點擊事件 (可選)
+    // 聯絡我們點擊事件
     const contactLink = document.querySelector('.contact-us');
     if(contactLink) {
         contactLink.addEventListener('click', function(event) {
-            // 如果您想添加點擊聯絡我們的特殊處理，可以在這裡編寫代碼
-            // 例如，如果郵件客戶端無法打開，可以提供備用選項
-            // event.preventDefault();
-            // 自定義處理...
+            // 目前使用默認的mailto行為
+            // 如果需要自定義行為，可以在這裡添加代碼
         });
     }
 });
