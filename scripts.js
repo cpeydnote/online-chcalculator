@@ -33,14 +33,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 100);
         });
         
-        // 鼠標懸停效果增強
+        // 鼠標懸停效果 - 只對文字框應用
         card.addEventListener('mouseenter', function() {
-            this.querySelector('.tool-icon').style.boxShadow = '3px 3px 8px rgba(0, 0, 0, 0.2)';
+            // 只為文字名稱添加陰影效果
             this.querySelector('.tool-name').style.boxShadow = '3px 3px 8px rgba(0, 0, 0, 0.2)';
         });
         
         card.addEventListener('mouseleave', function() {
-            this.querySelector('.tool-icon').style.boxShadow = '2px 2px 5px rgba(0, 0, 0, 0.1)';
+            // 恢復文字名稱的原始陰影
             this.querySelector('.tool-name').style.boxShadow = '2px 2px 5px rgba(0, 0, 0, 0.1)';
         });
     });
