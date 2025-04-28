@@ -213,27 +213,20 @@ main {
 }
 
 .tool-icon {
-    width: 100%;
+    width: auto; /* 改為auto，讓容器適應圖片大小 */
     height: auto;
-    aspect-ratio: 1.5 / 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    aspect-ratio: auto; /* 移除固定的長寬比 */
+    display: inline-block; /* 改為行內塊元素 */
     margin-bottom: 0.5rem;
     padding: 0;
-    position: relative;
-    overflow: visible; /* 改為可見，讓內容不被裁剪 */
-    background-color: transparent; /* 完全透明背景 */
-    box-shadow: none; /* 完全移除陰影 */
-    border: none; /* 確保沒有邊框 */
-    border-radius: 0; /* 移除圓角 */
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
 }
 
 .tool-icon img {
-    width: 110%;
-    height: 110%;
-    object-fit: contain; /* 使圖標保持原比例 */
-    background-color: transparent; /* 確保圖片背景透明 */
+    display: block; /* 讓圖片以塊級元素顯示 */
+    max-width: 100%; /* 圖片最大寬度 */
 }
 
 .tool-name {
