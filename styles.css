@@ -141,7 +141,7 @@ main {
 .calculator-header h1 {
     font-family: 'ConcertOne', cursive;
     font-size: 2.5rem;
-    margin-bottom: 0.3rem; /* 減少標題與說明之間的間距 */
+    margin-bottom: 0.1rem; /* 更加減少標題與說明之間的間距 */
     color: #222;
 }
 
@@ -149,7 +149,7 @@ main {
     font-family: 'ReggaeOne', sans-serif;
     color: #666;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: -0.1rem auto 0; /* 負上邊距，使文字更靠近標題 */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -225,13 +225,14 @@ main {
     position: relative;
     overflow: hidden;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #FFFBF3; /* 與頁面背景相同的顏色 */
 }
 
 .tool-icon img {
     width: 100%;
     height: 100%;
     object-fit: contain; /* 使圖標保持原比例 */
-    background-color: #D9C3B0; /* 圖標背景色 */
+    /* 移除背景色 */
 }
 
 .tool-name {
@@ -239,7 +240,7 @@ main {
     font-size: 1.1rem;
     font-weight: bold;
     background-color: white;
-    border-radius: 20px;
+    border-radius: 10px; /* 減小圓角半徑 */
     padding: 0.5rem 1rem;
     letter-spacing: 0.5em; /* 增加字間距為半個字元 */
     padding-right: 0.5em; /* 補償增加的字間距 */
