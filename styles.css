@@ -66,6 +66,16 @@ header {
     margin-bottom: 0.5rem;
 }
 
+.logo-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+}
+
+.logo-link:hover {
+    opacity: 0.9; /* 懸停時輕微變透明，提供視覺反饋 */
+}
+
 .logo {
     display: flex;
     align-items: center;
@@ -141,7 +151,7 @@ main {
 .calculator-header h1 {
     font-family: 'ConcertOne', cursive;
     font-size: 2.5rem;
-    margin-bottom: 0.05rem; /* 更加減少標題與說明之間的間距 */
+    margin-bottom: 0.03rem; /* 更加減少標題與說明之間的間距 */
     color: #222;
 }
 
@@ -149,7 +159,7 @@ main {
     font-family: 'ReggaeOne', sans-serif;
     color: #666;
     max-width: 1200px;
-    margin: -0.3rem auto 0; /* 負上邊距，使文字更靠近標題 */
+    margin: -0.4rem auto 0; /* 負上邊距，使文字更靠近標題 */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
