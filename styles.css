@@ -241,3 +241,232 @@ footer p {
 .contact-us:hover {
     text-decoration: underline;
 }
+
+/* 漢堡選單按鈕 */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+
+.menu-toggle .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #333;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* 響應式設計增強 */
+@media (max-width: 1024px) {
+    /* 頁頭調整 */
+    header {
+        padding: 0.8rem 1.5rem;
+    }
+    
+    .logo img {
+        height: 40px;
+    }
+    
+    .logo span {
+        font-size: 1.4rem;
+    }
+    
+    .auth-buttons button {
+        padding: 6px 16px;
+        font-size: 0.9rem;
+    }
+    
+    /* 主要內容調整 */
+    .calculator-header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .calculator-header p {
+        font-size: 0.85rem;
+    }
+    
+    /* 工具格網調整 */
+    .tool-card {
+        transform: scale(0.85);
+    }
+    
+    .tool-name {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 767px) {
+    /* 頁頭調整 */
+    header {
+        padding: 0.8rem 1rem;
+        position: relative;
+    }
+    
+    .logo img {
+        height: 35px;
+    }
+    
+    .logo span {
+        font-size: 1.3rem;
+    }
+    
+    /* 漢堡選單顯示 */
+    .menu-toggle {
+        display: flex;
+        position: absolute;
+        right: 1rem;
+        top: 1.3rem;
+    }
+    
+    /* 按鈕區隱藏並準備顯示為下拉菜單 */
+    .auth-buttons {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        background-color: #FFFBF3;
+        padding: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 5;
+        gap: 10px;
+    }
+    
+    .auth-buttons.show {
+        display: flex;
+    }
+    
+    .auth-buttons button {
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* 主要內容調整 */
+    .calculator-header {
+        margin-bottom: 1.5rem;
+    }
+    
+    .calculator-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .calculator-header p {
+        font-size: 0.8rem;
+        white-space: normal;
+        padding: 0 1rem;
+    }
+    
+    /* 工具格網和卡片調整 */
+    .tools-grid {
+        gap: 1rem;
+    }
+    
+    .tool-card {
+        transform: scale(0.75);
+    }
+    
+    .tool-name {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+        letter-spacing: 0.3em;
+        padding-right: 0.3em;
+    }
+    
+    /* 頁尾調整 */
+    footer {
+        padding: 0.8rem 1rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    /* 頁頭進一步調整 */
+    .logo img {
+        height: 30px;
+    }
+    
+    .logo span {
+        font-size: 1.2rem;
+    }
+    
+    /* 主要內容進一步調整 */
+    .calculator-header h1 {
+        font-size: 1.6rem;
+    }
+    
+    .calculator-header p {
+        font-size: 0.75rem;
+    }
+    
+    /* 工具格網調整 */
+    .tools-grid {
+        gap: 0.8rem;
+    }
+    
+    /* 讓工具卡片在小型手機上變大一點，方便點擊 */
+    .tool-card {
+        transform: scale(0.85);
+    }
+}
+
+/* 橫向螢幕 (Landscape) 模式的優化 */
+@media (max-height: 500px) and (orientation: landscape) {
+    header {
+        padding: 0.5rem 1rem;
+    }
+    
+    .logo img {
+        height: 30px;
+    }
+    
+    /* 工具格網調整 */
+    .calculator-header {
+        margin-bottom: 1rem;
+    }
+    
+    .calculator-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .calculator-header p {
+        font-size: 0.8rem;
+    }
+    
+    /* 橫向螢幕時顯示更多列 */
+    .tools-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+    }
+    
+    /* 調整工具卡片在橫向模式下的大小 */
+    .tool-card {
+        transform: scale(0.7);
+    }
+    
+    /* 調整頁尾在橫向模式下的位置 */
+    footer {
+        position: relative;
+        margin-top: 2rem;
+    }
+}
