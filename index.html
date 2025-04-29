@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OTSC | CHCalculator</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- 添加圖標 -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <header>
         <a href="index.html" class="logo-link">
-    <div class="logo">
-        <img src="images/logo.png" alt="CHCalculator">
-        <span>CHCALCULATOR</span>
-    </div>
-</a>
+            <div class="logo">
+                <img src="images/logo.png" alt="CHCalculator">
+                <span>CHCALCULATOR</span>
+            </div>
+        </a>
         <div class="auth-buttons">
             <button class="analysis-btn">分析前提</button>
             <button class="login-btn">登入</button>
@@ -123,7 +125,25 @@
         <p><a href="mailto:contact@chcalculator.com" class="contact-us">聯絡我們</a></p>
         <p>版權所有© 2025 CHCalculator</p>
     </footer>
-    
-    <script src="scripts.js"></script>
+
+    <!-- 添加漢堡選單按鈕 -->
+    <button class="menu-toggle" aria-label="顯示選單">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+
+    <!-- 添加簡單的 JavaScript 控制漢堡選單 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const authButtons = document.querySelector('.auth-buttons');
+            
+            menuToggle.addEventListener('click', function() {
+                menuToggle.classList.toggle('active');
+                authButtons.classList.toggle('show');
+            });
+        });
+    </script>
 </body>
 </html>
