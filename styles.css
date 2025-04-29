@@ -6,7 +6,6 @@
     font-style: normal;
     font-display: swap;
 }
-
 @font-face {
     font-family: 'ConcertOne';
     src: url('fonts/ConcertOne-Regular.ttf') format('truetype');
@@ -14,7 +13,6 @@
     font-style: normal;
     font-display: swap;
 }
-
 @font-face {
     font-family: 'ReggaeOne';
     src: url('fonts/ReggaeOne-Regular.ttf') format('truetype');
@@ -22,7 +20,6 @@
     font-style: normal;
     font-display: swap;
 }
-
 @font-face {
     font-family: 'ZenMaruGothic';
     src: url('fonts/ZenMaruGothic-Bold.ttf') format('truetype');
@@ -30,7 +27,6 @@
     font-style: normal;
     font-display: swap;
 }
-
 @font-face {
     font-family: 'Copyduck';
     src: url('fonts/Copyduck.ttf') format('truetype');
@@ -38,14 +34,12 @@
     font-style: normal;
     font-display: swap;
 }
-
 /* 基本重置 */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Microsoft JhengHei', Arial, sans-serif;
     line-height: 1.6;
@@ -54,7 +48,6 @@ body {
     position: relative;
     min-height: 100vh; /* 確保頁面至少有視窗高度 */
 }
-
 /* 頁頭 */
 header {
     display: flex;
@@ -65,28 +58,23 @@ header {
     box-shadow: none;
     margin-bottom: 0.5rem;
 }
-
 .logo-link {
     text-decoration: none;
     color: inherit;
     display: flex;
 }
-
 .logo-link:hover {
     opacity: 0.9; /* 懸停時輕微變透明，提供視覺反饋 */
 }
-
 .logo {
     display: flex;
     align-items: center;
 }
-
 .logo img {
     height: 50px;
     width: auto;
     margin-right: 5px;
 }
-
 .logo span {
     font-family: 'Copyduck', sans-serif;
     font-size: 1.6rem;
@@ -95,13 +83,11 @@ header {
     position: relative;
     left: -5px;
 }
-
 .auth-buttons {
     display: flex;
     gap: 15px; /* 減少按鈕之間的間距 */
     margin-right: 10px;
 }
-
 .auth-buttons button {
     font-family: 'ZenMaruGothic', sans-serif;
     padding: 8px 20px; /* 減少寬度以適應新按鈕 */
@@ -113,19 +99,15 @@ header {
     border: none;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
-
 .analysis-btn {
     color: #737373; /* 與登入按鈕相同的顏色 */
 }
-
 .login-btn {
     color: #737373;
 }
-
 .subscribe-btn {
     color: #BC832B;
 }
-
 /* 主要內容 */
 main {
     max-width: 1200px;
@@ -133,7 +115,6 @@ main {
     padding: 0 1rem;
     padding-bottom: 5rem; /* 為頁腳留空間 */
 }
-
 .calculator-container {
     background-color: transparent;
     border-radius: 0;
@@ -141,20 +122,17 @@ main {
     padding: 1rem;
     border: none;
 }
-
 .calculator-header {
     text-align: center;
     margin-bottom: 2rem;
     margin-top: -1rem;
 }
-
 .calculator-header h1 {
     font-family: 'ConcertOne', cursive;
     font-size: 2.5rem;
     margin-bottom: 0.03rem; /* 更加減少標題與說明之間的間距 */
     color: #222;
 }
-
 .calculator-header p {
     font-family: 'ReggaeOne', sans-serif;
     color: #666;
@@ -165,14 +143,12 @@ main {
     text-overflow: ellipsis;
     font-size: 0.95rem;
 }
-
 @media (max-width: 1200px) {
     .calculator-header p {
         white-space: normal;
         font-size: 0.9rem;
     }
 }
-
 /* 工具格網 */
 .tools-grid {
     display: grid;
@@ -180,31 +156,26 @@ main {
     gap: 1.5rem;
     margin-top: -0.5rem;
 }
-
 @media (max-width: 1200px) {
     .tools-grid {
         grid-template-columns: repeat(4, 1fr);
     }
 }
-
 @media (max-width: 992px) {
     .tools-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 }
-
 @media (max-width: 768px) {
     .tools-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
-
 @media (max-width: 480px) {
     .tools-grid {
         grid-template-columns: 1fr;
     }
 }
-
 .tool-card {
     background-color: transparent;
     border-radius: 0;
@@ -216,12 +187,12 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    transform: scale(0.8); /* 整體縮小到80% */
+    transform-origin: center; /* 以中心為基準點縮放 */
 }
-
 .tool-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px) scale(0.8); /* 保持80%比例，同時有上浮效果 */
 }
-
 .tool-icon {
     width: auto; /* 改為auto，讓容器適應圖片大小 */
     height: auto;
@@ -233,12 +204,10 @@ main {
     box-shadow: none;
     border: none;
 }
-
 .tool-icon img {
     display: block; /* 讓圖片以塊級元素顯示 */
     max-width: 100%; /* 圖片最大寬度 */
 }
-
 .tool-name {
     font-family: 'ZenMaruGothic', sans-serif;
     font-size: 1.1rem;
@@ -251,7 +220,6 @@ main {
     width: 97%;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
-
 /* 頁尾 */
 footer {
     position: absolute;
@@ -262,17 +230,14 @@ footer {
     background-color: transparent;
     color: #666;
 }
-
 footer p {
     margin-bottom: 0.5rem;
 }
-
 .contact-us {
     color: #666;
     text-decoration: none;
     cursor: pointer;
 }
-
 .contact-us:hover {
     text-decoration: underline;
 }
