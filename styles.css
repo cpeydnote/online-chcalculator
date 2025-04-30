@@ -21,9 +21,16 @@
     font-display: swap;
 }
 @font-face {
-    font-family: 'ZenMaruGothic';
+    font-family: 'ZenMaruGothic-Bold';
     src: url('fonts/ZenMaruGothic-Bold.ttf') format('truetype');
     font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'ZenMaruGothic-Medium';
+    src: url('fonts/ZenMaruGothic-Medium.ttf') format('truetype');
+    font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
@@ -53,10 +60,10 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 0.8rem 2rem; /* 縮小頂部padding */
     background-color: #FFFBF3;
     box-shadow: none;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem; /* 縮小標頭和內容間距 */
 }
 .logo-link {
     text-decoration: none;
@@ -89,7 +96,7 @@ header {
     margin-right: 10px;
 }
 .auth-buttons button {
-    font-family: 'ZenMaruGothic', sans-serif;
+    font-family: 'ZenMaruGothic-Medium', sans-serif;
     padding: 8px 20px; /* 減少寬度以適應新按鈕 */
     border-radius: 5px;
     font-size: 1rem;
@@ -113,49 +120,49 @@ main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
-    padding-bottom: 5rem; /* 為頁腳留空間 */
+    padding-bottom: 4rem; /* 縮小底部padding */
 }
 .calculator-container {
     background-color: transparent;
     border-radius: 0;
     box-shadow: none;
-    padding: 1rem;
+    padding: 0.7rem; /* 縮小container的padding */
     border: none;
 }
 .calculator-header {
     text-align: center;
-    margin-bottom: 1.5rem; /* 減少標題和工具網格之間的間距 */
-    margin-top: -1rem;
+    margin-bottom: 0.7rem; /* 進一步縮小標題和工具網格之間的間距 */
+    margin-top: -0.7rem; /* 縮小頂部偏移 */
 }
 .calculator-header h1 {
     font-family: 'ConcertOne', cursive;
-    font-size: 2.5rem;
-    margin-bottom: 0.03rem; /* 更加減少標題與說明之間的間距 */
+    font-size: 2.3rem; /* 略微縮小標題 */
+    margin-bottom: 0.01rem; /* 更加減少標題與說明之間的間距 */
     color: #222;
 }
 .calculator-header p {
     font-family: 'ReggaeOne', sans-serif;
     color: #666;
     max-width: 1200px;
-    margin: -0.4rem auto 0; /* 負上邊距，使文字更靠近標題 */
+    margin: -0.3rem auto 0; /* 調整負上邊距 */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: 0.95rem;
+    font-size: 0.9rem; /* 略微縮小說明文字 */
 }
 @media (max-width: 1200px) {
     .calculator-header p {
         white-space: normal;
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 }
 /* 工具格網 */
 .tools-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 1.5rem; /* 恢復原本的水平間距 */
-    margin-top: -0.5rem;
-    row-gap: 0.4rem; /* 進一步減少垂直間距 */
+    gap: 1.2rem; /* 略微縮小水平間距 */
+    margin-top: -0.3rem; /* 減少頂部邊距 */
+    row-gap: 0; /* 沒有垂直間距 */
 }
 @media (max-width: 1200px) {
     .tools-grid {
@@ -188,18 +195,19 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transform: scale(0.68); /* 維持原來調整好的縮放比例 */
+    transform: scale(0.63); /* 進一步縮小圖示 */
     transform-origin: center; /* 以中心為基準點縮放 */
+    margin-bottom: -0.8rem; /* 增加負邊距使卡片更加緊湊 */
 }
 .tool-card:hover {
-    transform: translateY(-5px) scale(0.68); /* 保持比例，同時有上浮效果 */
+    transform: translateY(-5px) scale(0.63); /* 保持比例，同時有上浮效果 */
 }
 .tool-icon {
     width: auto; /* 改為auto，讓容器適應圖片大小 */
     height: auto;
     aspect-ratio: auto; /* 移除固定的長寬比 */
     display: inline-block; /* 改為行內塊元素 */
-    margin-bottom: 0.3rem; /* 減少圖示和文字框之間的距離 */
+    margin-bottom: 0.15rem; /* 更進一步減少圖示和文字框之間的距離 */
     padding: 0;
     background-color: transparent;
     box-shadow: none;
@@ -210,16 +218,17 @@ main {
     max-width: 100%; /* 圖片最大寬度 */
 }
 .tool-name {
-    font-family: 'ZenMaruGothic', sans-serif;
-    font-size: 1.25rem; /* 增加文字大小 */
-    font-weight: bold;
+    font-family: 'ZenMaruGothic-Medium', sans-serif; /* 更改為中等粗細字體 */
+    font-size: 1.25rem; /* 維持增加後的文字大小 */
+    font-weight: normal; /* 更改為正常粗細，因為已經使用中等粗細字體 */
     background-color: white;
-    border-radius: 10px; /* 減小圓角半徑 */
-    padding: 0.5rem 1rem;
+    border-radius: 8px; /* 減小圓角半徑 */
+    padding: 0.4rem 0.9rem; /* 縮小內部padding */
     letter-spacing: 0.5em; /* 增加字間距為半個字元 */
     padding-right: 0.5em; /* 補償增加的字間距 */
     width: 97%;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    color: #737373; /* 改為灰色文字 */
 }
 /* 頁尾 */
 footer {
@@ -227,12 +236,12 @@ footer {
     bottom: 0;
     width: 100%;
     text-align: right; /* 靠右對齊 */
-    padding: 1rem 2rem;
+    padding: 0.8rem 2rem; /* 縮小頁尾padding */
     background-color: transparent;
     color: #666;
 }
 footer p {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem; /* 縮小段落間距 */
 }
 .contact-us {
     color: #666;
@@ -299,7 +308,7 @@ footer p {
     
     /* 主要內容調整 */
     .calculator-header h1 {
-        font-size: 2.2rem;
+        font-size: 2.1rem;
     }
     
     .calculator-header p {
@@ -307,12 +316,18 @@ footer p {
     }
     
     /* 工具格網調整 */
+    .tools-grid {
+        gap: 1.1rem;
+        row-gap: 0; /* 沒有垂直間距 */
+    }
+    
     .tool-card {
-        transform: scale(0.65); /* 調整平板上的大小 */
+        transform: scale(0.6); /* 調整平板上的大小 */
+        margin-bottom: -0.9rem; /* 增加負邊距 */
     }
     
     .tool-card:hover {
-        transform: translateY(-5px) scale(0.65);
+        transform: translateY(-5px) scale(0.6);
     }
     
     .tool-name {
@@ -323,7 +338,7 @@ footer p {
 @media (max-width: 767px) {
     /* 頁頭調整 */
     header {
-        padding: 0.8rem 1rem;
+        padding: 0.7rem 1rem;
         position: relative;
     }
     
@@ -369,7 +384,7 @@ footer p {
     
     /* 主要內容調整 */
     .calculator-header {
-        margin-bottom: 1.2rem;
+        margin-bottom: 0.7rem;
     }
     
     .calculator-header h1 {
@@ -384,16 +399,17 @@ footer p {
     
     /* 工具格網和卡片調整 */
     .tools-grid {
-        gap: 1.2rem; /* 保持適當的水平間距 */
-        row-gap: 0.3rem; /* 更小的垂直間距 */
+        gap: 1rem; /* 保持適當的水平間距 */
+        row-gap: 0; /* 沒有垂直間距 */
     }
     
     .tool-card {
-        transform: scale(0.65);
+        transform: scale(0.6);
+        margin-bottom: -1rem; /* 增加負邊距 */
     }
     
     .tool-card:hover {
-        transform: translateY(-5px) scale(0.65);
+        transform: translateY(-5px) scale(0.6);
     }
     
     .tool-name {
@@ -432,16 +448,17 @@ footer p {
     /* 工具格網調整 */
     .tools-grid {
         gap: 0.8rem;
-        row-gap: 0.2rem; /* 極小的垂直間距 */
+        row-gap: 0; /* 沒有垂直間距 */
     }
     
     /* 讓工具卡片在小型手機上變大一點，方便點擊 */
     .tool-card {
-        transform: scale(0.7);
+        transform: scale(0.65);
+        margin-bottom: -0.7rem; /* 適當的負邊距 */
     }
     
     .tool-card:hover {
-        transform: translateY(-5px) scale(0.7);
+        transform: translateY(-5px) scale(0.65);
     }
     
     .tool-name {
@@ -461,31 +478,32 @@ footer p {
     
     /* 工具格網調整 */
     .calculator-header {
-        margin-bottom: 0.8rem;
+        margin-bottom: 0.5rem;
     }
     
     .calculator-header h1 {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
     }
     
     .calculator-header p {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
     }
     
     /* 橫向螢幕時顯示更多列 */
     .tools-grid {
         grid-template-columns: repeat(4, 1fr);
-        gap: 1rem;
-        row-gap: 0.2rem; /* 極小的垂直間距 */
+        gap: 0.8rem;
+        row-gap: 0; /* 沒有垂直間距 */
     }
     
     /* 調整工具卡片在橫向模式下的大小 */
     .tool-card {
-        transform: scale(0.6);
+        transform: scale(0.55);
+        margin-bottom: -1.1rem; /* 增加負邊距 */
     }
     
     .tool-card:hover {
-        transform: translateY(-5px) scale(0.6);
+        transform: translateY(-5px) scale(0.55);
     }
     
     .tool-name {
@@ -495,6 +513,6 @@ footer p {
     /* 調整頁尾在橫向模式下的位置 */
     footer {
         position: relative;
-        margin-top: 1.5rem;
+        margin-top: 1.2rem;
     }
 }
