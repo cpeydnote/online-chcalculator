@@ -55,15 +55,19 @@ body {
     position: relative;
     min-height: 100vh; /* 確保頁面至少有視窗高度 */
 }
-/* 頁頭 */
-header {
+
+/* 桌面版頁頭 */
+.desktop-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.8rem 2rem; /* 縮小頂部padding */
+    padding: 0.8rem 2rem;
     background-color: #FFFBF3;
     box-shadow: none;
-    margin-bottom: 0.3rem; /* 縮小標頭和內容間距 */
+    margin-bottom: 0.3rem;
+}
+.mobile-header {
+    display: none; /* 默認隱藏移動版頁頭 */
 }
 .logo-link {
     text-decoration: none;
@@ -115,6 +119,7 @@ header {
 .subscribe-btn {
     color: #BC832B;
 }
+
 /* 主要內容 */
 main {
     max-width: 1200px;
@@ -156,7 +161,8 @@ main {
         font-size: 0.85rem;
     }
 }
-/* 工具格網 - 更緊湊的布局 */
+
+/* 工具格網 - 桌面版布局 */
 .tools-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -177,16 +183,7 @@ main {
         grid-template-columns: repeat(3, 1fr);
     }
 }
-@media (max-width: 768px) {
-    .tools-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-@media (max-width: 480px) {
-    .tools-grid {
-        grid-template-columns: 1fr;
-    }
-}
+
 .tool-card {
     background-color: transparent;
     border-radius: 0;
@@ -233,11 +230,7 @@ main {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
     color: #737373; /* 改為灰色文字 */
 }
-/* 第一排第三個圖示特殊樣式 - 設為中心點 */
-.tools-grid > a:nth-child(3) {
-    position: relative;
-    z-index: 1;
-}
+
 /* 頁尾 */
 footer {
     position: absolute;
@@ -260,140 +253,132 @@ footer p {
     text-decoration: underline;
 }
 
-/* 漢堡選單按鈕 */
+/* 漢堡選單按鈕 - 桌面版隱藏 */
 .menu-toggle {
     display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 10;
 }
 
-.menu-toggle .bar {
-    height: 3px;
-    width: 100%;
-    background-color: #333;
-    border-radius: 10px;
-    transition: all 0.3s ease-in-out;
+/* 移動版選單 - 默認隱藏 */
+.mobile-menu {
+    display: none;
 }
 
-.menu-toggle.active .bar:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
-}
-
-.menu-toggle.active .bar:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-toggle.active .bar:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
-}
-
-/* 響應式設計增強 */
-@media (max-width: 1024px) {
-    /* 頁頭調整 */
-    header {
-        padding: 0.8rem 1.5rem;
-    }
-    
-    .logo img {
-        height: 40px;
-    }
-    
-    .logo span {
-        font-size: 1.4rem;
-    }
-    
-    .auth-buttons button {
-        padding: 6px 16px;
-        font-size: 0.9rem;
-    }
-    
-    /* 主要內容調整 */
-    .calculator-header h1 {
-        font-size: 2.1rem;
-    }
-    
-    .calculator-header p {
-        font-size: 0.85rem;
-    }
-    
-    /* 工具格網調整 */
-    .tools-grid {
-        gap: 0.5rem;
-        row-gap: -0.2rem; /* 負值垂直間距 */
-        max-width: 900px;
-    }
-    
-    .tool-card {
-        transform: scale(0.5); /* 調整平板上的大小 */
-        margin-bottom: -1.8rem; /* 增加負邊距 */
-    }
-    
-    .tool-card:hover {
-        transform: translateY(-5px) scale(0.5);
-    }
-    
-    .tool-name {
-        font-size: 1.2rem; /* 平板上也增加文字大小 */
-    }
-}
-
+/* 響應式設計 - 移動裝置專用樣式 */
 @media (max-width: 767px) {
-    /* 頁頭調整 */
-    header {
-        padding: 0.7rem 1rem;
+    /* 切換頁頭顯示 */
+    .desktop-header {
+        display: none; /* 隱藏桌面版頁頭 */
+    }
+    
+    .mobile-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.8rem 1rem;
+        background-color: #FFFBF3;
         position: relative;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
     
-    .logo img {
+    .mobile-logo-link {
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+    }
+    
+    .mobile-logo {
+        display: flex;
+        align-items: center;
+    }
+    
+    .mobile-logo img {
         height: 35px;
+        width: auto;
+        margin-right: 5px;
     }
     
-    .logo span {
+    .mobile-logo span {
+        font-family: 'Copyduck', sans-serif;
         font-size: 1.3rem;
+        font-weight: normal;
+        color: #333;
     }
     
-    /* 漢堡選單顯示 */
+    /* 漢堡選單按鈕 */
     .menu-toggle {
         display: flex;
-        position: absolute;
-        right: 1rem;
-        top: 1.3rem;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 10;
     }
     
-    /* 按鈕區隱藏並準備顯示為下拉菜單 */
-    .auth-buttons {
+    .menu-toggle .bar {
+        height: 3px;
+        width: 100%;
+        background-color: #333;
+        border-radius: 10px;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+    
+    /* 移動版下拉選單 */
+    .mobile-menu {
         display: none;
-        flex-direction: column;
         position: absolute;
         top: 100%;
         right: 0;
-        width: 100%;
-        background-color: #FFFBF3;
-        padding: 1rem;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 5;
+        width: 200px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        padding: 0.8rem;
+        z-index: 20;
+    }
+    
+    .mobile-menu.show {
+        display: flex;
+        flex-direction: column;
         gap: 10px;
     }
     
-    .auth-buttons.show {
-        display: flex;
-    }
-    
-    .auth-buttons button {
+    .mobile-menu button {
         width: 100%;
         text-align: center;
+        padding: 8px 15px;
+        border-radius: 5px;
+        font-family: 'ZenMaruGothic-Medium', sans-serif;
+        font-size: 1rem;
+        border: none;
+        cursor: pointer;
+        background-color: #f5f5f5;
+        transition: all 0.2s ease;
     }
     
-    /* 主要內容調整 */
+    .mobile-menu button:hover {
+        background-color: #ebebeb;
+    }
+    
+    /* 標題調整 */
     .calculator-header {
-        margin-bottom: 0.7rem;
+        margin-top: 0.5rem;
+        margin-bottom: 1.5rem;
     }
     
     .calculator-header h1 {
@@ -401,128 +386,115 @@ footer p {
     }
     
     .calculator-header p {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
         white-space: normal;
-        padding: 0 1rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        line-height: 1.5;
+        padding: 0 0.5rem;
     }
     
-    /* 工具格網和卡片調整 */
+    /* 工具格網 - 移動版布局 */
     .tools-grid {
-        gap: 0.5rem; /* 縮小水平間距 */
-        row-gap: -0.2rem; /* 負值垂直間距 */
-        max-width: 700px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.8rem;
+        row-gap: 0.5rem;
+        max-width: 100%;
+        padding: 0 0.5rem;
     }
     
     .tool-card {
-        transform: scale(0.5);
-        margin-bottom: -1.7rem; /* 增加負邊距 */
+        transform: none;
+        margin-bottom: 0;
+        background-color: transparent;
     }
     
     .tool-card:hover {
-        transform: translateY(-5px) scale(0.5);
+        transform: translateY(-3px);
+    }
+    
+    .tool-icon {
+        margin-bottom: 0.3rem;
+    }
+    
+    .tool-icon img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: #D8CFC1;
+        padding: 1rem;
+        object-fit: contain;
     }
     
     .tool-name {
-        font-size: 1.15rem; /* 手機上的文字大小 */
-        padding: 0.4rem 0.8rem;
-        letter-spacing: 0.3em;
-        padding-right: 0.3em;
+        font-size: 0.9rem;
+        letter-spacing: 0;
+        padding: 0.3rem 0.5rem;
+        width: 100%;
+        border-radius: 8px;
+        white-space: normal;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        height: 2.8rem;
+        line-height: 1.3;
+        overflow: hidden;
     }
     
     /* 頁尾調整 */
     footer {
-        padding: 0.8rem 1rem;
+        position: relative;
+        margin-top: 2rem;
         text-align: center;
+        padding: 1rem;
     }
 }
 
+/* 小型手機調整 */
 @media (max-width: 480px) {
-    /* 頁頭進一步調整 */
-    .logo img {
-        height: 30px;
-    }
-    
-    .logo span {
-        font-size: 1.2rem;
-    }
-    
-    /* 主要內容進一步調整 */
-    .calculator-header h1 {
-        font-size: 1.6rem;
-    }
-    
-    .calculator-header p {
-        font-size: 0.75rem;
-    }
-    
-    /* 工具格網調整 */
     .tools-grid {
-        gap: 0.4rem;
-        row-gap: -0.3rem; /* 負值垂直間距 */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
     }
     
-    /* 讓工具卡片在小型手機上變大一點，方便點擊 */
-    .tool-card {
-        transform: scale(0.55);
-        margin-bottom: -1.5rem; /* 適當的負邊距 */
-    }
-    
-    .tool-card:hover {
-        transform: translateY(-5px) scale(0.55);
-    }
-    
-    .tool-name {
-        font-size: 1.1rem; /* 小型手機上的文字大小 */
+    .tool-icon img {
+        width: 70px;
+        height: 70px;
+        padding: 0.8rem;
     }
 }
 
 /* 橫向螢幕 (Landscape) 模式的優化 */
 @media (max-height: 500px) and (orientation: landscape) {
-    header {
-        padding: 0.5rem 1rem;
-    }
-    
-    .logo img {
-        height: 30px;
-    }
-    
-    /* 工具格網調整 */
-    .calculator-header {
-        margin-bottom: 0.5rem;
-    }
-    
     .calculator-header h1 {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
     }
     
     .calculator-header p {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
+        -webkit-line-clamp: 1;
     }
     
-    /* 橫向螢幕時顯示更多列 */
     .tools-grid {
         grid-template-columns: repeat(4, 1fr);
-        gap: 0.4rem;
-        row-gap: -0.4rem; /* 負值垂直間距 */
+        gap: 0.5rem;
     }
     
-    /* 調整工具卡片在橫向模式下的大小 */
-    .tool-card {
-        transform: scale(0.45);
-        margin-bottom: -1.9rem; /* 增加負邊距 */
-    }
-    
-    .tool-card:hover {
-        transform: translateY(-5px) scale(0.45);
+    .tool-icon img {
+        width: 60px;
+        height: 60px;
+        padding: 0.7rem;
     }
     
     .tool-name {
-        font-size: 1.1rem; /* 橫向模式下的文字大小 */
+        font-size: 0.8rem;
+        height: 2.5rem;
     }
     
-    /* 調整頁尾在橫向模式下的位置 */
     footer {
-        position: relative;
-        margin-top: 1.2rem;
+        margin-top: 1rem;
+        padding: 0.5rem;
     }
 }
