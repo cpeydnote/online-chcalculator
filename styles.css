@@ -610,7 +610,7 @@ footer p {
     font-family: 'ZenMaruGothic-Medium', sans-serif;
     color: #4D4D4D;
     font-size: 1rem;
-    margin-left: 80px; /* 將路徑文字推右邊一點 */
+    margin-left: 70px; /* 將路徑文字推右邊一點 */
 }
 
 .desktop-header {
