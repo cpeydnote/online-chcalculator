@@ -588,3 +588,156 @@ footer p {
         padding: 0.5rem;
     }
 }
+
+/* 使用須知頁面專用樣式 */
+@font-face {
+    font-family: 'PottaOne';
+    src: url('fonts/PottaOne-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'RampartOne';
+    src: url('fonts/RampartOne-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.terms-container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 2rem 2rem;
+    background-color: #FFFBF3;
+}
+
+.terms-content {
+    background-color: #FFFBF3;
+    border-radius: 10px;
+    padding: 1.5rem;
+}
+
+.terms-header, .terms-footer {
+    margin: 2rem 0;
+}
+
+.welcome-text, .terms-footer p {
+    font-family: 'PottaOne', sans-serif;
+    color: #4D4D4D;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.terms-section {
+    margin-bottom: 2.5rem;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.moon-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 0.8rem;
+}
+
+.section-header h2 {
+    font-family: 'RampartOne', sans-serif;
+    color: #73421B;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.section-content {
+    margin-left: 40px; /* 對齊月形圖示右側 */
+    font-family: 'PottaOne', sans-serif;
+    color: #666666;
+    line-height: 1.6;
+}
+
+.section-content p {
+    margin-bottom: 1rem;
+}
+
+.section-content ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.section-content li {
+    margin-bottom: 0.5rem;
+}
+
+/* 添加下標樣式 */
+.section-content sub {
+    font-size: 0.75em;
+    vertical-align: sub;
+}
+
+/* 響應式設計 */
+@media (max-width: 767px) {
+    .terms-container {
+        margin: 1rem auto;
+        padding: 0 1rem 1rem;
+    }
+    
+    .terms-content {
+        padding: 1rem;
+    }
+    
+    .welcome-text, .terms-footer p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+    
+    .section-header h2 {
+        font-size: 1.3rem;
+    }
+    
+    .moon-icon {
+        width: 25px;
+        height: 25px;
+        margin-right: 0.6rem;
+    }
+    
+    .section-content {
+        margin-left: 30px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .terms-container {
+        padding: 0 0.8rem 0.8rem;
+    }
+    
+    .terms-content {
+        padding: 0.8rem;
+    }
+    
+    .welcome-text, .terms-footer p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    .section-header h2 {
+        font-size: 1.2rem;
+    }
+    
+    .moon-icon {
+        width: 22px;
+        height: 22px;
+        margin-right: 0.5rem;
+    }
+    
+    .section-content {
+        margin-left: 25px;
+        font-size: 0.9rem;
+    }
+}
