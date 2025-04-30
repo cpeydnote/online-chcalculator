@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用須知 | CHCalculator</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- 添加圖標 -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="desktop-header">
+        <a href="index.html" class="logo-link">
+            <div class="logo">
+                <img src="images/logo.png" alt="CHCalculator">
+                <span>CHCALCULATOR</span>
+            </div>
+        </a>
+        <div class="auth-buttons">
+            <button class="login-btn">登入</button>
+            <button class="subscribe-btn">訂閱</button>
+        </div>
+    </header>
+    
+    <!-- 移動版頂部導航 -->
+    <header class="mobile-header">
+        <a href="index.html" class="mobile-logo-link">
+            <div class="mobile-logo">
+                <img src="images/logo.png" alt="CHCalculator">
+                <span>CHCALCULATOR</span>
+            </div>
+        </a>
+        <!-- 漢堡選單按鈕 -->
+        <button class="menu-toggle" aria-label="顯示選單">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <!-- 移動版下拉選單 -->
+        <div class="mobile-menu">
+            <button class="login-btn">登入</button>
+            <button class="subscribe-btn">訂閱</button>
+        </div>
+    </header>
+    
+    <main class="terms-container">
+        <div class="terms-content">
+            <div class="terms-header">
+                <p class="welcome-text">歡迎使用 OTSC 網站（以下簡稱「本網站」）。本平台是由最新 AI 編碼技術打造，專為營造現場之假設工程結構做快速輔助檢核而設計。在使用 OTSC 前，請詳閱以下說明，以保障您的權益。</p>
+            </div>
+            
+            <div class="terms-section">
+                <div class="section-header">
+                    <img src="images/00_Moon Icon.png" alt="月形圖示" class="moon-icon">
+                    <h2>本站介紹</h2>
+                </div>
+                <div class="section-content">
+                    <p>OTSC 是一個專門針對營造業現場需求設計的結構輔助平台，用戶只需輸入基本結構參數（如尺寸、載重、設計條件等），系統即可即時提供初步的結構檢核（如 OK/NG 判斷）。</p>
+                    <p>本平台所提供之結果可作為初步參考，訂閱版可提供計算報告的輸出。</p>
+                </div>
+            </div>
+            
+            <div class="terms-section">
+                <div class="section-header">
+                    <img src="images/00_Moon Icon.png" alt="月形圖示" class="moon-icon">
+                    <h2>適用範圍</h2>
+                </div>
+                <div class="section-content">
+                    <p>本網站適用於以下場景之檢核使用：</p>
+                    <ul>
+                        <li>臨時假設工程構件</li>
+                        <li>營建工地臨時支撐結構</li>
+                        <li>非供永久使用之構造物</li>
+                        <li>需快速取得初判意見的營造現場應用</li>
+                    </ul>
+                    <p>※本網站不適用於永久結構設計、或具高風險公共安全要求之構造物。</p>
+                </div>
+            </div>
+            
+            <div class="terms-section">
+                <div class="section-header">
+                    <img src="images/00_Moon Icon.png" alt="月形圖示" class="moon-icon">
+                    <h2>計算前提</h2>
+                </div>
+                <div class="section-content">
+                    <ul>
+                        <li>常重混凝土單位重 w<sub>c</sub> = 2.32 tf/m³</li>
+                        <li>鋼單位重 w<sub>s</sub> = 7.85 tf/m³</li>
+                        <li>鋼筋混凝土單位重 w<sub>rc</sub> = 2.4 tf/m³</li>
+                        <li>鋼彈性係數 E<sub>s</sub> = 2040 tf/cm²</li>
+                        <li>試驗強度安全係數 Ω = 3</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="terms-section">
+                <div class="section-header">
+                    <img src="images/00_Moon Icon.png" alt="月形圖示" class="moon-icon">
+                    <h2>隱私權政策</h2>
+                </div>
+                <div class="section-content">
+                    <p>本站僅收集必要之使用紀錄與參數資訊，作為系統優化與統計分析用途。</p>
+                    <p>您輸入的工程參數不會對外公開，亦不會與第三方共享。</p>
+                    <p>若您需使用帳號或登入功能，我們將依《個人資料保護法》要善處理您的個資。</p>
+                </div>
+            </div>
+            
+            <div class="terms-section">
+                <div class="section-header">
+                    <img src="images/00_Moon Icon.png" alt="月形圖示" class="moon-icon">
+                    <h2>外部網站與智慧財產權保護</h2>
+                </div>
+                <div class="section-content">
+                    <p>本網站可能連結至其他第三方網站，其內容與行為不在本網站控制範圍內。</p>
+                    <p>若發現本網站內容（圖文、演算邏輯、介面設計等）遭他人未經授權使用或轉載，請來信告知。我們將依法維權。本網站所使用之名稱、圖示、技術邏輯，皆為開發者或授權來源所有。</p>
+                    <p>未經同意不得擅自複製、引用或商業使用。</p>
+                </div>
+            </div>
+            
+            <div class="terms-section">
+                <div class="section-header">
+                    <img src="images/00_Moon Icon.png" alt="月形圖示" class="moon-icon">
+                    <h2>網站暫停與內容修改權利</h2>
+                </div>
+                <div class="section-content">
+                    <p>本網站有權於任何時間因系統維護、安全更新或功能調整而暫停服務，恕不另行通知。</p>
+                    <p>本網站保留隨時修改網站內容、計算邏輯、功能界面與使用條款之權利。</p>
+                    <p>若您於修改後繼續使用本網站，即視為您同意該等修改。</p>
+                </div>
+            </div>
+            
+            <div class="terms-footer">
+                <p>如您對本網站使用條件、檢核內容或技術原理有任何疑問，歡迎聯絡我們。</p>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p><a href="mailto:contact@chcalculator.com" class="contact-us">聯絡我們</a></p>
+        <p>版權所有© 2025 CHCalculator</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            menuToggle.addEventListener('click', function() {
+                menuToggle.classList.toggle('active');
+                mobileMenu.classList.toggle('show');
+            });
+        });
+    </script>
+</body>
+</html>
