@@ -591,8 +591,8 @@ footer p {
 
 /* 使用須知頁面專用樣式 */
 @font-face {
-    font-family: 'PottaOne';
-    src: url('fonts/PottaOne-Regular.ttf') format('truetype');
+    font-family: 'ZenMaruGothic-Medium';
+    src: url('fonts/ZenMaruGothic-Medium.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -607,10 +607,10 @@ footer p {
 
 /* 導航路徑樣式 */
 .nav-path {
-    font-family: 'PottaOne', sans-serif;
+    font-family: 'ZenMaruGothic-Medium', sans-serif;
     color: #4D4D4D;
     font-size: 1rem;
-    margin-left: -150px; /* 將路徑文字推向左側 */
+    margin-left: -30px; /* 將路徑文字推右邊一點 */
 }
 
 .desktop-header {
