@@ -9,7 +9,8 @@
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <header>
+    <!-- 桌面版頂部導航 -->
+    <header class="desktop-header">
         <a href="index.html" class="logo-link">
             <div class="logo">
                 <img src="images/logo.png" alt="CHCalculator">
@@ -17,6 +18,28 @@
             </div>
         </a>
         <div class="auth-buttons">
+            <button class="analysis-btn">分析前提</button>
+            <button class="login-btn">登入</button>
+            <button class="subscribe-btn">訂閱</button>
+        </div>
+    </header>
+    
+    <!-- 移動版頂部導航 -->
+    <header class="mobile-header">
+        <a href="index.html" class="mobile-logo-link">
+            <div class="mobile-logo">
+                <img src="images/logo.png" alt="CHCalculator">
+                <span>CHCALCULATOR</span>
+            </div>
+        </a>
+        <!-- 漢堡選單按鈕 -->
+        <button class="menu-toggle" aria-label="顯示選單">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <!-- 移動版下拉選單 -->
+        <div class="mobile-menu">
             <button class="analysis-btn">分析前提</button>
             <button class="login-btn">登入</button>
             <button class="subscribe-btn">訂閱</button>
@@ -133,22 +156,16 @@
         <p>版權所有© 2025 CHCalculator</p>
     </footer>
 
-    <!-- 添加漢堡選單按鈕 -->
-    <button class="menu-toggle" aria-label="顯示選單">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </button>
-
-    <!-- 添加簡單的 JavaScript 控制漢堡選單 -->
+    <!-- JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // 漢堡選單控制
             const menuToggle = document.querySelector('.menu-toggle');
-            const authButtons = document.querySelector('.auth-buttons');
+            const mobileMenu = document.querySelector('.mobile-menu');
             
             menuToggle.addEventListener('click', function() {
                 menuToggle.classList.toggle('active');
-                authButtons.classList.toggle('show');
+                mobileMenu.classList.toggle('show');
             });
         });
     </script>
