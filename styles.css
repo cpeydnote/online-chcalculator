@@ -375,7 +375,7 @@ footer p {
         background-color: #ebebeb;
     }
     
-    /* 標題調整 */
+    /* 標題調整 - 縮小英文標題間距 */
     .calculator-header {
         margin-top: 0.5rem;
         margin-bottom: 1.5rem;
@@ -383,6 +383,7 @@ footer p {
     
     .calculator-header h1 {
         font-size: 1.8rem;
+        line-height: 1.1; /* 縮小行間距 */
     }
     
     .calculator-header p {
@@ -392,8 +393,9 @@ footer p {
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
-        line-height: 1.5;
+        line-height: 1.3; /* 縮小行間距 */
         padding: 0 0.5rem;
+        margin-top: 0.1rem; /* 減少與標題的間距 */
     }
     
     /* 工具格網 - 移動版布局 */
@@ -419,28 +421,84 @@ footer p {
         margin-bottom: 0.3rem;
     }
     
+    /* 修改：使用特殊圖示，移除背景 */
     .tool-icon img {
         width: 80px;
         height: 80px;
-        border-radius: 50%;
-        background-color: #D8CFC1;
-        padding: 1rem;
+        border-radius: 0; /* 移除圓角 */
+        background-color: transparent; /* 背景透明 */
+        padding: 0; /* 移除內邊距 */
         object-fit: contain;
     }
     
+    /* 修改：調整文字框樣式 */
     .tool-name {
         font-size: 0.9rem;
         letter-spacing: 0;
-        padding: 0.3rem 0.5rem;
-        width: 100%;
+        padding: 0.3rem;
+        width: 85%; /* 縮小寬度 */
         border-radius: 8px;
         white-space: normal;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
+        display: flex;
+        align-items: center; /* 垂直居中 */
+        justify-content: center; /* 水平居中 */
         height: 2.8rem;
-        line-height: 1.3;
+        line-height: 1.2;
         overflow: hidden;
+        min-height: 42px; /* 確保最小高度 */
+    }
+    
+    /* 為第一行工具的圖示指定特殊圖片 - 使用帶星號的圖片 */
+    .tools-grid > a:nth-child(1) .tool-icon img {
+        content: url('images/01*_Fence.png');
+    }
+    
+    .tools-grid > a:nth-child(2) .tool-icon img {
+        content: url('images/02*_Temporary Surface.png');
+    }
+    
+    .tools-grid > a:nth-child(3) .tool-icon img {
+        content: url('images/03*_Slab Capacity.png');
+    }
+    
+    .tools-grid > a:nth-child(4) .tool-icon img {
+        content: url('images/04*_Temporary Beam.png');
+    }
+    
+    .tools-grid > a:nth-child(5) .tool-icon img {
+        content: url('images/05*_Scaffolding.png');
+    }
+    
+    .tools-grid > a:nth-child(6) .tool-icon img {
+        content: url('images/07*_Framework.png');
+    }
+    
+    .tools-grid > a:nth-child(7) .tool-icon img {
+        content: url('images/08*_Concrete Lateral Pressure.png');
+    }
+    
+    .tools-grid > a:nth-child(8) .tool-icon img {
+        content: url('images/09*_Slab Supports.png');
+    }
+    
+    .tools-grid > a:nth-child(9) .tool-icon img {
+        content: url('images/10*_Handrails.png');
+    }
+    
+    .tools-grid > a:nth-child(10) .tool-icon img {
+        content: url('images/11*_CFRP.png');
+    }
+    
+    .tools-grid > a:nth-child(11) .tool-icon img {
+        content: url('images/06*_Heavy-duty Scaffolding.png');
+    }
+    
+    .tools-grid > a:nth-child(12) .tool-icon img {
+        content: url('images/12*_Tower Crane.png');
+    }
+    
+    .tools-grid > a:nth-child(13) .tool-icon img {
+        content: url('images/13*_Post-installed rebar.png');
     }
     
     /* 頁尾調整 */
@@ -462,7 +520,11 @@ footer p {
     .tool-icon img {
         width: 70px;
         height: 70px;
-        padding: 0.8rem;
+    }
+    
+    .tool-name {
+        width: 90%; /* 小螢幕上寬度稍大一點 */
+        font-size: 0.85rem;
     }
 }
 
@@ -470,11 +532,13 @@ footer p {
 @media (max-height: 500px) and (orientation: landscape) {
     .calculator-header h1 {
         font-size: 1.5rem;
+        line-height: 1; /* 進一步縮小行間距 */
     }
     
     .calculator-header p {
         font-size: 0.7rem;
         -webkit-line-clamp: 1;
+        line-height: 1.2;
     }
     
     .tools-grid {
@@ -485,12 +549,13 @@ footer p {
     .tool-icon img {
         width: 60px;
         height: 60px;
-        padding: 0.7rem;
     }
     
     .tool-name {
         font-size: 0.8rem;
+        width: 85%; /* 更窄的文字框 */
         height: 2.5rem;
+        min-height: 36px;
     }
     
     footer {
