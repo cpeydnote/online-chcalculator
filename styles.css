@@ -197,7 +197,7 @@ main {
     align-items: center;
     transform: scale(0.55); /* 進一步縮小圖示 */
     transform-origin: center; /* 以中心為基準點縮放 */
-    margin-bottom: -1.6rem; /* 大幅增加負邊距使卡片更加緊湊 */
+    margin-bottom: -1.8rem; /* 更大的負邊距使卡片更加緊湊 */
 }
 .tool-card:hover {
     transform: translateY(-5px) scale(0.55); /* 保持比例，同時有上浮效果 */
@@ -207,7 +207,7 @@ main {
     height: auto;
     aspect-ratio: auto; /* 移除固定的長寬比 */
     display: inline-block; /* 改為行內塊元素 */
-    margin-bottom: 0.25rem; /* 保持圖示和文字框之間的距離 */
+    margin-bottom: 0.15rem; /* 減少圖示和文字框之間的距離 */
     padding: 0;
     background-color: transparent;
     box-shadow: none;
@@ -431,21 +431,24 @@ footer p {
         object-fit: contain;
     }
     
-    /* 修改：調整文字框樣式 */
+    /* 修改：調整文字框樣式 - 寬度更窄 */
     .tool-name {
         font-size: 0.9rem;
         letter-spacing: 0;
         padding: 0.3rem;
-        width: 85%; /* 縮小寬度 */
-        border-radius: 8px;
-        white-space: normal;
-        display: flex;
+        width: auto; /* 取消固定寬度 */
+        min-width: 0; /* 允許寬度收縮 */
+        display: inline-flex; /* 使寬度適應內容 */
         align-items: center; /* 垂直居中 */
         justify-content: center; /* 水平居中 */
-        height: 2.8rem;
-        line-height: 1.2;
-        overflow: hidden;
-        min-height: 42px; /* 確保最小高度 */
+        margin: 0 auto; /* 水平居中 */
+        border-radius: 8px;
+        white-space: nowrap; /* 防止文字換行 */
+        height: auto; /* 自適應高度 */
+        min-height: 32px; /* 確保最小高度 */
+        max-width: 70%; /* 限制最大寬度 */
+        padding-left: 0.8em; /* 左側較大內邊距 */
+        padding-right: 0.8em; /* 右側較大內邊距 */
     }
     
     /* 為第一行工具的圖示指定特殊圖片 - 使用帶星號的圖片 */
@@ -523,8 +526,9 @@ footer p {
     }
     
     .tool-name {
-        width: 90%; /* 小螢幕上寬度稍大一點 */
         font-size: 0.85rem;
+        max-width: 80%; /* 小螢幕上稍寬一點 */
+        min-height: 30px;
     }
 }
 
@@ -553,9 +557,8 @@ footer p {
     
     .tool-name {
         font-size: 0.8rem;
-        width: 85%; /* 更窄的文字框 */
-        height: 2.5rem;
-        min-height: 36px;
+        max-width: 70%; /* 更窄的文字框 */
+        min-height: 28px;
     }
     
     footer {
