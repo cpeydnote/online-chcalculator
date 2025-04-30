@@ -304,30 +304,32 @@ footer p {
         color: #333;
     }
     
-    /* 漢堡選單按鈕 */
+    /* 漢堡選單按鈕 - 調整大小 */
     .menu-toggle {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 24px;
-        height: 15px;
+        width: 24px; /* 縮小寬度 */
+        height: 18px; /* 縮小高度 */
         background: transparent;
         border: none;
         cursor: pointer;
         padding: 0;
         z-index: 10;
+        position: relative;
     }
     
     .menu-toggle .bar {
-        height: 2.6px;
+        height: 2px; /* 縮小每條槓的高度 */
         width: 100%;
         background-color: #333;
         border-radius: 10px;
         transition: all 0.3s ease-in-out;
     }
     
+    /* 修改轉換為 ✕ 時的樣式 */
     .menu-toggle.active .bar:nth-child(1) {
-        transform: translateY(9px) rotate(45deg);
+        transform: translateY(8px) rotate(45deg); /* 調整位移距離 */
     }
     
     .menu-toggle.active .bar:nth-child(2) {
@@ -335,7 +337,7 @@ footer p {
     }
     
     .menu-toggle.active .bar:nth-child(3) {
-        transform: translateY(-9px) rotate(-45deg);
+        transform: translateY(-8px) rotate(-45deg); /* 調整位移距離 */
     }
     
     /* 移動版下拉選單 */
@@ -513,7 +515,7 @@ footer p {
     }
 }
 
-/* 小型手機調整 */
+/* 小型手機調整 - 進一步縮小漢堡選單 */
 @media (max-width: 480px) {
     .tools-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -527,8 +529,26 @@ footer p {
     
     .tool-name {
         font-size: 0.85rem;
-        max-width: 50%; /* 小螢幕上稍寬一點 */
-        min-height: 24px;
+        max-width: 80%; /* 小螢幕上稍寬一點 */
+        min-height: 30px;
+    }
+    
+    /* 小螢幕上進一步縮小漢堡選單 */
+    .menu-toggle {
+        width: 22px;
+        height: 16px;
+    }
+    
+    .menu-toggle .bar {
+        height: 2px;
+    }
+    
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+    
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
     }
 }
 
@@ -557,8 +577,8 @@ footer p {
     
     .tool-name {
         font-size: 0.8rem;
-        max-width: 50%; /* 更窄的文字框 */
-        min-height: 24px;
+        max-width: 70%; /* 更窄的文字框 */
+        min-height: 28px;
     }
     
     footer {
