@@ -309,8 +309,8 @@ footer p {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 30px;
-        height: 21px;
+        width: 24px;
+        height: 15px;
         background: transparent;
         border: none;
         cursor: pointer;
@@ -319,7 +319,7 @@ footer p {
     }
     
     .menu-toggle .bar {
-        height: 3px;
+        height: 2.6px;
         width: 100%;
         background-color: #333;
         border-radius: 10px;
