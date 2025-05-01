@@ -61,11 +61,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 2rem 0.8rem 2rem; /* 增加頂部padding */
+    padding: 1rem 2rem 0.8rem 2rem; /* 增加頂部padding */
     background-color: #FFFBF3;
     box-shadow: none;
     margin-bottom: 0.3rem;
-    margin-top: 10px; /* 新增頂部margin */
+    margin-top: 5px; /* 新增頂部margin */
 }
 .mobile-header {
     display: none; /* 默認隱藏移動版頁頭 */
@@ -618,12 +618,12 @@ footer p {
     color: #4D4D4D;
     font-size: 1rem;
     margin-left: 70px;
-    margin-top: 15px; /* 增加頂部margin */
+    margin-top: 10px; /* 增加頂部margin */
 }
 .desktop-header {
     justify-content: flex-start;
-    padding: 1.5rem 2rem 0.5rem 2rem; /* 增加頂部padding，保持左右不變，底部不變 */
-    margin-top: 10px; /* 新增頂部margin */
+    padding: 1rem 2rem 0.5rem 2rem; /* 增加頂部padding，保持左右不變，底部不變 */
+    margin-top: 5px; /* 新增頂部margin */
 }
 .desktop-header .logo img {
     height: 35px; /* 縮小logo */
@@ -643,7 +643,7 @@ footer p {
 }
 .terms-container {
     max-width: 1000px;
-    margin: 20px auto 0; /* 增加頂部margin */
+    margin: 15px auto 0; /* 增加頂部margin */
     padding: 0 2rem 2rem;
     background-color: #FFFBF3;
     border: 1px solid #ddd;
