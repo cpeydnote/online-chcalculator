@@ -21,15 +21,15 @@
     font-display: swap;
 }
 @font-face {
-    font-family: 'ZenMaruGothic-Bold';
-    src: url('fonts/ZenMaruGothic-Bold.ttf') format('truetype');
+    font-family: 'irohamaru-Medium';
+    src: url('fonts/irohamaru-Medium.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
-    font-family: 'ZenMaruGothic-Medium';
-    src: url('fonts/ZenMaruGothic-Medium.ttf') format('truetype');
+    font-family: 'irohamaru-Regular';
+    src: url('fonts/irohamaru-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -100,7 +100,7 @@ body {
     margin-right: 10px;
 }
 .auth-buttons button {
-    font-family: 'ZenMaruGothic-Medium', sans-serif;
+    font-family: 'irohamaru-Regular', sans-serif;
     padding: 8px 20px; /* 減少寬度以適應新按鈕 */
     border-radius: 5px;
     font-size: 1rem;
@@ -219,7 +219,7 @@ main {
     max-width: 100%; /* 圖片最大寬度 */
 }
 .tool-name {
-    font-family: 'ZenMaruGothic-Medium', sans-serif; /* 更改為中等粗細字體 */
+    font-family: 'irohamaru-Regular', sans-serif; /* 更改為中等粗細字體 */
     font-size: 1.3rem; /* 放大文字大小 */
     font-weight: normal; /* 更改為正常粗細，因為已經使用中等粗細字體 */
     background-color: white;
@@ -366,7 +366,7 @@ footer p {
         text-align: center;
         padding: 8px 15px;
         border-radius: 5px;
-        font-family: 'ZenMaruGothic-Medium', sans-serif;
+        font-family: 'irohamaru-Regular', sans-serif;
         font-size: 1rem;
         border: none;
         cursor: pointer;
@@ -598,6 +598,13 @@ footer p {
     font-display: swap;
 }
 @font-face {
+    font-family: 'irohamaru-Regular';
+    src: url('fonts/irohamaru-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
     font-family: 'RampartOne';
     src: url('fonts/RampartOne-Regular.ttf') format('truetype');
     font-weight: normal;
@@ -606,7 +613,7 @@ footer p {
 }
 /* 導航路徑樣式 */
 .nav-path {
-    font-family: 'Helvetica', sans-serif;
+    font-family: 'irohamaru-Regular', sans-serif;
     color: #4D4D4D;
     font-size: 1rem;
     margin-left: 70px; /* 將路徑文字推右邊一點 */
@@ -648,7 +655,7 @@ footer p {
     margin: 1.5rem 0;
 }
 .welcome-text, .terms-footer p {
-    font-family: 'Helvetica', sans-serif;
+    font-family: 'irohamaru-Regular', sans-serif;
     color: #4D4D4D;
     font-size: 1rem;
     line-height: 1.6;
@@ -676,7 +683,7 @@ footer p {
 }
 .section-content {
     margin-left: 40px; /* 對齊月形圖示右側 */
-    font-family: 'Helvetica', sans-serif; /* 改為 Helvetica */
+    font-family: 'irohamaru-Regular', sans-serif; /* 改為 irohamaru-Regular */
     color: #666666;
     line-height: 1.5;
     font-size: 0.95rem;
