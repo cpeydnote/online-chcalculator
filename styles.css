@@ -61,10 +61,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.8rem 2rem;
+    padding: 1.5rem 2rem 0.8rem 2rem; /* 增加頂部padding */
     background-color: #FFFBF3;
     box-shadow: none;
     margin-bottom: 0.3rem;
+    margin-top: 10px; /* 新增頂部margin */
 }
 .mobile-header {
     display: none; /* 默認隱藏移動版頁頭 */
@@ -616,11 +617,13 @@ footer p {
     font-family: 'irohamaru-Regular', sans-serif;
     color: #4D4D4D;
     font-size: 1rem;
-    margin-left: 70px; /* 將路徑文字推右邊一點 */
+    margin-left: 70px;
+    margin-top: 15px; /* 增加頂部margin */
 }
 .desktop-header {
     justify-content: flex-start;
-    padding: 0.5rem 2rem;
+    padding: 1.5rem 2rem 0.5rem 2rem; /* 增加頂部padding，保持左右不變，底部不變 */
+    margin-top: 10px; /* 新增頂部margin */
 }
 .desktop-header .logo img {
     height: 35px; /* 縮小logo */
@@ -640,11 +643,11 @@ footer p {
 }
 .terms-container {
     max-width: 1000px;
-    margin: 0 auto; /* 取消頂部間距 */
+    margin: 20px auto 0; /* 增加頂部margin */
     padding: 0 2rem 2rem;
     background-color: #FFFBF3;
-    border: 1px solid #ddd; /* 添加淺色邊框 */
-    border-radius: 5px; /* 略微圓角 */
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 .terms-content {
     background-color: #FFFBF3;
