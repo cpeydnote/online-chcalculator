@@ -434,6 +434,7 @@ footer p {
         background-color: transparent; /* 背景透明 */
         padding: 0; /* 移除內邊距 */
         object-fit: contain;
+        filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.1));
     }
     
     /* 修改：調整文字框樣式 - 保持原有尺寸 */
@@ -643,11 +644,12 @@ footer p {
 }
 .terms-container {
     max-width: 1000px;
-    margin: 15px auto 0; /* 增加頂部margin */
+    margin: 20px auto 0;
     padding: 0 2rem 2rem;
-    background-color: #FFFBF3;
-    border: 1px solid #ddd;
+    background-color: #FFF9E8; /* 調整為更溫暖的背景色 */
+    border: 1px solid #E5D6BA; /* 調整為更溫暖的邊框色 */
     border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* 添加輕微陰影 */
 }
 .terms-content {
     background-color: #FFFBF3;
