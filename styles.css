@@ -591,8 +591,8 @@ footer p {
 
 /* 使用須知頁面專用樣式 */
 @font-face {
-    font-family: 'ZenMaruGothic-Medium';
-    src: url('fonts/ZenMaruGothic-Medium.ttf') format('truetype');
+    font-family: 'Helvetica';
+    src: url('fonts/Helvetica.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -604,41 +604,33 @@ footer p {
     font-style: normal;
     font-display: swap;
 }
-
 /* 導航路徑樣式 */
 .nav-path {
-    font-family: 'ZenMaruGothic-Medium', sans-serif;
+    font-family: 'Helvetica', sans-serif;
     color: #4D4D4D;
     font-size: 1rem;
     margin-left: 70px; /* 將路徑文字推右邊一點 */
 }
-
 .desktop-header {
     justify-content: flex-start;
     padding: 0.5rem 2rem;
 }
-
 .desktop-header .logo img {
     height: 35px; /* 縮小logo */
 }
-
 .desktop-header .logo span {
     font-size: 1.2rem; /* 縮小logo文字 */
 }
-
 .auth-buttons {
     margin-left: auto; /* 將按鈕推到右側 */
 }
-
 /* 移動版調整 */
 .mobile-header .mobile-logo img {
     height: 30px; /* 縮小移動版logo */
 }
-
 .mobile-header .mobile-logo span {
     font-size: 1.1rem; /* 縮小移動版logo文字 */
 }
-
 .terms-container {
     max-width: 1000px;
     margin: 0 auto; /* 取消頂部間距 */
@@ -647,91 +639,76 @@ footer p {
     border: 1px solid #ddd; /* 添加淺色邊框 */
     border-radius: 5px; /* 略微圓角 */
 }
-
 .terms-content {
     background-color: #FFFBF3;
     border-radius: 0;
     padding: 1rem;
 }
-
 .terms-header, .terms-footer {
     margin: 1.5rem 0;
 }
-
 .welcome-text, .terms-footer p {
-    font-family: 'ZenMaruGothic-Medium', sans-serif;
+    font-family: 'Helvetica', sans-serif;
     color: #4D4D4D;
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
 }
-
 .terms-section {
     margin-bottom: 2rem;
 }
-
 .section-header {
     display: flex;
     align-items: center;
     margin-bottom: 0.8rem;
 }
-
 .moon-icon {
-    width: 28px;
-    height: 28px;
+    width: 22px; /* 縮小月形圖標 */
+    height: 22px;
     margin-right: 0.8rem;
 }
-
 .section-header h2 {
-    font-family: 'RampartOne', sans-serif;
+    font-family: 'Helvetica', sans-serif; /* 改為 Helvetica */
     color: #73421B;
     font-size: 1.3rem;
     margin: 0;
-    font-weight: normal;
+    font-weight: bold; /* 使用粗體以確保標題醒目 */
 }
-
 .section-content {
     margin-left: 40px; /* 對齊月形圖示右側 */
-    font-family: 'ZenMaruGothic-Medium', sans-serif;
+    font-family: 'Helvetica', sans-serif; /* 改為 Helvetica */
     color: #666666;
     line-height: 1.5;
     font-size: 0.95rem;
 }
-
 .section-content p {
     margin-bottom: 0.8rem;
 }
-
 .section-content ul {
     list-style-type: disc;
     margin-left: 1.5rem;
     margin-bottom: 0.8rem;
 }
-
 .section-content li {
     margin-bottom: 0.4rem;
 }
-
 /* 添加下標樣式 */
 .section-content sub {
     font-size: 0.75em;
     vertical-align: sub;
 }
-
 /* 調整footer樣式使其與參考圖片一致 */
 footer {
     position: relative;
     padding: 0.8rem 2rem;
     margin-top: 1rem;
 }
-
 /* 響應式設計 */
 @media (max-width: 991px) {
     .nav-path {
         display: none; /* 在中小屏幕上隱藏路徑 */
     }
 }
-
 @media (max-width: 767px) {
     .terms-container {
         margin: 0;
@@ -753,8 +730,8 @@ footer {
     }
     
     .moon-icon {
-        width: 24px;
-        height: 24px;
+        width: 20px; /* 進一步縮小月形圖標 */
+        height: 20px;
         margin-right: 0.6rem;
     }
     
@@ -763,7 +740,6 @@ footer {
         font-size: 0.9rem;
     }
 }
-
 @media (max-width: 480px) {
     .terms-container {
         padding: 0 0.5rem 0.5rem;
@@ -783,8 +759,8 @@ footer {
     }
     
     .moon-icon {
-        width: 20px;
-        height: 20px;
+        width: 18px; /* 在小型設備上更小的月形圖標 */
+        height: 18px;
         margin-right: 0.5rem;
     }
     
