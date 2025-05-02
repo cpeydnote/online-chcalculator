@@ -9,6 +9,10 @@
     padding-bottom: 0.5rem;
 }
 
+.left-tab-buttons {
+    display: flex;
+}
+
 .tab-btn {
     padding: 0.5rem 1.5rem;
     border: none;
@@ -18,11 +22,17 @@
     font-size: 0.9rem;
     margin-right: 0.5rem;
     font-family: 'irohamaru-Regular', sans-serif;
+    transition: background-color 0.2s, transform 0.1s;
 }
 
 .tab-btn.active {
     background-color: #E9EDF5;
     font-weight: bold;
+}
+
+.tab-btn:active {
+    transform: translateY(2px);
+    background-color: #D9D9D9;
 }
 
 .right-tab-buttons {
@@ -73,6 +83,7 @@
     border-radius: 4px;
     padding: 0.5rem;
     background-color: #F9F9F9;
+    width: 200px; /* 減少寬度 */
 }
 
 .input-with-unit input {
@@ -95,7 +106,7 @@
 }
 
 select {
-    width: 100%;
+    width: 200px; /* 減少寬度 */
     padding: 0.5rem;
     border: 1px solid #D9D9D9;
     border-radius: 4px;
@@ -169,20 +180,26 @@ select {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
 .check-label {
     font-size: 1rem;
-    color: #4D4D4D;
+    color: #005CCB;
     margin-bottom: 1rem;
     font-weight: bold;
+    position: absolute;
+    top: -0.75rem;
+    background-color: #fff;
+    padding: 0 0.5rem;
 }
 
 .check-result {
     background-color: #F9F9F9;
     border-radius: 8px;
+    border: 1px solid #E6E6E6;
     padding: 1.5rem;
-    width: 100%;
+    width: 80%;
     text-align: center;
 }
 
@@ -203,7 +220,7 @@ select {
 
 .formula-value {
     padding: 0.5rem 1rem;
-    background-color: #F2F2F2;
+    background-color: transparent;
     border-radius: 4px;
 }
 
@@ -228,7 +245,7 @@ select {
 
 @media (max-width: 768px) {
     .tab-buttons {
-        flex-wrap: wrap;
+        flex-direction: column;
     }
     
     .right-tab-buttons {
@@ -244,6 +261,10 @@ select {
     
     .tube-image img {
         width: 150px;
+    }
+    
+    .input-with-unit, select {
+        width: 100%;
     }
 }
 
