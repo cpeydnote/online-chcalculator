@@ -1,0 +1,260 @@
+/* 模板支撐頁面專用樣式 */
+
+/* 標籤按鈕樣式 */
+.tab-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #E6E6E6;
+    padding-bottom: 0.5rem;
+}
+
+.tab-btn {
+    padding: 0.5rem 1.5rem;
+    border: none;
+    background-color: #F2F2F2;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+    font-family: 'irohamaru-Regular', sans-serif;
+}
+
+.tab-btn.active {
+    background-color: #E9EDF5;
+    font-weight: bold;
+}
+
+.right-tab-buttons {
+    display: flex;
+}
+
+.right-tab-buttons .tab-btn {
+    margin-left: 0.5rem;
+    margin-right: 0;
+}
+
+/* 計算器內容區域 */
+.calculator-content {
+    display: block;
+}
+
+.calculator-content.hidden {
+    display: none;
+}
+
+/* 輸入欄位布局 */
+.input-columns {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.left-column, .right-column {
+    flex: 1;
+}
+
+/* 輸入組件樣式 */
+.input-group {
+    margin-bottom: 1.2rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+    color: #4D4D4D;
+}
+
+.input-with-unit {
+    display: flex;
+    align-items: center;
+    border: 1px solid #D9D9D9;
+    border-radius: 4px;
+    padding: 0.5rem;
+    background-color: #F9F9F9;
+}
+
+.input-with-unit input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 0.9rem;
+}
+
+.unit {
+    color: #4D4D4D;
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+}
+
+.value-display {
+    color: #333;
+    font-size: 0.9rem;
+}
+
+select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #D9D9D9;
+    border-radius: 4px;
+    background-color: #F9F9F9;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+/* 管斷面示意圖 */
+.tube-image-container {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.tube-image {
+    position: relative;
+    display: inline-block;
+}
+
+.tube-image img {
+    width: 180px;
+    height: auto;
+}
+
+.tube-dimension {
+    position: absolute;
+    color: #FF3333;
+    font-size: 0.8rem;
+}
+
+.b-dimension {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.c-dimension {
+    left: 24%;
+    top: 50%;
+}
+
+.tube-dimension-label {
+    position: absolute;
+    right: 15%;
+    top: 15%;
+    color: #333;
+    font-size: 0.8rem;
+}
+
+.unit-label {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+/* 支撐結構示意圖 */
+.support-image-container {
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.support-image-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 結果區域 */
+.result-section {
+    border-top: 1px solid #E6E6E6;
+    padding-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.check-label {
+    font-size: 1rem;
+    color: #4D4D4D;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.check-result {
+    background-color: #F9F9F9;
+    border-radius: 8px;
+    padding: 1.5rem;
+    width: 100%;
+    text-align: center;
+}
+
+.check-title {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.check-formula {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1rem;
+}
+
+.formula-value {
+    padding: 0.5rem 1rem;
+    background-color: #F2F2F2;
+    border-radius: 4px;
+}
+
+.formula-operator {
+    font-weight: bold;
+}
+
+/* 即將推出的頁面提示 */
+.coming-soon {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: #666;
+    font-size: 1.2rem;
+}
+
+/* 響應式設計 */
+@media (max-width: 992px) {
+    .input-columns {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .tab-buttons {
+        flex-wrap: wrap;
+    }
+    
+    .right-tab-buttons {
+        margin-top: 0.5rem;
+        width: 100%;
+        justify-content: flex-start;
+    }
+    
+    .right-tab-buttons .tab-btn {
+        margin-left: 0;
+        margin-right: 0.5rem;
+    }
+    
+    .tube-image img {
+        width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .check-formula {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .formula-value, .formula-operator {
+        width: 100%;
+        text-align: center;
+    }
+}
