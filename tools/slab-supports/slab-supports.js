@@ -12,7 +12,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const steelPlateContent = document.getElementById('steel-plate-content');
     
     const steelPipeSpec = document.getElementById('steel-pipe-spec');
-    const steelPipeSpecBeam = document.getElementById('steel-pipe-spec-beam');
+    const materialLabel = document.getElementById('material-label');
+    const beamInterval = document.getElementById('beam-interval');
+    const valueE = document.getElementById('value-e');
     
     // 移動版選單相關
     const menuToggle = document.querySelector('.menu-toggle');
@@ -20,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 設定初始值
     updatePipeSpecValues('A36');
-    updatePipeSpecValuesBeam('A36');
     
     // 標籤按鈕點擊事件
     rcPlateBtn.addEventListener('click', function() {
@@ -40,10 +41,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     t99AsdBtn.addEventListener('click', function() {
         setActiveRightTab('t99-asd-btn');
+        // 未來可能會更新計算方式，影響(F)值
     });
     
     aiscBtn.addEventListener('click', function() {
         setActiveRightTab('aisc-btn');
+        // 未來可能會更新計算方式，影響(F)值
     });
     
     // 鋼管規格選擇變更事件
@@ -51,8 +54,9 @@ document.addEventListener('DOMContentLoaded', function() {
         updatePipeSpecValues(this.value);
     });
     
-    steelPipeSpecBeam.addEventListener('change', function() {
-        updatePipeSpecValuesBeam(this.value);
+    // 監聽大引間隔輸入
+    beamInterval.addEventListener('input', function() {
+        updateResultValues();
     });
     
     // 移動版選單開關
@@ -87,18 +91,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // 函數：根據選定的鋼管規格更新RC板頁面的參數值
+    // 函數：根據選定的鋼管規格更新參數值
     function updatePipeSpecValues(specType) {
-        let specA, specB, specC;
+        let specA, specB, specC, materialText;
         
         if (specType === 'A36') {
-            specA = '2.4';
+            specA = '2.5';  // 修改為2.5，根據您的要求
             specB = '4.86';
             specC = '0.25';
+            materialText = 'A36';
         } else if (specType === 'STK500') {
             specA = '3.5';
             specB = '4.86';
             specC = '0.25';
+            materialText = 'STK500';
         }
         
         // 更新顯示值
@@ -107,28 +113,19 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('spec-c').textContent = specC;
         document.getElementById('b-dimension-value').textContent = specB;
         document.getElementById('c-dimension-value').textContent = specC;
+        materialLabel.textContent = materialText;  // 更新材料標籤
     }
     
-    // 函數：根據選定的鋼管規格更新RC梁頁面的參數值
-    function updatePipeSpecValuesBeam(specType) {
-        let specA, specB, specC;
-        
-        if (specType === 'A36') {
-            specA = '2.4';
-            specB = '4.86';
-            specC = '0.25';
-        } else if (specType === 'STK500') {
-            specA = '3.5';
-            specB = '4.86';
-            specC = '0.25';
+    // 函數：更新結果值
+    function updateResultValues() {
+        // 當用戶輸入大引間隔時，更新(E)的值
+        if (beamInterval.value) {
+            valueE.textContent = beamInterval.value;
+        } else {
+            valueE.textContent = '(E)';
         }
         
-        // 更新顯示值
-        document.getElementById('spec-a-beam').textContent = specA;
-        document.getElementById('spec-b-beam').textContent = specB;
-        document.getElementById('spec-c-beam').textContent = specC;
-        document.getElementById('b-dimension-value-beam').textContent = specB;
-        document.getElementById('c-dimension-value-beam').textContent = specC;
+        // (F)值將在未來根據計算公式更新
     }
     
     // 函數：切換主要內容區域
@@ -166,47 +163,5 @@ document.addEventListener('DOMContentLoaded', function() {
                 tab.classList.remove('active');
             }
         });
-    }
-    
-    // 添加輸入值變更監聽器，即時進行計算
-    const inputs = document.querySelectorAll('input[type="number"]');
-    inputs.forEach(function(input) {
-        input.addEventListener('input', updateCalculations);
-    });
-    
-    // 函數：更新計算結果
-    function updateCalculations() {
-        // 這裡可以添加根據輸入值進行計算的邏輯
-        // 例如計算大引間隔與支撐間距的關係等
-        
-        // 由於沒有明確的計算公式，這裡只做一個簡單的示例
-        
-        if (rcPlateContent.classList.contains('hidden')) {
-            // RC梁頁面的計算
-            const supportHeight = document.getElementById('support-height-beam').value;
-            const loadSupportCount = document.getElementById('load-support-count').value;
-            
-            if (supportHeight && loadSupportCount) {
-                // 示例：計算支撐排數
-                const resultE = Math.ceil(parseInt(supportHeight) / 90);
-                const resultElements = document.querySelectorAll('#rc-beam-content .check-formula .formula-value');
-                if (resultElements.length > 0) {
-                    resultElements[0].textContent = resultE.toString();
-                }
-            }
-        } else {
-            // RC板頁面的計算
-            const beamInterval = document.getElementById('beam-interval').value;
-            const supportHeight = document.getElementById('support-height').value;
-            
-            if (beamInterval && supportHeight) {
-                // 示例：計算某個值
-                const resultE = (parseInt(beamInterval) / 100).toFixed(1);
-                const resultElement = document.querySelector('#rc-plate-content .check-formula .formula-value:first-child');
-                if (resultElement) {
-                    resultElement.textContent = resultE;
-                }
-            }
-        }
     }
 });
