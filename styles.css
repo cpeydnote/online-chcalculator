@@ -619,7 +619,10 @@ footer p {
     color: #4D4D4D;
     font-size: 1rem;
     margin-left: 70px;
-    margin-top: 10px; /* 增加頂部margin */
+    margin-top: 0; /* 移除頂部margin使其與logo平行 */
+    display: flex;
+    align-items: center; /* 垂直居中對齊 */
+    height: 35px; /* 與logo高度一致 */
 }
 .desktop-header {
     justify-content: flex-start;
@@ -646,13 +649,13 @@ footer p {
     max-width: 1000px;
     margin: 20px auto 0;
     padding: 0 2rem 2rem;
-    background-color: #FFF9E8; /* 調整為更溫暖的背景色 */
-    border: 1px solid #E5D6BA; /* 調整為更溫暖的邊框色 */
+    background-color: #FFFCF7; /* 改為白色背景 */
+    border: 1px solid #E5D6BA;
     border-radius: 5px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* 添加輕微陰影 */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* 保留輕微陰影 */
 }
 .terms-content {
-    background-color: #FFFBF3;
+    background-color: transparent; /* 內部內容區域背景改為透明 */
     border-radius: 0;
     padding: 1rem;
 }
@@ -726,10 +729,12 @@ footer {
         margin: 0;
         padding: 0 1rem 1rem;
         border: none;
+        background-color: #FFFCF7; /* 確保移動版背景也是白色 */
     }
     
     .terms-content {
         padding: 0.5rem;
+        background-color: transparent; /* 確保移動版內容區域也是透明的 */
     }
     
     .welcome-text, .terms-footer p {
@@ -755,10 +760,12 @@ footer {
 @media (max-width: 480px) {
     .terms-container {
         padding: 0 0.5rem 0.5rem;
+        background-color: #FFFCF7; /* 確保小螢幕移動版背景也是白色 */
     }
     
     .terms-content {
         padding: 0.3rem;
+        background-color: transparent; /* 確保小螢幕移動版背景也是白色 */
     }
     
     .welcome-text, .terms-footer p {
