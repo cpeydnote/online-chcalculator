@@ -49,9 +49,11 @@
     <main>
         <div class="calculator-container">
             <div class="tab-buttons">
-                <button class="tab-btn active" id="rc-plate-btn">RC板</button>
-                <button class="tab-btn" id="rc-beam-btn">RC梁</button>
-                <button class="tab-btn" id="steel-plate-btn">鋼承板</button>
+                <div class="left-tab-buttons">
+                    <button class="tab-btn active" id="rc-plate-btn">RC板</button>
+                    <button class="tab-btn" id="rc-beam-btn">RC梁</button>
+                    <button class="tab-btn" id="steel-plate-btn">鋼承板</button>
+                </div>
                 
                 <div class="right-tab-buttons">
                     <button class="tab-btn active" id="t99-asd-btn">T99_ASD</button>
@@ -99,7 +101,7 @@
                                 <img src="../../images/G. Tube Image.png" alt="管斷面示意圖">
                                 <div class="tube-dimension b-dimension"><span id="b-dimension-value">(B)</span></div>
                                 <div class="tube-dimension c-dimension"><span id="c-dimension-value">(C)</span></div>
-                                <div class="tube-dimension-label">(D)</div>
+                                <div class="tube-dimension-label" id="material-label">(D)</div>
                             </div>
                             <div class="unit-label">單位：cm</div>
                         </div>
@@ -157,9 +159,9 @@
                     <div class="check-result">
                         <span class="check-title">大引間隔 & 支撐間距</span>
                         <div class="check-formula">
-                            <span class="formula-value">(E)</span>
+                            <span class="formula-value" id="value-e">(E)</span>
                             <span class="formula-operator">×</span>
-                            <span class="formula-value">90</span>
+                            <span class="formula-value" id="value-f">(F)</span>
                             <span class="unit-label">單位：cm</span>
                         </div>
                     </div>
@@ -167,11 +169,12 @@
             </div>
             
             <div class="calculator-content hidden" id="rc-beam-content">
-                <!-- RC梁內容 (省略詳細內容，保持不變) -->
+                <div class="coming-soon">
+                    <p>RC梁功能正在開發中，敬請期待！</p>
+                </div>
             </div>
             
             <div class="calculator-content hidden" id="steel-plate-content">
-                <!-- 鋼承板的內容將在未來添加 -->
                 <div class="coming-soon">
                     <p>鋼承板功能正在開發中，敬請期待！</p>
                 </div>
