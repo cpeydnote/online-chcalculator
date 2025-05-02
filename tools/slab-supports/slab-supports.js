@@ -77,6 +77,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // 聯絡我們點擊事件
+    document.querySelectorAll('.contact-us').forEach(function(link) {
+        link.addEventListener('click', function(event) {
+            if (!link.hasAttribute('href')) {
+                event.preventDefault();
+                window.location.href = 'mailto:cpeydnote@gmail.com';
+            }
+        });
+    });
+    
     // 函數：根據選定的鋼管規格更新RC板頁面的參數值
     function updatePipeSpecValues(specType) {
         let specA, specB, specC;
@@ -199,5 +209,4 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     }
-    
-    // 聯絡我們點擊事件
+});
