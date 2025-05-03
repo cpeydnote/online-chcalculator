@@ -16,15 +16,15 @@
     content: '';
     position: absolute;
     bottom: 0;
-    left: 5%; /* 修改：縮短分隔線長度，從左側增加空間 */
-    right: 5%; /* 修改：縮短分隔線長度，從右側增加空間 */
+    left: 0; /* 修改：延長分隔線長度，從左側對齊按鈕 */
+    right: 0; /* 修改：延長分隔線長度，從右側對齊按鈕 */
     height: 1px;
     background-color: #E6E6E6;
 }
 
 .left-tab-buttons {
     display: flex;
-    margin-left: 8px; /* 修改：左側按鈕往右移動 */
+    margin-left: -7px; /* 修改：左側按鈕往左移動15px (從8px改為-7px) */
 }
 
 .tab-btn {
@@ -51,7 +51,7 @@
 
 .right-tab-buttons {
     display: flex;
-    margin-right: 8px; /* 修改：右側按鈕往左移動 */
+    margin-right: -7px; /* 修改：右側按鈕往右移動15px (從8px改為-7px) */
 }
 
 .right-tab-buttons .tab-btn {
