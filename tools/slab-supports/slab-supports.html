@@ -48,6 +48,27 @@
     
     <main>
         <div class="calculator-container">
+            <!-- 移動版下拉選單（類型和規範） -->
+            <div class="dropdown-container">
+                <div class="dropdown-group">
+                    <label class="dropdown-label" for="type-dropdown">類型</label>
+                    <select class="dropdown-select" id="type-dropdown">
+                        <option value="rc-plate">RC板</option>
+                        <option value="rc-beam">RC梁</option>
+                        <option value="steel-plate">鋼承板</option>
+                    </select>
+                </div>
+                
+                <div class="dropdown-group">
+                    <label class="dropdown-label" for="standard-dropdown">規範</label>
+                    <select class="dropdown-select" id="standard-dropdown">
+                        <option value="t99-asd">T99_ASD</option>
+                        <option value="aisc">AISC 360-27</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- 桌面版按鈕列 -->
             <div class="tab-buttons">
                 <div class="left-tab-buttons">
                     <button class="tab-btn active" id="rc-plate-btn">RC板</button>
@@ -62,8 +83,9 @@
             </div>
             
             <div class="calculator-content" id="rc-plate-content">
-                <div class="input-columns">
-                    <div class="left-column">
+                <div class="content-layout">
+                    <!-- 左側欄 -->
+                    <div class="left-section">
                         <div class="input-group">
                             <label for="steel-pipe-spec">鋼管規格</label>
                             <select id="steel-pipe-spec">
@@ -74,24 +96,30 @@
                         
                         <div class="input-group">
                             <label for="yield-strength">降伏強度 F<sub>y</sub></label>
-                            <div class="input-with-unit">
-                                <span class="value-display" id="spec-a">(A)</span>
+                            <div class="input-field-container">
+                                <div class="input-with-unit">
+                                    <span class="value-display" id="spec-a">2.5</span>
+                                </div>
                                 <span class="unit">tf/cm<sup>2</sup></span>
                             </div>
                         </div>
                         
                         <div class="input-group">
                             <label for="outer-radius">外徑 r</label>
-                            <div class="input-with-unit">
-                                <span class="value-display" id="spec-b">(B)</span>
+                            <div class="input-field-container">
+                                <div class="input-with-unit">
+                                    <span class="value-display" id="spec-b">4.86</span>
+                                </div>
                                 <span class="unit">cm</span>
                             </div>
                         </div>
                         
                         <div class="input-group">
                             <label for="thickness">厚度 t</label>
-                            <div class="input-with-unit">
-                                <span class="value-display" id="spec-c">(C)</span>
+                            <div class="input-field-container">
+                                <div class="input-with-unit">
+                                    <span class="value-display" id="spec-c">0.25</span>
+                                </div>
                                 <span class="unit">cm</span>
                             </div>
                         </div>
@@ -99,43 +127,64 @@
                         <div class="tube-image-container">
                             <div class="tube-image">
                                 <img src="../../images/G. Tube Image.png" alt="管斷面示意圖">
-                                <div class="tube-dimension b-dimension"><span id="b-dimension-value">(B)</span></div>
-                                <div class="tube-dimension c-dimension"><span id="c-dimension-value">(C)</span></div>
-                                <div class="tube-dimension-label" id="material-label">(D)</div>
+                                <div class="tube-dimension b-dimension"><span id="b-dimension-value">4.86</span></div>
+                                <div class="tube-dimension c-dimension"><span id="c-dimension-value">0.25</span></div>
+                                <div class="tube-dimension-label" id="material-label">A36</div>
                             </div>
-                            <div class="unit-label">單位：cm</div>
+                            <div class="unit-label-bottom">單位：cm</div>
                         </div>
                         
                         <div class="input-group">
                             <label for="test-strength">（選）試驗強度 P<sub>test</sub></label>
-                            <div class="input-with-unit">
-                                <input type="number" id="test-strength">
+                            <div class="input-field-container">
+                                <div class="input-with-unit">
+                                    <input type="number" id="test-strength">
+                                </div>
                                 <span class="unit">tf</span>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="right-column">
+                    <!-- 右側欄 -->
+                    <div class="right-section">
+                        <!-- 檢核結果框 -->
+                        <div class="result-section">
+                            <span class="check-title">大引間隔 & 支撐間距</span>
+                            <div class="check-formula">
+                                <span class="formula-value" id="value-e">(E)</span>
+                                <span class="formula-operator">×</span>
+                                <span class="formula-value" id="value-f">(F)</span>
+                                <span class="unit-label">單位：cm</span>
+                            </div>
+                        </div>
+                        
+                        <!-- 右側輸入欄 -->
                         <div class="input-group">
                             <label for="beam-interval">大引(下角材)間隔</label>
-                            <div class="input-with-unit">
-                                <input type="number" id="beam-interval">
+                            <div class="input-field-container">
+                                <div class="input-with-unit">
+                                    <input type="number" id="beam-interval">
+                                </div>
                                 <span class="unit">cm</span>
                             </div>
                         </div>
                         
                         <div class="input-group">
                             <label for="work-load">施工活載重</label>
-                            <div class="input-with-unit">
-                                <input type="number" id="work-load">
+                            <div class="input-field-container">
+                                <div class="input-with-unit">
+                                    <input type="number" id="work-load">
+                                </div>
                                 <span class="unit">kgf/m<sup>2</sup></span>
                             </div>
                         </div>
                         
                         <div class="input-group">
                             <label for="plate-thickness">板厚</label>
-                            <div class="input-with-unit">
-                                <input type="number" id="plate-thickness">
+                            <div class="input-field-container">
+                                <div class="input-with-unit">
+                                    <input type="number" id="plate-thickness">
+                                </div>
                                 <span class="unit">cm</span>
                             </div>
                         </div>
@@ -146,23 +195,12 @@
                         
                         <div class="input-group">
                             <label for="support-height">支撐淨高</label>
-                            <div class="input-with-unit">
-                                <input type="number" id="support-height">
+                            <div class="input-field-container">
+                                <div class="input-with-unit">
+                                    <input type="number" id="support-height">
+                                </div>
                                 <span class="unit">cm</span>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="result-section">
-                    <div class="check-label">檢核</div>
-                    <div class="check-result">
-                        <span class="check-title">大引間隔 & 支撐間距</span>
-                        <div class="check-formula">
-                            <span class="formula-value" id="value-e">(E)</span>
-                            <span class="formula-operator">×</span>
-                            <span class="formula-value" id="value-f">(F)</span>
-                            <span class="unit-label">單位：cm</span>
                         </div>
                     </div>
                 </div>
