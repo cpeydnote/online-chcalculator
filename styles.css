@@ -624,6 +624,17 @@ footer p {
     align-items: center; /* 垂直居中對齊 */
     height: 35px; /* 與logo高度一致 */
 }
+/* 導航路徑連結樣式 */
+.nav-link {
+    color: #4D4D4D;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #333;
+    text-decoration: underline;
+}
 .desktop-header {
     justify-content: flex-start;
     padding: 1rem 2rem 0.5rem 2rem; /* 增加頂部padding，保持左右不變，底部不變 */
