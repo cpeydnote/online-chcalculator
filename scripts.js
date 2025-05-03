@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // 更新日誌彈出視窗功能 - 修正版
+    // 更新日誌彈出視窗功能
     const changelogLinks = document.querySelectorAll('.changelog-link');
     if(changelogLinks.length > 0) {
         changelogLinks.forEach(function(link) {
