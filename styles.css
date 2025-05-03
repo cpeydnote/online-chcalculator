@@ -788,3 +788,103 @@ footer {
         font-size: 0.85rem;
     }
 }
+/* 更新日誌樣式 */
+.changelog-link {
+    color: #666;
+    text-decoration: none;
+    cursor: pointer;
+}
+.changelog-link:hover {
+    text-decoration: underline;
+}
+
+/* 彈出視窗樣式 */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.popup-content {
+    background-color: #FFFCF7;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #E5D6BA;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.popup-content h2 {
+    font-family: 'Helvetica', sans-serif;
+    color: #73421B;
+    font-size: 1.3rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.popup-content p {
+    font-family: 'irohamaru-Regular', sans-serif;
+    color: #666666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-align: left;
+    margin-bottom: 0;
+}
+
+.close-popup {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 0.8;
+}
+
+.close-popup:hover,
+.close-popup:focus {
+    color: #333;
+    text-decoration: none;
+}
+
+/* 響應式設計 */
+@media (max-width: 767px) {
+    .popup-content {
+        width: 90%;
+        margin: 25% auto;
+        padding: 15px;
+    }
+    
+    .popup-content h2 {
+        font-size: 1.2rem;
+    }
+    
+    .popup-content p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .popup-content {
+        width: 95%;
+        margin: 30% auto;
+        padding: 12px;
+    }
+    
+    .popup-content h2 {
+        font-size: 1.1rem;
+    }
+    
+    .popup-content p {
+        font-size: 0.85rem;
+    }
+}
