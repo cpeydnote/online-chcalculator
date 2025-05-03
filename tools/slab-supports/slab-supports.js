@@ -138,6 +138,36 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // 更新日誌按鈕點擊事件
+    document.querySelectorAll('.changelog-link').forEach(function(link) {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            const changelogPopup = document.getElementById('changelog-popup');
+            if (changelogPopup) {
+                changelogPopup.style.display = 'block';
+            }
+        });
+    });
+    
+    // 關閉彈出視窗按鈕點擊事件
+    const closePopup = document.querySelector('.close-popup');
+    if (closePopup) {
+        closePopup.addEventListener('click', function() {
+            const changelogPopup = document.getElementById('changelog-popup');
+            if (changelogPopup) {
+                changelogPopup.style.display = 'none';
+            }
+        });
+    }
+    
+    // 點擊彈出視窗外部時關閉
+    window.addEventListener('click', function(event) {
+        const changelogPopup = document.getElementById('changelog-popup');
+        if (event.target == changelogPopup) {
+            changelogPopup.style.display = 'none';
+        }
+    });
+    
     // 函數：根據選定的鋼管規格更新參數值
     function updatePipeSpecValues(specType) {
         let specA, specB, specC, materialText;
