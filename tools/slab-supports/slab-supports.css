@@ -58,9 +58,10 @@
 }
 
 /* 計算器內容區域 */
+/* 1. 添加左右邊距，讓內容不會完全貼著邊緣 */
 .calculator-content {
-    display: block;
-    margin-top: 0; /* 確保沒有多餘的頂部間距 */
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 .calculator-content.hidden {
@@ -333,6 +334,7 @@ select {
 }
 
 /* 移動版選單樣式 */
+/* 移動版選單樣式 */
 .mobile-menu {
     display: none;
     position: absolute;
@@ -392,7 +394,7 @@ select {
     transition: all 0.3s ease;
 }
 
-/* 移除輸入框和下拉選單的邊框 */
+/* 2. 添加陰影到輸入框和下拉選單 */
 .input-with-unit {
     display: flex;
     align-items: center;
@@ -402,21 +404,23 @@ select {
     width: 100%;
 }
 
-.uniform-input {
+/* 統一輸入框樣式並添加陰影 */
+.uniform-input, input[type="number"], select, .mobile-type-dropdown, .mobile-standard-dropdown {
     background-color: #f9f9f9;
     border: none;
-    padding: 8px 12px;
     border-radius: 4px;
+    padding: 8px 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin: 2px 0;
+}
+
+.uniform-input, input[type="number"] {
     width: 100px !important;
     text-align: right;
 }
 
 /* 下拉選單樣式統一 */
 select, .mobile-type-dropdown, .mobile-standard-dropdown {
-    border: none;
-    background-color: #f9f9f9;
-    border-radius: 4px;
-    padding: 8px 12px;
     color: #666; /* 統一為灰色 */
     font-weight: normal;
     -webkit-appearance: none;
@@ -427,28 +431,39 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
     background-position: right 8px center;
 }
 
-/* 調整規範下拉選單顯示 */
-#mobile-standard-dropdown, #steel-pipe-spec {
+/* 3. 調整「大引間隔...」標題文字顏色為灰色 */
+.check-title {
     color: #666;
-    font-weight: normal;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 1rem;
 }
 
-/* 標準輸入框樣式 */
-input[type="number"] {
-    border: none;
-    background-color: #f9f9f9;
-    border-radius: 4px;
-    padding: 8px 12px;
+/* 調整數據輸入區域的標籤樣式 */
+.input-group label {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
 }
 
-/* 響應式設計 */
+/* 結果區塊樣式優化 */
+.result-section {
+    border: 1px solid #E6E6E6;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    background-color: #F9F9F9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* 保持響應式設計部分不變 */
 @media (max-width: 992px) {
     .content-layout {
         flex-direction: column;
     }
     
     .tab-buttons {
-        display: none; /* 隱藏原本的標籤按鈕 */
+        display: none;
     }
     
     .mobile-dropdown-container {
@@ -492,6 +507,12 @@ input[type="number"] {
     
     .input-with-unit, select {
         width: 100%;
+    }
+    
+    /* 確保在較小螢幕上也有適當的邊距 */
+    .calculator-content {
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }
 
