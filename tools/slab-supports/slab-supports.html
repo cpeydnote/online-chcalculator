@@ -25,56 +25,54 @@
         </div>
     </header>
     
-    <!-- 移動版頂部導航 -->
-    <header class="mobile-header">
-        <a href="../../index.html" class="mobile-logo-link">
-            <div class="mobile-logo">
-                <img src="../../images/logo.png" alt="Vicolator">
-                <span>Vicolator</span>
-            </div>
-        </a>
-        <!-- 漢堡選單按鈕 -->
-        <button class="menu-toggle" aria-label="顯示選單">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
-        <!-- 移動版下拉選單 -->
-        <div class="mobile-menu">
-            <button class="login-btn">登入</button>
-            <button class="subscribe-btn">訂閱</button>
-            <a href="../../terms.html" class="terms-link">使用須知</a>
+<!-- 移動版頂部導航 -->
+<header class="mobile-header">
+    <a href="../../index.html" class="mobile-logo-link">
+        <div class="mobile-logo">
+            <img src="../../images/logo.png" alt="Vicolator">
+            <span>Vicolator</span>
         </div>
-    </header>
+    </a>
+    <!-- 漢堡選單按鈕 -->
+    <button class="menu-toggle" aria-label="顯示選單">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+    <!-- 移動版下拉選單 - 右上角顯示 -->
+    <div class="mobile-menu">
+        <a href="../../terms.html" class="terms-link">使用須知</a>
+        <button class="login-btn">登入</button>
+        <button class="subscribe-btn">訂閱</button>
+    </div>
+</header>
+
+<!-- 移動版選擇器新結構 -->
+<div class="mobile-dropdown-container">
+    <div class="mobile-dropdown-wrapper">
+        <!-- 左側類型選擇 -->
+        <div class="mobile-type-section">
+            <div class="mobile-type-label">類型</div>
+            <select class="mobile-type-dropdown" id="mobile-type-dropdown">
+                <option value="rc-plate">RC板</option>
+                <option value="rc-beam">RC梁</option>
+                <option value="steel-plate">鋼承板</option>
+            </select>
+        </div>
+        
+        <!-- 右側規範選擇 -->
+        <div class="mobile-standard-section">
+            <div class="mobile-standard-label">規範</div>
+            <select class="mobile-standard-dropdown" id="mobile-standard-dropdown">
+                <option value="t99-asd">T99_ASD</option>
+                <option value="aisc">AISC 360-27</option>
+            </select>
+        </div>
+    </div>
     
-    <main>
-        <div class="calculator-container">
-            <!-- 移動版選擇器新結構 -->
-            <div class="mobile-dropdown-container">
-                <div class="mobile-dropdown-wrapper">
-                    <!-- 左側類型選擇 -->
-                    <div class="mobile-type-section">
-                        <div class="mobile-type-label">類型</div>
-                        <select class="mobile-type-dropdown" id="mobile-type-dropdown">
-                            <option value="rc-plate">RC板</option>
-                            <option value="rc-beam">RC梁</option>
-                            <option value="steel-plate">鋼承板</option>
-                        </select>
-                    </div>
-                    
-                    <!-- 右側規範選擇 -->
-                    <div class="mobile-standard-section">
-                        <div class="mobile-standard-label">規範</div>
-                        <select class="mobile-standard-dropdown" id="mobile-standard-dropdown">
-                            <option value="t99-asd">T99_ASD</option>
-                            <option value="aisc">AISC 360-27</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <!-- 數據區域分隔線 -->
-                <div class="data-section-divider"></div>
-            </div>
+    <!-- 數據區域分隔線 -->
+    <div class="data-section-divider"></div>
+</div>
             
             <!-- 桌面版按鈕列 -->
             <div class="tab-buttons">
