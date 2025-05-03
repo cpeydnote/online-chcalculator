@@ -788,14 +788,18 @@ footer {
         font-size: 0.85rem;
     }
 }
-/* 更新日誌樣式 */
+/* 更新日誌樣式 - 修正為與聯絡我們完全一致 */
 .changelog-link {
     color: #666;
     text-decoration: none;
-    cursor: pointer;
+    transition: color 0.3s;
+    font-family: 'irohamaru-Regular', sans-serif;
+    font-size: inherit;
 }
+
 .changelog-link:hover {
     text-decoration: underline;
+    color: #333;
 }
 
 /* 彈出視窗樣式 */
