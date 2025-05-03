@@ -158,40 +158,64 @@
                     
                     <!-- 右側欄 -->
                     <div class="right-section">
-    <!-- 右側輸入欄 -->
-    <div class="input-group">
-        <label for="beam-interval">大引(下角材)間隔</label>
-    </div>
-    
-    <div class="input-group">
-        <label for="work-load">施工活載重</label>
-    </div>
-    
-    <div class="input-group">
-        <label for="plate-thickness">板厚</label>
-    </div>
-    
-    <div class="support-image-container">
-        <img src="../../images/G. Support.png" alt="支撐結構示意圖">
-    </div>
-    
-    <div class="input-group">
-        <label for="support-height">支撐淨高</label>
-    </div>
-</div>
+                        <!-- 右側輸入欄 -->
+                        <div class="input-group">
+                            <label for="beam-interval">大引(下角材)間隔</label>
+                            <div class="input-field-container">
+                                <div class="input-with-unit">
+                                    <input type="number" id="beam-interval" class="uniform-input">
+                                </div>
+                                <span class="unit">cm</span>
+                            </div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="work-load">施工活載重</label>
+                            <div class="input-field-container">
+                                <div class="input-with-unit">
+                                    <input type="number" id="work-load" class="uniform-input">
+                                </div>
+                                <span class="unit">tf/cm<sup>2</sup></span>
+                            </div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="plate-thickness">板厚</label>
+                            <div class="input-field-container">
+                                <div class="input-with-unit">
+                                    <input type="number" id="plate-thickness" class="uniform-input">
+                                </div>
+                                <span class="unit">cm</span>
+                            </div>
+                        </div>
+                        
+                        <div class="support-image-container">
+                            <img src="../../images/G. Support.png" alt="支撐結構示意圖">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="support-height">支撐淨高</label>
+                            <div class="input-field-container">
+                                <div class="input-with-unit">
+                                    <input type="number" id="support-height" class="uniform-input">
+                                </div>
+                                <span class="unit">cm</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-</div>
-
-<!-- 檢核結果框 - 移到中間下方 -->
-<div class="result-section">
-    <span class="check-title">大引間隔 & 支撐間距</span>
-    <div class="check-formula">
-        <span class="formula-value" id="value-e">(E)</span>
-        <span class="formula-operator">×</span>
-        <span class="formula-value" id="value-f">(F)</span>
-        <span class="unit-label">單位：cm</span>
-    </div>
-</div>
+                <!-- 檢核結果框 - 移到中間下方 -->
+                <div class="result-section">
+                    <span class="check-title">大引間隔 & 支撐間距</span>
+                    <div class="check-formula">
+                        <span class="formula-value" id="value-e">(E)</span>
+                        <span class="formula-operator">×</span>
+                        <span class="formula-value" id="value-f">80</span>
+                        <span class="unit-label">單位：cm</span>
+                    </div>
+                </div>
+            </div>
             
             <div class="calculator-content hidden" id="rc-beam-content">
                 <div class="coming-soon">
@@ -208,17 +232,17 @@
     </main>
     
     <footer>
-    <p><a href="#" class="changelog-link">更新日誌</a></p>
-    <p><a href="mailto:cpeydnote@gmail.com" class="contact-us">聯絡我們</a></p>
-    <p>版權所有© 2025 Vicolator</p>
-</footer>
+        <p><a href="#" class="changelog-link">更新日誌</a></p>
+        <p><a href="mailto:cpeydnote@gmail.com" class="contact-us">聯絡我們</a></p>
+        <p>版權所有© 2025 Vicolator</p>
+    </footer>
     <div id="changelog-popup" class="popup">
-    <div class="popup-content">
-        <span class="close-popup">&times;</span>
-        <h2>更新日誌</h2>
-        <p>2025/05/02：新增「模板支撐」頁面</p>
+        <div class="popup-content">
+            <span class="close-popup">&times;</span>
+            <h2>更新日誌</h2>
+            <p>2025/05/02：新增「模板支撐」頁面</p>
+        </div>
     </div>
-</div>
     
     <!-- 引入JavaScript文件 -->
     <script src="slab-supports.js"></script>
