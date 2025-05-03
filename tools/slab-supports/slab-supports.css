@@ -47,6 +47,7 @@
 /* 計算器內容區域 */
 .calculator-content {
     display: block;
+    padding-left: 420px; /* 新增: 將內容向右移動，對齊紅線右側 */
 }
 
 .calculator-content.hidden {
@@ -241,6 +242,10 @@ select {
     .input-columns {
         flex-direction: column;
     }
+    
+    .calculator-content {
+        padding-left: 200px; /* 在較小的屏幕上減少左邊距 */
+    }
 }
 
 @media (max-width: 768px) {
@@ -266,6 +271,10 @@ select {
     .input-with-unit, select {
         width: 100%;
     }
+    
+    .calculator-content {
+        padding-left: 100px; /* 在更小的屏幕上進一步減少左邊距 */
+    }
 }
 
 @media (max-width: 480px) {
@@ -277,5 +286,9 @@ select {
     .formula-value, .formula-operator {
         width: 100%;
         text-align: center;
+    }
+    
+    .calculator-content {
+        padding-left: 20px; /* 在最小的屏幕上使用最小的左邊距 */
     }
 }
