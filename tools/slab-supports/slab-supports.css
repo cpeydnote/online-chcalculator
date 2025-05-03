@@ -1,529 +1,242 @@
-/* 模板支撐頁面專用樣式 */
-
-/* 標籤按鈕樣式 */
-.tab-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 2rem;
-    padding-bottom: 0.5rem;
-    max-width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-}
-
-.tab-buttons:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background-color: #E6E6E6;
-}
-
-.left-tab-buttons {
-    display: flex;
-}
-
-.tab-btn {
-    padding: 0.5rem 1.5rem;
-    border: none;
-    background-color: #F2F2F2;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    margin-right: 0.5rem;
-    font-family: 'irohamaru-Regular', sans-serif;
-    transition: background-color 0.2s, transform 0.1s;
-}
-
-.tab-btn.active {
-    background-color: #E9EDF5;
-    font-weight: bold;
-}
-
-.tab-btn:active {
-    transform: translateY(2px);
-    background-color: #D9D9D9;
-}
-
-.right-tab-buttons {
-    display: flex;
-}
-
-.right-tab-buttons .tab-btn {
-    margin-left: 0.5rem;
-    margin-right: 0;
-}
-
-/* 計算器內容區域 */
-/* 1. 添加左右邊距，讓內容不會完全貼著邊緣 */
-.calculator-content {
-    padding-left: 16px;
-    padding-right: 16px;
-}
-
-.calculator-content.hidden {
-    display: none;
-}
-
-/* 移動版下拉選單重新設計 */
-.mobile-dropdown-container {
-    display: none; /* 在桌面版隱藏 */
-}
-
-/* 移動版標題區塊樣式 */
-.mobile-header-section {
-    margin-bottom: 0.5rem;
-}
-
-/* 類型選擇區域 */
-.mobile-type-section {
-    padding: 1rem;
-    border-bottom: 1px solid #e6e6e6;
-}
-
-.mobile-type-label {
-    font-size: 1rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    color: #333;
-}
-
-.mobile-type-dropdown {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #d9d9d9;
-    border-radius: 4px;
-    background-color: #f9f9f9;
-    font-size: 1rem;
-    color: #0066cc;
-    font-weight: bold;
-}
-
-/* 規範選擇區域 */
-.mobile-standard-section {
-    padding: 1rem;
-    border-bottom: 1px solid #e6e6e6;
-}
-
-.mobile-standard-label {
-    font-size: 1rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    color: #333;
-}
-
-.mobile-standard-dropdown {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #d9d9d9;
-    border-radius: 4px;
-    background-color: #f9f9f9;
-    font-size: 1rem;
-    color: #0066cc;
-    font-weight: bold;
-}
-
-/* 數據區域分隔線 */
-.data-section-divider {
-    height: 1px;
-    background-color: #E6E6E6;
-    margin-bottom: 1.5rem;
-}
-
-/* 輸入欄位布局 - 新的兩欄布局 */
-.content-layout {
-    display: flex;
-    gap: 3rem;
-    margin-bottom: 2rem;
-}
-
-.left-section {
-    flex: 1;
-}
-
-.right-section {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-/* 輸入欄位和結果區布局 */
-.input-columns {
-    display: flex;
-    gap: 2rem;
-}
-
-.left-column, .right-column {
-    flex: 1;
-}
-
-/* 輸入組件樣式 */
-.input-group {
-    margin-bottom: 1.2rem;
-    display: flex;
-    align-items: center;
-}
-
-.input-group label {
-    width: 140px;
-    margin-right: 0.5rem;
-    font-size: 0.9rem;
-    color: #4D4D4D;
-}
-
-.input-field-container {
-    display: flex;
-    flex: 1;
-    align-items: center;
-}
-
-.input-with-unit {
-    display: flex;
-    align-items: center;
-    border: 1px solid #D9D9D9;
-    border-radius: 4px;
-    padding: 0.5rem;
-    background-color: #F9F9F9;
-    width: 100%;
-}
-
-.input-with-unit input {
-    flex: 1;
-    border: none;
-    background: transparent;
-    outline: none;
-    font-size: 0.9rem;
-}
-
-.unit {
-    color: #4D4D4D;
-    font-size: 0.9rem;
-    margin-left: 0.5rem;
-    white-space: nowrap;
-}
-
-.value-display {
-    color: #333;
-    font-size: 0.9rem;
-}
-
-/* 統一文字框長度 */
-.uniform-input {
-    width: 100px !important;
-    text-align: right;
-}
-
-select {
-    flex: 1;
-    padding: 0.5rem;
-    border: 1px solid #D9D9D9;
-    border-radius: 4px;
-    background-color: #F9F9F9;
-    font-size: 0.9rem;
-    outline: none;
-}
-
-/* 結果區域 - 重新放置到右上方 */
-.result-section {
-    border: 1px solid #E6E6E6;
-    border-radius: 8px;
-    padding: 1rem;
-    margin-bottom: 2rem;
-    background-color: #F9F9F9;
-}
-
-.check-title {
-    display: block;
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    font-weight: bold;
-    color: #005CCB;
-}
-
-.check-formula {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-size: 1rem;
-}
-
-.formula-value {
-    padding: 0.5rem 1rem;
-    background-color: #F2F2F2;
-    border-radius: 4px;
-}
-
-.formula-operator {
-    font-weight: bold;
-}
-
-.unit-label {
-    font-size: 0.8rem;
-    color: #666;
-    margin-left: 1rem;
-}
-
-/* 管斷面示意圖 */
-.tube-image-container {
-    margin: 1.5rem 0;
-    text-align: center;
-}
-
-.tube-image {
-    position: relative;
-    display: inline-block;
-}
-
-.tube-image img {
-    width: 180px;
-    height: auto;
-}
-
-.tube-dimension {
-    position: absolute;
-    color: #FF3333;
-    font-size: 0.8rem;
-}
-
-.b-dimension {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.c-dimension {
-    left: 24%;
-    top: 50%;
-}
-
-.tube-dimension-label {
-    position: absolute;
-    right: 15%;
-    top: 15%;
-    color: #333;
-    font-size: 0.8rem;
-}
-
-.unit-label-bottom {
-    font-size: 0.8rem;
-    color: #666;
-    text-align: center;
-    margin-top: 0.5rem;
-}
-
-/* 支撐結構示意圖 */
-.support-image-container {
-    margin: 1rem 0;
-    text-align: center;
-}
-
-.support-image-container img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* 即將推出的頁面提示 */
-.coming-soon {
-    text-align: center;
-    padding: 3rem 1rem;
-    color: #666;
-    font-size: 1.2rem;
-}
-
-/* 移動版選單樣式 */
-/* 移動版選單樣式 */
-.mobile-menu {
-    display: none;
-    position: absolute;
-    top: 60px; /* 調整距離頂部的位置 */
-    right: 10px; /* 調整為右上角 */
-    width: 160px; /* 固定寬度 */
-    background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    padding: 0;
-    z-index: 100;
-    flex-direction: column;
-    overflow: hidden;
-}
-
-.mobile-menu.show {
-    display: flex;
-}
-
-.mobile-menu button, .mobile-menu a {
-    padding: 12px 15px;
-    text-align: center;
-    width: 100%;
-    font-size: 0.95rem;
-    background-color: #fff;
-    border: none;
-    border-bottom: 1px solid #f2f2f2;
-    cursor: pointer;
-    color: #333;
-    text-decoration: none;
-    font-weight: normal;
-    margin: 0;
-}
-
-.mobile-menu button:last-child, .mobile-menu a:last-child {
-    border-bottom: none;
-}
-
-.mobile-menu a.terms-link {
-    color: #333;
-}
-
-/* 漢堡選單按鈕樣式 */
-.menu-toggle {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-}
-
-.menu-toggle .bar {
-    display: block;
-    width: 22px;
-    height: 2px;
-    background-color: #333;
-    margin: 4px 0;
-    transition: all 0.3s ease;
-}
-
-/* 2. 添加陰影到輸入框和下拉選單 */
-.input-with-unit {
-    display: flex;
-    align-items: center;
-    border: none;
-    padding: 0.5rem 0;
-    background-color: transparent;
-    width: 100%;
-}
-
-/* 統一輸入框樣式並添加陰影 */
-.uniform-input, input[type="number"], select, .mobile-type-dropdown, .mobile-standard-dropdown {
-    background-color: #f9f9f9;
-    border: none;
-    border-radius: 4px;
-    padding: 8px 12px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    margin: 2px 0;
-}
-
-.uniform-input, input[type="number"] {
-    width: 100px !important;
-    text-align: right;
-}
-
-/* 下拉選單樣式統一 */
-select, .mobile-type-dropdown, .mobile-standard-dropdown {
-    color: #666; /* 統一為灰色 */
-    font-weight: normal;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23666' viewBox='0 0 12 12'%3E%3Cpath d='M6 9L1 4h10z'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 8px center;
-}
-
-/* 3. 調整「大引間隔...」標題文字顏色為灰色 */
-.check-title {
-    color: #666;
-    font-weight: bold;
-    font-size: 1rem;
-    margin-bottom: 1rem;
-}
-
-/* 調整數據輸入區域的標籤樣式 */
-.input-group label {
-    color: #666;
-    font-size: 0.9rem;
-    margin-bottom: 0.4rem;
-}
-
-/* 結果區塊樣式優化 */
-.result-section {
-    border: 1px solid #E6E6E6;
-    border-radius: 8px;
-    padding: 1rem;
-    margin: 1.5rem 0;
-    background-color: #F9F9F9;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-/* 保持響應式設計部分不變 */
-@media (max-width: 992px) {
-    .content-layout {
-        flex-direction: column;
-    }
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模板支撐 | Vicolator</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="slab-supports.css">
+    <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="desktop-header">
+        <a href="../../index.html" class="logo-link">
+            <div class="logo">
+                <img src="../../images/logo.png" alt="Vicolator">
+                <span>Vicolator</span>
+            </div>
+        </a>
+        <div class="nav-path">
+            <span>首頁 / 模板支撐</span>
+        </div>
+        <div class="auth-buttons">
+            <a href="../../terms.html" class="terms-btn">使用須知</a>
+            <button class="login-btn">登入</button>
+            <button class="subscribe-btn">訂閱</button>
+        </div>
+    </header>
     
-    .tab-buttons {
-        display: none;
-    }
+    <!-- 移動版頂部導航 -->
+    <header class="mobile-header">
+        <a href="../../index.html" class="mobile-logo-link">
+            <div class="mobile-logo">
+                <img src="../../images/logo.png" alt="Vicolator">
+                <span>Vicolator</span>
+            </div>
+        </a>
+        <!-- 漢堡選單按鈕 -->
+        <button class="menu-toggle" aria-label="顯示選單">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <!-- 移動版下拉選單 -->
+        <div class="mobile-menu">
+            <a href="../../terms.html" class="terms-link">使用須知</a>
+            <button class="login-btn">登入</button>
+            <button class="subscribe-btn">訂閱</button>
+        </div>
+    </header>
     
-    .mobile-dropdown-container {
-        display: block;
-    }
+    <main>
+        <div class="calculator-container">
+            <!-- 移動版選擇器新結構 -->
+            <div class="mobile-dropdown-container">
+                <div class="mobile-dropdown-wrapper">
+                    <!-- 左側類型選擇 -->
+                    <div class="mobile-type-section">
+                        <div class="mobile-type-label">類型</div>
+                        <select class="mobile-type-dropdown" id="mobile-type-dropdown">
+                            <option value="rc-plate">RC板</option>
+                            <option value="rc-beam">RC梁</option>
+                            <option value="steel-plate">鋼承板</option>
+                        </select>
+                    </div>
+                    
+                    <!-- 右側規範選擇 -->
+                    <div class="mobile-standard-section">
+                        <div class="mobile-standard-label">規範</div>
+                        <select class="mobile-standard-dropdown" id="mobile-standard-dropdown">
+                            <option value="t99-asd">T99_ASD</option>
+                            <option value="aisc">AISC 360-27</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- 數據區域分隔線 -->
+                <div class="data-section-divider"></div>
+            </div>
+            
+            <!-- 桌面版按鈕列 -->
+            <div class="tab-buttons">
+                <div class="left-tab-buttons">
+                    <button class="tab-btn active" id="rc-plate-btn">RC板</button>
+                    <button class="tab-btn" id="rc-beam-btn">RC梁</button>
+                    <button class="tab-btn" id="steel-plate-btn">鋼承板</button>
+                </div>
+                
+                <div class="right-tab-buttons">
+                    <button class="tab-btn active" id="t99-asd-btn">T99_ASD</button>
+                    <button class="tab-btn" id="aisc-btn">AISC 360-27</button>
+                </div>
+            </div>
+            
+            <div class="calculator-content" id="rc-plate-content">
+                <div class="content-layout">
+                    <!-- 左側欄 -->
+                    <div class="left-section">
+                        <div class="input-group">
+                            <label for="steel-pipe-spec">鋼管規格</label>
+                            <div class="input-field-container">
+                                <select id="steel-pipe-spec">
+                                    <option value="A36">CNS 5644_A36</option>
+                                    <option value="STK500">CNS 5644_STK500</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="yield-strength">降伏強度 F<sub>y</sub></label>
+                            <div class="input-field-container">
+                                <div class="input-with-unit">
+                                    <span class="value-display uniform-input" id="spec-a">2.5</span>
+                                </div>
+                                <span class="unit">tf/cm<sup>2</sup></span>
+                            </div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="outer-radius">外徑 r</label>
+                            <div class="input-field-container">
+                                <div class="input-with-unit">
+                                    <span class="value-display uniform-input" id="spec-b">4.86</span>
+                                </div>
+                                <span class="unit">cm</span>
+                            </div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="thickness">厚度 t</label>
+                            <div class="input-field-container">
+                                <div class="input-with-unit">
+                                    <span class="value-display uniform-input" id="spec-c">0.25</span>
+                                </div>
+                                <span class="unit">cm</span>
+                            </div>
+                        </div>
+                        
+                        <div class="tube-image-container">
+                            <div class="tube-image">
+                                <img src="../../images/G. Tube Image.png" alt="管斷面示意圖">
+                                <div class="tube-dimension b-dimension"><span id="b-dimension-value">4.86</span></div>
+                                <div class="tube-dimension c-dimension"><span id="c-dimension-value">0.25</span></div>
+                                <div class="tube-dimension-label" id="material-label">A36</div>
+                            </div>
+                            <div class="unit-label-bottom">單位：cm</div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="test-strength">（選）試驗強度 P<sub>test</sub></label>
+                            <div class="input-field-container">
+                                <div class="input-with-unit">
+                                    <input type="number" id="test-strength" class="uniform-input">
+                                </div>
+                                <span class="unit">tf</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 右側欄 -->
+                    <div class="right-section">
+                        <!-- 檢核結果框 -->
+                        <div class="result-section">
+                            <span class="check-title">大引間隔 & 支撐間距</span>
+                            <div class="check-formula">
+                                <span class="formula-value" id="value-e">(E)</span>
+                                <span class="formula-operator">×</span>
+                                <span class="formula-value" id="value-f">(F)</span>
+                                <span class="unit-label">單位：cm</span>
+                            </div>
+                        </div>
+                        
+                        <!-- 右側輸入欄 -->
+                        <div class="input-group">
+                            <label for="beam-interval">大引(下角材)間隔</label>
+                            <div class="input-field-container">
+                                <div class="input-with-unit">
+                                    <input type="number" id="beam-interval" class="uniform-input">
+                                </div>
+                                <span class="unit">cm</span>
+                            </div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="work-load">施工活載重</label>
+                            <div class="input-field-container">
+                                <div class="input-with-unit">
+                                    <input type="number" id="work-load" class="uniform-input">
+                                </div>
+                                <span class="unit">kgf/m<sup>2</sup></span>
+                            </div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="plate-thickness">板厚</label>
+                            <div class="input-field-container">
+                                <div class="input-with-unit">
+                                    <input type="number" id="plate-thickness" class="uniform-input">
+                                </div>
+                                <span class="unit">cm</span>
+                            </div>
+                        </div>
+                        
+                        <div class="support-image-container">
+                            <img src="../../images/G. Support.png" alt="支撐結構示意圖">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="support-height">支撐淨高</label>
+                            <div class="input-field-container">
+                                <div class="input-with-unit">
+                                    <input type="number" id="support-height" class="uniform-input">
+                                </div>
+                                <span class="unit">cm</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="calculator-content hidden" id="rc-beam-content">
+                <div class="coming-soon">
+                    <p>RC梁功能正在開發中，敬請期待！</p>
+                </div>
+            </div>
+            
+            <div class="calculator-content hidden" id="steel-plate-content">
+                <div class="coming-soon">
+                    <p>鋼承板功能正在開發中，敬請期待！</p>
+                </div>
+            </div>
+        </div>
+    </main>
     
-    .mobile-dropdown-wrapper {
-        display: flex;
-        justify-content: space-between;
-    }
+    <footer>
+        <p><a href="mailto:cpeydnote@gmail.com" class="contact-us">聯絡我們</a></p>
+        <p>版權所有© 2025 Vicolator</p>
+    </footer>
     
-    .mobile-type-section {
-        flex: 1;
-        margin-right: 0.5rem;
-    }
-    
-    .mobile-standard-section {
-        flex: 1;
-        margin-left: 0.5rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .input-columns {
-        flex-direction: column;
-    }
-    
-    .tube-image img {
-        width: 150px;
-    }
-    
-    .input-group {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .input-group label {
-        width: 100%;
-        margin-bottom: 0.3rem;
-    }
-    
-    .input-with-unit, select {
-        width: 100%;
-    }
-    
-    /* 確保在較小螢幕上也有適當的邊距 */
-    .calculator-content {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .check-formula {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-    
-    .formula-value, .formula-operator {
-        width: 100%;
-        text-align: center;
-    }
-}
+    <!-- 引入JavaScript文件 -->
+    <script src="slab-supports.js"></script>
+</body>
+</html>
