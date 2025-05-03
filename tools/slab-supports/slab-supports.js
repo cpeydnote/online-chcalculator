@@ -11,10 +11,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const rcBeamContent = document.getElementById('rc-beam-content');
     const steelPlateContent = document.getElementById('steel-plate-content');
     
+    // 新增：取得下拉選單元素
+    const typeDropdown = document.getElementById('type-dropdown');
+    const standardDropdown = document.getElementById('standard-dropdown');
+    
     const steelPipeSpec = document.getElementById('steel-pipe-spec');
     const materialLabel = document.getElementById('material-label');
     const beamInterval = document.getElementById('beam-interval');
     const valueE = document.getElementById('value-e');
+    const valueF = document.getElementById('value-f');
     
     // 移動版選單相關
     const menuToggle = document.querySelector('.menu-toggle');
@@ -48,6 +53,39 @@ document.addEventListener('DOMContentLoaded', function() {
         setActiveRightTab('aisc-btn');
         // 未來可能會更新計算方式，影響(F)值
     });
+    
+    // 新增：類型下拉選單變更事件
+    if (typeDropdown) {
+        typeDropdown.addEventListener('change', function() {
+            const selectedType = this.value;
+            
+            // 根據選擇的值切換內容
+            if (selectedType === 'rc-plate') {
+                setActiveContent('rc-plate-content');
+                setActiveTab('rc-plate-btn');
+            } else if (selectedType === 'rc-beam') {
+                setActiveContent('rc-beam-content');
+                setActiveTab('rc-beam-btn');
+            } else if (selectedType === 'steel-plate') {
+                setActiveContent('steel-plate-content');
+                setActiveTab('steel-plate-btn');
+            }
+        });
+    }
+    
+    // 新增：規範下拉選單變更事件
+    if (standardDropdown) {
+        standardDropdown.addEventListener('change', function() {
+            const selectedStandard = this.value;
+            
+            // 根據選擇的值切換規範
+            if (selectedStandard === 't99-asd') {
+                setActiveRightTab('t99-asd-btn');
+            } else if (selectedStandard === 'aisc') {
+                setActiveRightTab('aisc-btn');
+            }
+        });
+    }
     
     // 鋼管規格選擇變更事件
     steelPipeSpec.addEventListener('change', function() {
@@ -96,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let specA, specB, specC, materialText;
         
         if (specType === 'A36') {
-            specA = '2.5';  // 修改為2.5，根據您的要求
+            specA = '2.5';
             specB = '4.86';
             specC = '0.25';
             materialText = 'A36';
@@ -125,7 +163,8 @@ document.addEventListener('DOMContentLoaded', function() {
             valueE.textContent = '(E)';
         }
         
-        // (F)值將在未來根據計算公式更新
+        // 設定F的臨時固定值，未來可能會改為計算的值
+        valueF.textContent = '80';  // 假設為80，實際上應根據計算公式或用戶設定
     }
     
     // 函數：切換主要內容區域
@@ -138,6 +177,17 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // 顯示選定的內容
         document.getElementById(contentId).classList.remove('hidden');
+        
+        // 同步下拉選單的值（如果存在）
+        if (typeDropdown) {
+            if (contentId === 'rc-plate-content') {
+                typeDropdown.value = 'rc-plate';
+            } else if (contentId === 'rc-beam-content') {
+                typeDropdown.value = 'rc-beam';
+            } else if (contentId === 'steel-plate-content') {
+                typeDropdown.value = 'steel-plate';
+            }
+        }
     }
     
     // 函數：設置左側活動標籤
@@ -163,5 +213,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 tab.classList.remove('active');
             }
         });
+        
+        // 同步下拉選單的值（如果存在）
+        if (standardDropdown) {
+            if (tabId === 't99-asd-btn') {
+                standardDropdown.value = 't99-asd';
+            } else if (tabId === 'aisc-btn') {
+                standardDropdown.value = 'aisc';
+            }
+        }
     }
+    
+    // 初始化執行
+    updateResultValues();
 });
