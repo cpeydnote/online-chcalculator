@@ -6,9 +6,9 @@
     justify-content: space-between;
     margin-bottom: 2rem;
     padding-bottom: 0.5rem;
-    max-width: 100%;
-    padding-left: 32px; /* 與「首頁 / 模板支撐」對齊 */
-    padding-right: 32px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
     position: relative;
 }
 
@@ -16,15 +16,15 @@
     content: '';
     position: absolute;
     bottom: 0;
-    left: 32px; /* 與「首頁 / 模板支撐」對齊 */
-    right: 32px; /* 對稱設定 */
+    left: 5%; /* 修改：縮短分隔線長度，從左側增加空間 */
+    right: 5%; /* 修改：縮短分隔線長度，從右側增加空間 */
     height: 1px;
     background-color: #E6E6E6;
 }
 
 .left-tab-buttons {
     display: flex;
-    margin-left: 0; /* 重設左側按鈕位置 */
+    margin-left: 8px; /* 修改：左側按鈕往右移動 */
 }
 
 .tab-btn {
@@ -51,7 +51,7 @@
 
 .right-tab-buttons {
     display: flex;
-    margin-right: 0; /* 重設右側按鈕位置 */
+    margin-right: 8px; /* 修改：右側按鈕往左移動 */
 }
 
 .right-tab-buttons .tab-btn {
@@ -80,40 +80,14 @@
 }
 
 /* 計算器內容區域 */
+/* 1. 添加左右邊距，讓內容不會完全貼著邊緣 */
 .calculator-content {
-    padding-left: 32px; /* 與「首頁 / 模板支撐」對齊 */
-    padding-right: 32px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 .calculator-content.hidden {
     display: none;
-}
-
-/* 三欄佈局 - 平均分配空間 */
-.left-section, .middle-section, .right-section {
-    width: 31%; /* 平分空間並留出間隙 */
-    margin-bottom: 2rem;
-}
-
-/* 鋼管資訊區 - 左側 */
-.left-section {
-    display: flex;
-    flex-direction: column;
-}
-
-/* 大引間隔資訊區 - 中間 */
-.middle-section {
-    display: flex;
-    flex-direction: column;
-}
-
-/* 檢核區域 - 右側 */
-.right-section {
-    display: flex;
-    flex-direction: column;
 }
 
 /* 移動版下拉選單重新設計 */
@@ -146,7 +120,7 @@
     border-radius: 4px;
     background-color: #f9f9f9;
     font-size: 1rem;
-    color: #666;
+    color: #666; /* 修改：顏色從藍色改為灰色 */
     font-weight: normal;
 }
 
@@ -170,7 +144,7 @@
     border-radius: 4px;
     background-color: #f9f9f9;
     font-size: 1rem;
-    color: #666;
+    color: #666; /* 修改：顏色從藍色改為灰色 */
     font-weight: normal;
 }
 
@@ -181,71 +155,92 @@
     margin-bottom: 1.5rem;
 }
 
+/* 輸入欄位布局 - 新的兩欄布局 */
+.content-layout {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.left-section {
+    flex: 1;
+}
+
+.right-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 輸入欄位和結果區布局 */
+.input-columns {
+    display: flex;
+    gap: 2rem;
+}
+
+.left-column, .right-column {
+    flex: 1;
+}
+
 /* 輸入組件樣式 */
 .input-group {
     margin-bottom: 1.2rem;
     display: flex;
-    flex-direction: column; /* 改為垂直排列 */
-    align-items: flex-start;
+    align-items: center;
 }
 
 .input-group label {
-    width: 100%;
-    margin: 0 0 0.5rem 0;
+    width: 140px;
+    margin-right: 0.5rem;
     font-size: 0.9rem;
     color: #666;
 }
 
 .input-field-container {
     display: flex;
-    width: 100%;
+    flex: 1;
     align-items: center;
 }
 
 .input-with-unit {
     display: flex;
     align-items: center;
-    border: 1px solid #D9D9D9; /* 加回邊框 */
-    border-radius: 4px;
-    padding: 0.5rem;
-    background-color: #F9F9F9;
+    border: none;
+    padding: 0.5rem 0;
+    background-color: transparent;
     width: 100%;
 }
 
 .unit {
     color: #4D4D4D;
     font-size: 0.9rem;
-    position: absolute;
-    right: 10px; /* 固定位置在右側 */
+    margin-left: 0.5rem;
     white-space: nowrap;
 }
 
 .value-display {
     color: #333;
     font-size: 0.9rem;
-    width: 100%;
 }
 
 /* 統一文字框長度 */
 .uniform-input {
-    width: 100% !important;
-    text-align: left;
-    background-color: transparent;
-    border: none;
-    padding: 0;
+    width: 100px !important;
+    text-align: right;
 }
 
 select {
-    width: 100%;
+    flex: 1;
     padding: 0.5rem;
-    border: 1px solid #D9D9D9;
+    border: none;
     border-radius: 4px;
     background-color: #F9F9F9;
     font-size: 0.9rem;
     outline: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-/* 結果區域 - 右上方檢核框 */
+/* 結果區域 - 重新放置到右上方 */
 .result-section {
     border: 1px solid #E6E6E6;
     border-radius: 8px;
@@ -261,7 +256,6 @@ select {
     margin-bottom: 1rem;
     font-weight: bold;
     color: #666;
-    text-align: center;
 }
 
 .check-formula {
@@ -269,15 +263,12 @@ select {
     align-items: center;
     gap: 1rem;
     font-size: 1rem;
-    justify-content: center;
 }
 
 .formula-value {
     padding: 0.5rem 1rem;
     background-color: #F2F2F2;
     border-radius: 4px;
-    width: 40%; /* 統一寬度 */
-    text-align: center;
 }
 
 .formula-operator {
@@ -288,10 +279,6 @@ select {
     font-size: 0.8rem;
     color: #666;
     margin-left: 1rem;
-    text-align: right;
-    width: 100%;
-    display: block;
-    margin-top: 0.5rem;
 }
 
 /* 管斷面示意圖 */
@@ -378,7 +365,7 @@ select {
 .mobile-menu.show {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 10px; /* 使用與首頁相同的間距方式 */
 }
 
 .mobile-menu button, .mobile-menu a {
@@ -392,13 +379,14 @@ select {
     cursor: pointer;
     background-color: #f5f5f5;
     transition: all 0.2s ease;
-    color: #333;
+    color: #333; /* 基本顏色 */
     text-decoration: none;
+    /* 移除 margin-bottom */
 }
 
 /* 添加訂閱按鈕特定樣式 */
 .mobile-menu .subscribe-btn {
-    color: #BC832B;
+    color: #BC832B; /* 與首頁一致的金色 */
 }
 
 .mobile-menu button:hover, .mobile-menu a:hover {
@@ -447,7 +435,13 @@ select {
     border: none;
     border-radius: 4px;
     padding: 8px 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     margin: 2px 0;
+}
+
+.uniform-input, input[type="number"] {
+    width: 100px !important;
+    text-align: right;
 }
 
 /* 下拉選單樣式統一 */
@@ -464,12 +458,8 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
 
 /* 保持響應式設計部分不變 */
 @media (max-width: 992px) {
-    .calculator-content {
+    .content-layout {
         flex-direction: column;
-    }
-    
-    .left-section, .middle-section, .right-section {
-        width: 100%;
     }
     
     .tab-buttons {
