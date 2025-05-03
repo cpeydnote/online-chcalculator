@@ -148,11 +148,12 @@
     font-weight: normal;
 }
 
-/* 數據區域分隔線 */
+/* 數據區域分隔線 - 修改：細化分隔線並向下移動1px */
 .data-section-divider {
     height: 1px;
     background-color: #E6E6E6;
     margin-bottom: 1.5rem;
+    margin-top: 1px;
 }
 
 /* 輸入欄位布局 - 新的兩欄布局 */
@@ -160,6 +161,7 @@
     display: flex;
     gap: 3rem;
     margin-bottom: 2rem;
+    margin-top: 1px; /* 添加：向下移動1px */
 }
 
 .left-section {
@@ -240,7 +242,7 @@ select {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-/* 結果區域 - 重新放置到右上方 */
+/* 結果區域 - 修改：從右上方移到中間下方 */
 .result-section {
     border: 1px solid #E6E6E6;
     border-radius: 8px;
@@ -248,6 +250,12 @@ select {
     margin-bottom: 2rem;
     background-color: #F9F9F9;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    /* 移除了原來的位置指定 */
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    clear: both;
+    order: 3; /* 使用 order 確保結果區域在支撐淨高之後 */
 }
 
 .check-title {
@@ -333,6 +341,7 @@ select {
 .support-image-container {
     margin: 1rem 0;
     text-align: center;
+    order: 1; /* 使用 order 重新排序 */
 }
 
 .support-image-container img {
@@ -489,6 +498,11 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
     .menu-toggle {
         display: flex;
     }
+    
+    /* 在響應式設計下，重置 order 屬性 */
+    .result-section, .support-image-container {
+        order: unset;
+    }
 }
 
 @media (max-width: 768px) {
@@ -536,6 +550,11 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
     
     .menu-toggle.active .bar:nth-child(3) {
         transform: translateY(-7px) rotate(-45deg);
+    }
+    
+    /* 小屏幕上結果區域的寬度 */
+    .result-section {
+        width: 100%;
     }
 }
 
