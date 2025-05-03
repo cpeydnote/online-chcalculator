@@ -264,11 +264,14 @@ select {
     margin-bottom: 1rem;
     font-weight: bold;
     color: #666;
+    text-align: left;
+    padding-left: 20px; /* 標題稍微偏左 */
 }
 
 .check-formula {
     display: flex;
     align-items: center;
+    justify-content: center; /* 公式置中 */
     gap: 1rem;
     font-size: 1rem;
 }
@@ -286,7 +289,7 @@ select {
 .unit-label {
     font-size: 0.8rem;
     color: #666;
-    margin-left: 1rem;
+    margin-left: 0.5rem; /* 單位靠近數值 */
 }
 
 /* 管斷面示意圖 */
