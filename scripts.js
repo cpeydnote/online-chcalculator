@@ -11,9 +11,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // 分析前提按鈕點擊事件
-    document.querySelector('.analysis-btn').addEventListener('click', function() {
-        alert('分析前提說明將在未來版本推出，敬請期待！');
-    });
+    const analysisBtn = document.querySelector('.analysis-btn');
+    if (analysisBtn) {
+        analysisBtn.addEventListener('click', function() {
+            if (this.hasAttribute('onclick')) return; // 如果有onclick屬性，則不執行alert
+            alert('分析前提說明將在未來版本推出，敬請期待！');
+        });
+    }
     
     // 工具卡片點擊動畫效果
     const toolCards = document.querySelectorAll('.tool-card');
@@ -51,6 +55,35 @@ document.addEventListener('DOMContentLoaded', function() {
         contactLink.addEventListener('click', function(event) {
             // 目前使用默認的mailto行為
             // 如果需要自定義行為，可以在這裡添加代碼
+        });
+    }
+    
+    // 更新日誌彈出視窗功能
+    const changelogLinks = document.querySelectorAll('.changelog-link');
+    const changelogPopup = document.getElementById('changelog-popup');
+    const closePopup = document.querySelector('.close-popup');
+    
+    // 點擊更新日誌鏈接時打開彈出視窗
+    if (changelogLinks.length > 0 && changelogPopup) {
+        changelogLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                changelogPopup.style.display = 'block';
+            });
+        });
+        
+        // 點擊關閉按鈕時關閉彈出視窗
+        if (closePopup) {
+            closePopup.addEventListener('click', function() {
+                changelogPopup.style.display = 'none';
+            });
+        }
+        
+        // 點擊彈出視窗外部時關閉
+        window.addEventListener('click', function(event) {
+            if (event.target == changelogPopup) {
+                changelogPopup.style.display = 'none';
+            }
         });
     }
 });
