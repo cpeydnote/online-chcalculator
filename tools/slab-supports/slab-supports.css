@@ -60,10 +60,76 @@
 /* 計算器內容區域 */
 .calculator-content {
     display: block;
+    margin-top: 0; /* 確保沒有多餘的頂部間距 */
 }
 
 .calculator-content.hidden {
     display: none;
+}
+
+/* 移動版下拉選單重新設計 */
+.mobile-dropdown-container {
+    display: none; /* 在桌面版隱藏 */
+}
+
+/* 移動版標題區塊樣式 */
+.mobile-header-section {
+    margin-bottom: 0.5rem;
+}
+
+/* 類型選擇區域 */
+.mobile-type-section {
+    padding: 1rem;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.mobile-type-label {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.mobile-type-dropdown {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    font-size: 1rem;
+    color: #0066cc;
+    font-weight: bold;
+}
+
+/* 規範選擇區域 */
+.mobile-standard-section {
+    padding: 1rem;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.mobile-standard-label {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.mobile-standard-dropdown {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    font-size: 1rem;
+    color: #0066cc;
+    font-weight: bold;
+}
+
+/* 數據區域分隔線 */
+.data-section-divider {
+    height: 1px;
+    background-color: #E6E6E6;
+    margin-bottom: 1.5rem;
 }
 
 /* 輸入欄位布局 - 新的兩欄布局 */
@@ -141,6 +207,12 @@
 .value-display {
     color: #333;
     font-size: 0.9rem;
+}
+
+/* 統一文字框長度 */
+.uniform-input {
+    width: 100px !important;
+    text-align: right;
 }
 
 select {
@@ -260,32 +332,42 @@ select {
     font-size: 1.2rem;
 }
 
-/* 下拉選單樣式 */
-.dropdown-container {
-    margin-bottom: 1rem;
-    display: none; /* 默認隱藏，只在移動版顯示 */
+/* 移動版選單樣式 */
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    z-index: 100;
+    flex-direction: column;
 }
 
-.dropdown-group {
-    margin-bottom: 1rem;
+.mobile-menu.show {
+    display: flex;
 }
 
-.dropdown-label {
-    display: block;
-    margin-bottom: 0.3rem;
-    font-size: 0.9rem;
-    color: #4D4D4D;
-    font-weight: bold;
-}
-
-.dropdown-select {
+.mobile-menu button, .mobile-menu a {
+    margin-bottom: 0.5rem;
+    padding: 0.75rem;
+    text-align: center;
     width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #D9D9D9;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    border: 1px solid #d9d9d9;
     border-radius: 4px;
-    background-color: #F9F9F9;
-    font-size: 0.9rem;
-    outline: none;
+    cursor: pointer;
+    color: #333;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.mobile-menu a.terms-link {
+    background-color: #f2f2f2;
+    color: #666;
 }
 
 /* 響應式設計 */
@@ -294,13 +376,27 @@ select {
         flex-direction: column;
     }
     
-    /* 顯示下拉選單，隱藏原本的標籤按鈕 */
-    .dropdown-container {
+    .tab-buttons {
+        display: none; /* 隱藏原本的標籤按鈕 */
+    }
+    
+    .mobile-dropdown-container {
         display: block;
     }
     
-    .tab-buttons {
-        display: none;
+    .mobile-dropdown-wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .mobile-type-section {
+        flex: 1;
+        margin-right: 0.5rem;
+    }
+    
+    .mobile-standard-section {
+        flex: 1;
+        margin-left: 0.5rem;
     }
 }
 
