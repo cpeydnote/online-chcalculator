@@ -159,22 +159,34 @@
     margin-top: 1px;
 }
 
-/* 輸入欄位布局 - 新的兩欄布局 */
+/* 輸入欄位布局 - 確保左右兩欄對齊 */
 .content-layout {
     display: flex;
-    gap: 2rem; /* 修改：縮小間隔從3rem到2rem */
+    gap: 2rem;
     margin-bottom: 2rem;
-    margin-top: 1px; /* 添加：向下移動1px */
+    margin-top: 1px;
+    align-items: flex-start; /* 確保左右兩欄從頂部對齊 */
 }
 
 .left-section {
     flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .right-section {
     flex: 1;
     display: flex;
     flex-direction: column;
+}
+
+/* 確保左右欄位的輸入組每個高度一致 */
+.left-section .input-group,
+.right-section .input-group {
+    min-height: 50px; /* 統一每個輸入組的最小高度 */
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
 }
 
 /* 輸入欄位和結果區布局 */
