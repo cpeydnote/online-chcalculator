@@ -509,42 +509,99 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
     .result-section, .support-image-container {
         order: unset;
     }
-    
-    /* 調整支撐結構示意圖上的標籤大小 */
-    .beam-interval-display,
-    .support-height-display,
-    .work-load-display {
-        font-size: 1.1rem;
-    }
 }
 
 @media (max-width: 768px) {
+    .calculator-content {
+        max-width: 100%; /* 讓計算器內容區域在手機上全寬顯示 */
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .content-layout {
+        gap: 1rem; /* 減少內容間隔 */
+    }
+    
     .input-columns {
         flex-direction: column;
     }
     
-    .tube-image img {
-        width: 150px;
-    }
-    
     .input-group {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row; /* 保持水平排列 */
+        align-items: center;
+        margin-bottom: 0.8rem;
     }
     
     .input-group label {
-        width: 100%;
-        margin-bottom: 0.3rem;
+        width: 45%; /* 調整標籤寬度 */
+        margin-bottom: 0;
+        font-size: 0.9rem;
     }
     
-    .input-with-unit, select {
-        width: 100%;
+    .input-field-container {
+        width: 55%; /* 調整輸入框容器寬度 */
     }
     
-    /* 確保在較小螢幕上也有適當的邊距 */
-    .calculator-content {
-        padding-left: 20px;
-        padding-right: 20px;
+    .uniform-input, input[type="number"] {
+        width: 70px !important; /* 調整輸入框寬度 */
+        padding: 6px 8px;
+    }
+    
+    .unit {
+        font-size: 0.8rem;
+    }
+    
+    /* 重新安排示意圖位置 */
+    .tube-image-container {
+        margin: 1rem 0 1.5rem 0;
+        order: 3; /* 放在輸入欄位之後 */
+    }
+    
+    .tube-image img {
+        width: 140px;
+    }
+    
+    .support-image-container {
+        order: 4; /* 放在管斷面圖之後 */
+        margin: 0.5rem 0 1.5rem 0;
+    }
+    
+    /* 調整支撐結構示意圖上的數值標籤 */
+    .beam-interval-display {
+        left: 12%;
+        top: 50%;
+        font-size: 1rem;
+    }
+    
+    .support-height-display {
+        font-size: 1rem;
+        top: 40%;
+    }
+    
+    .work-load-display {
+        font-size: 1rem;
+        top: 8%;
+        left: 30%;
+    }
+    
+    /* 結果區域樣式調整 */
+    .result-section {
+        width: 100%;
+        order: 5; /* 放在最後 */
+        margin-top: 0.5rem;
+        border-radius: 6px;
+        background-color: #f2f2f2;
+    }
+    
+    .check-formula {
+        flex-direction: row; /* 保持水平排列 */
+        justify-content: center;
+    }
+    
+    .formula-value {
+        padding: 0.5rem 0.8rem;
+        min-width: 70px;
+        text-align: center;
     }
     
     /* 小型設備上縮小漢堡選單 */
@@ -564,47 +621,36 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
     .menu-toggle.active .bar:nth-child(3) {
         transform: translateY(-7px) rotate(-45deg);
     }
-    
-    /* 小屏幕上結果區域的寬度 */
-    .result-section {
-        width: 100%;
-    }
-    
-    /* 調整支撐結構示意圖上的數值標籤 */
-    .beam-interval-display {
-        left: 8%;
-        font-size: 1rem;
-    }
-    
-    .support-height-display {
-        font-size: 1rem;
-    }
-    
-    .work-load-display {
-        font-size: 0.9rem;
-        top: 8%;
-        left: 25%;
-    }
-    
-    .support-unit-label {
-        font-size: 0.8rem;
-    }
 }
 
 @media (max-width: 480px) {
-    .check-formula {
-        flex-direction: column;
-        gap: 0.5rem;
+    .input-group label {
+        font-size: 0.85rem;
     }
     
-    .formula-value, .formula-operator {
-        width: 100%;
-        text-align: center;
+    .uniform-input, input[type="number"] {
+        width: 65px !important;
+        padding: 5px 7px;
     }
     
-    /* 最小屏幕上的支撐結構示意圖調整 */
+    .unit {
+        font-size: 0.75rem;
+    }
+    
+    .tube-image img {
+        width: 120px;
+    }
+    
+    .tube-dimension {
+        font-size: 0.7rem;
+    }
+    
+    .tube-dimension-label {
+        font-size: 0.7rem;
+    }
+    
+    /* 調整支撐結構示意圖 */
     .beam-interval-display {
-        left: 5%;
         font-size: 0.9rem;
     }
     
@@ -613,8 +659,30 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
     }
     
     .work-load-display {
-        font-size: 0.8rem;
-        top: 5%;
-        left: 20%;
+        font-size: 0.85rem;
+    }
+    
+    .support-unit-label {
+        font-size: 0.7rem;
+    }
+    
+    /* 結果區域進一步調整 */
+    .check-title {
+        font-size: 0.9rem;
+        padding-left: 10px;
+    }
+    
+    .formula-value {
+        padding: 0.4rem 0.6rem;
+        min-width: 60px;
+        font-size: 0.9rem;
+    }
+    
+    .formula-operator {
+        font-size: 0.9rem;
+    }
+    
+    .unit-label {
+        font-size: 0.7rem;
     }
 }
