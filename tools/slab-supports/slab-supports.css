@@ -24,7 +24,7 @@
 
 .left-tab-buttons {
     display: flex;
-    margin-left: -3px; /* 修改：左側按鈕往左移動15px (從8px改為-7px) */
+    margin-left: -1px; /* 修改：左側按鈕往左移動15px (從8px改為-7px) */
 }
 
 .tab-btn {
@@ -51,7 +51,7 @@
 
 .right-tab-buttons {
     display: flex;
-    margin-right: -3px; /* 修改：右側按鈕往右移動15px (從8px改為-7px) */
+    margin-right: -1px; /* 修改：右側按鈕往右移動15px (從8px改為-7px) */
 }
 
 .right-tab-buttons .tab-btn {
