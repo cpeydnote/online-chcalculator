@@ -581,34 +581,41 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
     }
     
     .input-group label {
-        width: 40%; /* 調整標籤寬度 */
+        width: 45%; /* 恢復原來的標籤寬度 */
         margin-bottom: 0;
         font-size: 0.9rem;
     }
     
     .input-field-container {
-        width: 60%; /* 調整輸入框容器寬度 */
+        width: 55%; /* 調整輸入框容器寬度 */
         display: flex;
         justify-content: flex-end; /* 內容靠右對齊 */
-        padding-right: 15px; /* 右側添加內邊距 */
+        padding-right: 10px; /* 減少右側內邊距 */
     }
     
-    .uniform-input, input[type="number"] {
-        width: 90px !important; /* 調整輸入框寬度 */
+    /* 輸入框本身靠右但縮短寬度 */
+    .uniform-input, 
+    input[type="number"],
+    input[type="text"],
+    #test-strength,
+    #beam-interval,
+    #work-load,
+    #plate-thickness,
+    #support-height {
+        width: 75px !important; /* 縮短寬度 */
+        margin-right: 3px; /* 減少輸入框和單位間距 */
         padding: 6px 8px;
-        margin-right: 5px; /* 輸入框和單位間距 */
     }
     
     .unit {
         font-size: 0.8rem;
-        text-align: center;
-        min-width: 40px; /* 確保單位有足夠空間 */
+        text-align: right;
+        min-width: 30px; /* 減少單位寬度 */
     }
     
     /* 解決試驗強度文字換行問題 */
     .left-section .input-group:last-child label {
         font-size: 0.8rem; /* 縮小字體 */
-        width: 40%; /* 保持一致寬度 */
         white-space: nowrap; /* 防止換行 */
         overflow: hidden; /* 溢出隱藏 */
         text-overflow: ellipsis; /* 溢出顯示省略號 */
@@ -669,13 +676,15 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
     .check-formula {
         flex-direction: row; /* 保持水平排列 */
         justify-content: center;
+        flex-wrap: wrap; /* 允許元素換行 */
+        gap: 0.5rem 1rem; /* 行間距和列間距 */
     }
     
     .formula-value {
         padding: 0.5rem 0.8rem;
-        min-width: 100px; /* 與電腦版一致 */
-        width: 100px !important; /* 強制設定寬度 */
-        text-align: center; /* 改為右對齊，與輸入框一致 */
+        min-width: 90px; /* 縮小寬度 */
+        width: 90px !important; /* 強制設定寬度 */
+        text-align: right; /* 改為右對齊，與輸入框一致 */
         font-size: 0.9rem; /* 與輸入框字體大小一致 */
         background-color: #F2F2F2;
         border-radius: 4px;
@@ -685,6 +694,16 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
         align-items: center; /* 垂直居中 */
         justify-content: flex-end; /* 右對齊內容 */
         box-sizing: border-box; /* 確保 padding 不會增加元素總高度 */
+    }
+    
+    .unit-label {
+        font-size: 0.8rem;
+        color: #666;
+        margin-left: 0; /* 移除左邊距 */
+        margin-top: 0.5rem; /* 增加上邊距 */
+        width: 100%; /* 使其佔據整行 */
+        text-align: center; /* 居中對齊 */
+        order: 3; /* 確保它在公式後面 */
     }
     
     /* 小型設備上縮小漢堡選單 */
@@ -712,24 +731,31 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
     }
     
     .input-field-container {
-        padding-right: 10px; /* 較小的右側內邊距 */
+        padding-right: 8px; /* 更小的右側內邊距 */
     }
     
-    .uniform-input, input[type="number"] {
-        width: 80px !important; /* 較小的輸入框 */
+    /* 更新小螢幕上的輸入框樣式 */
+    .uniform-input, 
+    input[type="number"],
+    input[type="text"],
+    #test-strength,
+    #beam-interval,
+    #work-load,
+    #plate-thickness,
+    #support-height {
+        width: 65px !important; /* 更小的輸入框 */
         padding: 5px 7px;
-        margin-right: 3px; /* 較小的間距 */
+        margin-right: 2px; /* 更小的間距 */
     }
     
     .unit {
         font-size: 0.75rem;
-        min-width: 35px; /* 較小的單位寬度 */
+        min-width: 28px; /* 更小的單位寬度 */
     }
     
     /* 試驗強度文字在小螢幕上更小 */
     .left-section .input-group:last-child label {
         font-size: 0.75rem; /* 更小的字體 */
-        width: 38%; /* 更窄的寬度 */
     }
     
     .tube-image img {
@@ -769,9 +795,9 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
     
     .formula-value {
         padding: 0.4rem 0.6rem;
-        min-width: 90px; /* 小螢幕略微縮小 */
-        width: 90px !important; /* 強制設定寬度 */
-        text-align: center;
+        min-width: 80px; /* 更小的寬度 */
+        width: 80px !important; /* 強制設定寬度 */
+        text-align: right;
         font-size: 0.9rem;
         background-color: #F2F2F2;
         border-radius: 4px;
@@ -788,5 +814,6 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
     
     .unit-label {
         font-size: 0.7rem;
+        margin-top: 0.4rem; /* 較小的上邊距 */
     }
 }
