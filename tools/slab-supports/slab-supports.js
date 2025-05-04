@@ -15,11 +15,20 @@ document.addEventListener('DOMContentLoaded', function() {
     const rcBeamContent = document.getElementById('rc-beam-content');
     const steelPlateContent = document.getElementById('steel-plate-content');
     
+    // 獲取輸入字段
     const steelPipeSpec = document.getElementById('steel-pipe-spec');
     const materialLabel = document.getElementById('material-label');
     const beamInterval = document.getElementById('beam-interval');
+    const workLoad = document.getElementById('work-load');
+    const plateThickness = document.getElementById('plate-thickness');
+    const supportHeight = document.getElementById('support-height');
+    const testStrength = document.getElementById('test-strength');
+    
+    // 獲取顯示元素
     const valueE = document.getElementById('value-e');
     const valueF = document.getElementById('value-f');
+    const bDimensionValue = document.getElementById('b-dimension-value');
+    const cDimensionValue = document.getElementById('c-dimension-value');
     
     // 移動版選單相關
     const menuToggle = document.querySelector('.menu-toggle');
@@ -27,6 +36,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 設定初始值
     updatePipeSpecValues('A36');
+    
+    // 設置輸入欄位預設提示文字
+    setPlaceholders();
+    
+    // 更新初始結果顯示
+    updateResultValues();
     
     // 桌面版標籤按鈕點擊事件
     if (rcPlateBtn) {
@@ -95,14 +110,110 @@ document.addEventListener('DOMContentLoaded', function() {
     // 鋼管規格選擇變更事件
     if (steelPipeSpec) {
         steelPipeSpec.addEventListener('change', function() {
-            updatePipeSpecValues(this.value);
+            if (this.value) {
+                updatePipeSpecValues(this.value);
+            }
         });
     }
     
-    // 監聽大引間隔輸入
+    // 監聽所有輸入欄位變更事件
     if (beamInterval) {
         beamInterval.addEventListener('input', function() {
             updateResultValues();
+        });
+        
+        // 聚焦時清除內容
+        beamInterval.addEventListener('focus', function() {
+            if (this.value === '') {
+                this.placeholder = '';
+            }
+        });
+        
+        // 失焦時恢復預設提示（如果沒有輸入內容）
+        beamInterval.addEventListener('blur', function() {
+            if (this.value === '') {
+                this.placeholder = '請輸入數值';
+            }
+        });
+    }
+    
+    if (supportHeight) {
+        supportHeight.addEventListener('input', function() {
+            updateResultValues();
+        });
+        
+        // 聚焦時清除內容
+        supportHeight.addEventListener('focus', function() {
+            if (this.value === '') {
+                this.placeholder = '';
+            }
+        });
+        
+        // 失焦時恢復預設提示（如果沒有輸入內容）
+        supportHeight.addEventListener('blur', function() {
+            if (this.value === '') {
+                this.placeholder = '請輸入數值';
+            }
+        });
+    }
+    
+    if (workLoad) {
+        workLoad.addEventListener('input', function() {
+            updateResultValues();
+        });
+        
+        // 聚焦時清除內容
+        workLoad.addEventListener('focus', function() {
+            if (this.value === '') {
+                this.placeholder = '';
+            }
+        });
+        
+        // 失焦時恢復預設提示（如果沒有輸入內容）
+        workLoad.addEventListener('blur', function() {
+            if (this.value === '') {
+                this.placeholder = '請輸入數值';
+            }
+        });
+    }
+    
+    if (plateThickness) {
+        plateThickness.addEventListener('input', function() {
+            updateResultValues();
+        });
+        
+        // 聚焦時清除內容
+        plateThickness.addEventListener('focus', function() {
+            if (this.value === '') {
+                this.placeholder = '';
+            }
+        });
+        
+        // 失焦時恢復預設提示（如果沒有輸入內容）
+        plateThickness.addEventListener('blur', function() {
+            if (this.value === '') {
+                this.placeholder = '請輸入數值';
+            }
+        });
+    }
+    
+    if (testStrength) {
+        testStrength.addEventListener('input', function() {
+            updateResultValues();
+        });
+        
+        // 聚焦時清除內容
+        testStrength.addEventListener('focus', function() {
+            if (this.value === '') {
+                this.placeholder = '';
+            }
+        });
+        
+        // 失焦時恢復預設提示（如果沒有輸入內容）
+        testStrength.addEventListener('blur', function() {
+            if (this.value === '') {
+                this.placeholder = '請輸入數值';
+            }
         });
     }
     
@@ -182,34 +293,140 @@ document.addEventListener('DOMContentLoaded', function() {
             specB = '4.86';
             specC = '0.25';
             materialText = 'STK500';
+        } else {
+            // 預設值或空值
+            specA = '';
+            specB = '';
+            specC = '';
+            materialText = '';
         }
         
         // 更新顯示值
         const specAElement = document.getElementById('spec-a');
         const specBElement = document.getElementById('spec-b');
         const specCElement = document.getElementById('spec-c');
-        const bDimensionValue = document.getElementById('b-dimension-value');
-        const cDimensionValue = document.getElementById('c-dimension-value');
         
-        if (specAElement) specAElement.textContent = specA;
-        if (specBElement) specBElement.textContent = specB;
-        if (specCElement) specCElement.textContent = specC;
-        if (bDimensionValue) bDimensionValue.textContent = specB;
-        if (cDimensionValue) cDimensionValue.textContent = specC;
-        if (materialLabel) materialLabel.textContent = materialText;
-    }
-    
-    // 函數：更新結果值
-    function updateResultValues() {
-        // 當用戶輸入大引間隔時，更新(E)的值
-        if (beamInterval && beamInterval.value && valueE) {
-            valueE.textContent = beamInterval.value;
-        } else if (valueE) {
-            valueE.textContent = '(E)';
+        // 更新規格數值
+        if (specAElement) specAElement.textContent = specA || '請選擇規格';
+        if (specBElement) specBElement.textContent = specB || '請選擇規格';
+        if (specCElement) specCElement.textContent = specC || '請選擇規格';
+        
+        // 更新 G. Tube 圖上的數值
+        if (bDimensionValue) {
+            if (specB) {
+                bDimensionValue.textContent = specB;
+                bDimensionValue.style.display = 'block';
+            } else {
+                bDimensionValue.style.display = 'none';
+            }
         }
         
-        // 設定F的臨時固定值，未來可能會改為計算的值
-        if (valueF) valueF.textContent = '80';
+        if (cDimensionValue) {
+            if (specC) {
+                cDimensionValue.textContent = specC;
+                cDimensionValue.style.display = 'block';
+            } else {
+                cDimensionValue.style.display = 'none';
+            }
+        }
+        
+        // 更新材料標籤
+        if (materialLabel) {
+            if (materialText) {
+                materialLabel.textContent = materialText;
+                materialLabel.style.display = 'block';
+            } else {
+                materialLabel.style.display = 'none';
+            }
+        }
+    }
+    
+    // 函數：設置輸入欄位預設提示文字
+    function setPlaceholders() {
+        // 為所有數值輸入欄位添加預設提示文字
+        if (beamInterval) beamInterval.placeholder = '請輸入數值';
+        if (workLoad) workLoad.placeholder = '請輸入數值';
+        if (plateThickness) plateThickness.placeholder = '請輸入數值';
+        if (supportHeight) supportHeight.placeholder = '請輸入數值';
+        if (testStrength) testStrength.placeholder = '請輸入數值';
+        
+        // 為鋼管規格下拉選單添加預設選項
+        if (steelPipeSpec && steelPipeSpec.options.length > 0) {
+            // 檢查是否已有預設選項
+            if (steelPipeSpec.options[0].value !== '') {
+                // 創建新的預設選項
+                const defaultOption = document.createElement('option');
+                defaultOption.value = '';
+                defaultOption.text = '請選擇規格';
+                defaultOption.disabled = true;
+                defaultOption.selected = true;
+                
+                // 將預設選項添加到下拉選單的開頭
+                steelPipeSpec.insertBefore(defaultOption, steelPipeSpec.firstChild);
+            }
+        }
+    }
+    
+    // 函數：更新結果值及支撐示意圖
+    function updateResultValues() {
+        // 更新大引間隔顯示
+        if (beamInterval && beamInterval.value) {
+            // 用戶有輸入值，顯示在結果區
+            if (valueE) valueE.textContent = beamInterval.value;
+        } else {
+            // 用戶沒有輸入值，不顯示任何內容
+            if (valueE) valueE.textContent = '';
+        }
+        
+        // 暫時設定固定值95
+        // 備註：未來會根據多個輸入參數計算支撐間距
+        // 計算公式會考慮：
+        // 1. 大引間隔 (beamInterval.value)
+        // 2. 施工活載重 (workLoad.value)
+        // 3. 板厚 (plateThickness.value)
+        // 4. 支撐淨高 (supportHeight.value)
+        // 5. 鋼管規格 (steelPipeSpec.value)
+        // 6. 降伏強度、外徑、管厚等參數
+        // TODO: 未來將加入計算公式，取代固定值95
+        if (valueF) {
+            if (beamInterval && beamInterval.value) {
+                valueF.textContent = '95';
+            } else {
+                valueF.textContent = '';
+            }
+        }
+        
+        // 更新支撐結構示意圖上的數值
+        updateSupportImage();
+    }
+    
+    // 函數：更新支撐結構示意圖上的數值
+    function updateSupportImage() {
+        // 在HTML中需要添加以下元素：
+        // 1. 用於顯示大引間隔的元素，ID為beam-interval-display
+        // 2. 用於顯示支撐淨高的元素，ID為support-height-display
+        
+        // 尋找顯示大引間隔的元素
+        const beamIntervalDisplay = document.querySelector('.support-image-container .beam-interval-display');
+        if (beamIntervalDisplay) {
+            if (beamInterval && beamInterval.value) {
+                beamIntervalDisplay.textContent = beamInterval.value;
+                beamIntervalDisplay.style.display = 'block';
+            } else {
+                beamIntervalDisplay.style.display = 'none';
+            }
+        }
+        
+        // 尋找顯示支撐淨高的元素
+        const supportHeightDisplay = document.querySelector('.support-image-container .support-height-display');
+        if (supportHeightDisplay) {
+            if (supportHeight && supportHeight.value) {
+                supportHeightDisplay.textContent = supportHeight.value;
+                supportHeightDisplay.style.display = 'block';
+            } else {
+                supportHeightDisplay.style.display = 'none';
+            }
+        }
     }
     
     // 函數：切換主要內容區域
