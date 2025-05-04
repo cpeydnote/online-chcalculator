@@ -519,6 +519,30 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
     background-position: right 8px center;
 }
 
+/* 平板版特別調整 - 針對 iPad */
+@media (min-width: 769px) and (max-width: 992px) {
+    /* 讓內容置中顯示 */
+    .calculator-content {
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    /* 調整單位對齊 */
+    .unit {
+        text-align: right;
+        min-width: 50px; /* 固定最小寬度 */
+        display: inline-block;
+    }
+    
+    /* 使內容區域置中 */
+    .content-layout {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 /* 保持響應式設計部分不變 */
 @media (max-width: 992px) {
     .content-layout {
@@ -564,10 +588,15 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
         max-width: 100%; /* 讓計算器內容區域在手機上全寬顯示 */
         padding-left: 15px;
         padding-right: 15px;
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .content-layout {
         gap: 1rem; /* 減少內容間隔 */
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .input-columns {
@@ -586,11 +615,23 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
         font-size: 0.9rem;
     }
     
+    /* 調整單位對齊 - 確保所有單位右對齊並有一致的位置 */
+    .unit {
+        font-size: 0.8rem;
+        text-align: right;
+        min-width: 50px; /* 增加最小寬度，確保所有單位對齊 */
+        display: inline-block;
+        position: absolute; /* 使用絕對定位 */
+        right: 0; /* 靠右對齊 */
+    }
+    
+    /* 調整輸入框容器以適應絕對定位的單位 */
     .input-field-container {
-        width: 55%; /* 調整輸入框容器寬度 */
+        width: 55%;
         display: flex;
-        justify-content: flex-end; /* 內容靠右對齊 */
-        padding-right: 4px; /* 減少右側內邊距 */
+        justify-content: flex-end;
+        padding-right: 50px; /* 為單位預留空間 */
+        position: relative; /* 作為單位的定位上下文 */
     }
     
     /* 輸入框本身靠右但縮短寬度 */
@@ -605,12 +646,6 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
         width: 100px !important; /* 縮短寬度 */
         margin-right: 2px; /* 減少輸入框和單位間距 */
         padding: 6px 8px;
-    }
-    
-    .unit {
-        font-size: 0.8rem;
-        text-align: right;
-        min-width: 30px; /* 減少單位寬度 */
     }
     
     /* 解決試驗強度文字換行問題 */
@@ -730,8 +765,16 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
         font-size: 0.85rem;
     }
     
+    /* 調整單位對齊 - 小螢幕版本 */
+    .unit {
+        font-size: 0.75rem;
+        min-width: 45px; /* 小螢幕上稍微縮小單位寬度 */
+        right: 0;
+    }
+    
+    /* 調整輸入框容器以適應絕對定位的單位 */
     .input-field-container {
-        padding-right: 5px; /* 更小的右側內邊距 */
+        padding-right: 45px; /* 為單位預留空間 - 稍微減少 */
     }
     
     /* 更新小螢幕上的輸入框樣式 */
@@ -743,14 +786,9 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
     #work-load,
     #plate-thickness,
     #support-height {
-        width: 75px !important; /* 更小的輸入框 */
+        width: 80px !important; /* 小螢幕上縮小寬度 */
         padding: 5px 7px;
-        margin-right: 2px; /* 更小的間距 */
-    }
-    
-    .unit {
-        font-size: 0.75rem;
-        min-width: 28px; /* 更小的單位寬度 */
+        margin-right: 2px;
     }
     
     /* 試驗強度文字在小螢幕上更小 */
@@ -795,13 +833,13 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
     
     .formula-value {
         padding: 0.4rem 0.6rem;
-        min-width: 80px; /* 更小的寬度 */
-        width: 80px !important; /* 強制設定寬度 */
+        min-width: 80px;
+        width: 80px !important;
         text-align: right;
         font-size: 0.9rem;
         background-color: #F2F2F2;
         border-radius: 4px;
-        min-height: 35px; /* 小螢幕略微縮小高度 */
+        min-height: 35px;
         display: flex;
         align-items: center;
         justify-content: flex-end;
@@ -814,6 +852,6 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
     
     .unit-label {
         font-size: 0.7rem;
-        margin-top: 0.4rem; /* 較小的上邊距 */
+        margin-top: 0.4rem;
     }
 }
