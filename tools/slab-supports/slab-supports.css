@@ -40,8 +40,8 @@
 }
 
 .tab-btn.active {
-    background-color: #E9EDF5;
-    font-weight: bold;
+    background-color: #D9E1F0; /* 修改：更深的背景顏色 */
+    font-weight: normal; /* 修改：移除粗體 */
 }
 
 .tab-btn:active {
