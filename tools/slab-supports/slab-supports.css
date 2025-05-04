@@ -248,7 +248,7 @@
 /* 統一文字框長度 */
 .uniform-input {
     width: 100px !important;
-    text-align: right;
+    text-align: center;
 }
 /* 統一所有輸入框樣式 - 包括右側欄位和試驗強度 */
 .left-section .uniform-input,
@@ -262,8 +262,8 @@
 #work-load,
 #plate-thickness,
 #support-height {
-    width: 100px !important;
-    text-align: right;
+    width: 160px !important;
+    text-align: center;
     background-color: #f9f9f9;
     border: none;
     border-radius: 4px;
@@ -324,7 +324,7 @@ select {
     border-radius: 4px;
     min-width: 100px; /* 與輸入框寬度保持一致 */
     width: 100px !important; /* 強制設定寬度 */
-    text-align: right; /* 改為右對齊，與輸入框保持一致 */
+    text-align: center; /* 改為右對齊，與輸入框保持一致 */
     font-size: 0.9rem; /* 與輸入框字體大小一致 */
     min-height: 40px; /* 新增：確保最小高度與輸入框一致 */
     display: flex; /* 新增：使用 flex 布局 */
@@ -504,7 +504,7 @@ select {
 
 .uniform-input, input[type="number"] {
     width: 100px !important;
-    text-align: right;
+    text-align: center;
 }
 
 /* 下拉選單樣式統一 */
@@ -581,37 +581,62 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
     }
     
     .input-group label {
-        width: 45%; /* 調整標籤寬度 */
+        width: 40%; /* 調整標籤寬度 */
         margin-bottom: 0;
         font-size: 0.9rem;
     }
     
     .input-field-container {
-        width: 55%; /* 調整輸入框容器寬度 */
+        width: 60%; /* 調整輸入框容器寬度 */
+        display: flex;
+        justify-content: flex-end; /* 內容靠右對齊 */
+        padding-right: 15px; /* 右側添加內邊距 */
     }
     
     .uniform-input, input[type="number"] {
-        width: 70px !important; /* 調整輸入框寬度 */
+        width: 90px !important; /* 調整輸入框寬度 */
         padding: 6px 8px;
+        margin-right: 5px; /* 輸入框和單位間距 */
     }
     
     .unit {
         font-size: 0.8rem;
+        text-align: center;
+        min-width: 40px; /* 確保單位有足夠空間 */
+    }
+    
+    /* 解決試驗強度文字換行問題 */
+    .left-section .input-group:last-child label {
+        font-size: 0.8rem; /* 縮小字體 */
+        width: 40%; /* 保持一致寬度 */
+        white-space: nowrap; /* 防止換行 */
+        overflow: hidden; /* 溢出隱藏 */
+        text-overflow: ellipsis; /* 溢出顯示省略號 */
     }
     
     /* 重新安排示意圖位置 */
     .tube-image-container {
-        margin: 1rem 0 1.5rem 0;
+        margin: 1rem auto 1.5rem; /* 上右下左邊距，auto讓容器水平置中 */
+        text-align: center; /* 內容居中 */
         order: 3; /* 放在輸入欄位之後 */
+        width: 100%; /* 確保容器寬度 */
+    }
+    
+    .tube-image {
+        margin: 0 auto; /* 水平置中 */
     }
     
     .tube-image img {
         width: 140px;
+        display: block; /* 讓圖片可以被margin居中 */
+        margin: 0 auto; /* 水平置中 */
     }
     
     .support-image-container {
         order: 4; /* 放在管斷面圖之後 */
-        margin: 0.5rem 0 1.5rem 0;
+        margin: 0.5rem auto 1.5rem;
+        text-align: center;
+        width: 100%;
     }
     
     /* 調整支撐結構示意圖上的數值標籤 */
@@ -647,20 +672,20 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
     }
     
     .formula-value {
-    padding: 0.5rem 0.8rem;
-    min-width: 100px; /* 與電腦版一致 */
-    width: 100px !important; /* 強制設定寬度 */
-    text-align: right; /* 改為右對齊，與輸入框一致 */
-    font-size: 0.9rem; /* 與輸入框字體大小一致 */
-    background-color: #F2F2F2;
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    min-height: 40px; /* 確保最小高度與輸入框一致 */
-    display: flex; /* 使用 flex 布局 */
-    align-items: center; /* 垂直居中 */
-    justify-content: flex-end; /* 右對齊內容 */
-    box-sizing: border-box; /* 確保 padding 不會增加元素總高度 */
-}
+        padding: 0.5rem 0.8rem;
+        min-width: 100px; /* 與電腦版一致 */
+        width: 100px !important; /* 強制設定寬度 */
+        text-align: center; /* 改為右對齊，與輸入框一致 */
+        font-size: 0.9rem; /* 與輸入框字體大小一致 */
+        background-color: #F2F2F2;
+        border-radius: 4px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        min-height: 40px; /* 確保最小高度與輸入框一致 */
+        display: flex; /* 使用 flex 布局 */
+        align-items: center; /* 垂直居中 */
+        justify-content: flex-end; /* 右對齊內容 */
+        box-sizing: border-box; /* 確保 padding 不會增加元素總高度 */
+    }
     
     /* 小型設備上縮小漢堡選單 */
     .menu-toggle {
@@ -686,13 +711,25 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
         font-size: 0.85rem;
     }
     
+    .input-field-container {
+        padding-right: 10px; /* 較小的右側內邊距 */
+    }
+    
     .uniform-input, input[type="number"] {
-        width: 65px !important;
+        width: 80px !important; /* 較小的輸入框 */
         padding: 5px 7px;
+        margin-right: 3px; /* 較小的間距 */
     }
     
     .unit {
         font-size: 0.75rem;
+        min-width: 35px; /* 較小的單位寬度 */
+    }
+    
+    /* 試驗強度文字在小螢幕上更小 */
+    .left-section .input-group:last-child label {
+        font-size: 0.75rem; /* 更小的字體 */
+        width: 38%; /* 更窄的寬度 */
     }
     
     .tube-image img {
@@ -731,19 +768,19 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
     }
     
     .formula-value {
-    padding: 0.4rem 0.6rem;
-    min-width: 90px; /* 小螢幕略微縮小 */
-    width: 90px !important; /* 強制設定寬度 */
-    text-align: right;
-    font-size: 0.9rem;
-    background-color: #F2F2F2;
-    border-radius: 4px;
-    min-height: 35px; /* 小螢幕略微縮小高度 */
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    box-sizing: border-box;
-}
+        padding: 0.4rem 0.6rem;
+        min-width: 90px; /* 小螢幕略微縮小 */
+        width: 90px !important; /* 強制設定寬度 */
+        text-align: center;
+        font-size: 0.9rem;
+        background-color: #F2F2F2;
+        border-radius: 4px;
+        min-height: 35px; /* 小螢幕略微縮小高度 */
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        box-sizing: border-box;
+    }
     
     .formula-operator {
         font-size: 0.9rem;
