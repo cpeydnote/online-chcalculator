@@ -326,6 +326,11 @@ select {
     width: 100px !important; /* 強制設定寬度 */
     text-align: right; /* 改為右對齊，與輸入框保持一致 */
     font-size: 0.9rem; /* 與輸入框字體大小一致 */
+    min-height: 40px; /* 新增：確保最小高度與輸入框一致 */
+    display: flex; /* 新增：使用 flex 布局 */
+    align-items: center; /* 新增：垂直居中 */
+    justify-content: flex-end; /* 新增：右對齊內容 */
+    box-sizing: border-box; /* 新增：確保 padding 不會增加元素總高度 */
 }
 
 .formula-operator {
@@ -642,10 +647,20 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
     }
     
     .formula-value {
-        padding: 0.5rem 0.8rem;
-        min-width: 70px;
-        text-align: center;
-    }
+    padding: 0.5rem 0.8rem;
+    min-width: 100px; /* 與電腦版一致 */
+    width: 100px !important; /* 強制設定寬度 */
+    text-align: right; /* 改為右對齊，與輸入框一致 */
+    font-size: 0.9rem; /* 與輸入框字體大小一致 */
+    background-color: #F2F2F2;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    min-height: 40px; /* 確保最小高度與輸入框一致 */
+    display: flex; /* 使用 flex 布局 */
+    align-items: center; /* 垂直居中 */
+    justify-content: flex-end; /* 右對齊內容 */
+    box-sizing: border-box; /* 確保 padding 不會增加元素總高度 */
+}
     
     /* 小型設備上縮小漢堡選單 */
     .menu-toggle {
@@ -716,10 +731,19 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
     }
     
     .formula-value {
-        padding: 0.4rem 0.6rem;
-        min-width: 60px;
-        font-size: 0.9rem;
-    }
+    padding: 0.4rem 0.6rem;
+    min-width: 90px; /* 小螢幕略微縮小 */
+    width: 90px !important; /* 強制設定寬度 */
+    text-align: right;
+    font-size: 0.9rem;
+    background-color: #F2F2F2;
+    border-radius: 4px;
+    min-height: 35px; /* 小螢幕略微縮小高度 */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    box-sizing: border-box;
+}
     
     .formula-operator {
         font-size: 0.9rem;
