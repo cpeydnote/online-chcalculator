@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>模板支撐 | Vicolator</title>
+    <title>模板支撐 | CHCALCULATOR</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="slab-supports.css">
     <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
@@ -12,13 +12,13 @@
     <header class="desktop-header">
         <a href="../../index.html" class="logo-link">
             <div class="logo">
-                <img src="../../images/logo.png" alt="Vicolator">
-                <span>Vicolator</span>
+                <img src="../../images/logo.png" alt="CHCALCULATOR">
+                <span>CHCALCULATOR</span>
             </div>
         </a>
         <div class="nav-path">
-    <span><a href="../../index.html" class="nav-link">首頁</a> / 模板支撐</span>
-</div>
+            <span><a href="../../index.html" class="nav-link">首頁</a> / 模板支撐</span>
+        </div>
         <div class="auth-buttons">
             <a href="../../terms.html" class="terms-btn">使用須知</a>
             <button class="login-btn">登入</button>
@@ -30,8 +30,8 @@
     <header class="mobile-header">
         <a href="../../index.html" class="mobile-logo-link">
             <div class="mobile-logo">
-                <img src="../../images/logo.png" alt="Vicolator">
-                <span>Vicolator</span>
+                <img src="../../images/logo.png" alt="CHCALCULATOR">
+                <span>CHCALCULATOR</span>
             </div>
         </a>
         <!-- 漢堡選單按鈕 -->
@@ -135,21 +135,11 @@
                             </div>
                         </div>
                         
-                        <div class="tube-image-container">
-                            <div class="tube-image">
-                                <img src="../../images/G. Tube Image.png" alt="管斷面示意圖">
-                                <div class="tube-dimension b-dimension"><span id="b-dimension-value">4.86</span></div>
-                                <div class="tube-dimension c-dimension"><span id="c-dimension-value">0.25</span></div>
-                                <div class="tube-dimension-label" id="material-label">A36</div>
-                            </div>
-                            <div class="unit-label-bottom">單位：cm</div>
-                        </div>
-                        
                         <div class="input-group">
                             <label for="test-strength">(選)試驗強度 P<sub>test</sub></label>
                             <div class="input-field-container">
                                 <div class="input-with-unit">
-                                    <input type="text" id="test-strength" class="uniform-input">
+                                    <input type="number" id="test-strength" class="uniform-input" value="24">
                                 </div>
                                 <span class="unit">tf</span>
                             </div>
@@ -163,7 +153,7 @@
                             <label for="beam-interval">大引(下角材)間隔</label>
                             <div class="input-field-container">
                                 <div class="input-with-unit">
-                                    <input type="text" id="beam-interval" class="uniform-input">
+                                    <input type="number" id="beam-interval" class="uniform-input" value="70">
                                 </div>
                                 <span class="unit">cm</span>
                             </div>
@@ -173,9 +163,9 @@
                             <label for="work-load">施工活載重</label>
                             <div class="input-field-container">
                                 <div class="input-with-unit">
-                                    <input type="text" id="work-load" class="uniform-input">
+                                    <input type="number" id="work-load" class="uniform-input" value="500">
                                 </div>
-                                <span class="unit">tf/cm<sup>2</sup></span>
+                                <span class="unit">kgf/cm<sup>2</sup></span>
                             </div>
                         </div>
                         
@@ -183,35 +173,71 @@
                             <label for="plate-thickness">板厚</label>
                             <div class="input-field-container">
                                 <div class="input-with-unit">
-                                    <input type="text" id="plate-thickness" class="uniform-input">
+                                    <input type="number" id="plate-thickness" class="uniform-input" value="18">
                                 </div>
                                 <span class="unit">cm</span>
                             </div>
-                        </div>
-                        
-                        <div class="support-image-container">
-                            <img src="../../images/G. Support.png" alt="支撐結構示意圖">
                         </div>
                         
                         <div class="input-group">
                             <label for="support-height">支撐淨高</label>
                             <div class="input-field-container">
                                 <div class="input-with-unit">
-                                    <input type="text" id="support-height" class="uniform-input">
+                                    <input type="number" id="support-height" class="uniform-input" value="320">
                                 </div>
                                 <span class="unit">cm</span>
                             </div>
                         </div>
                     </div>
                 </div>
-
+                
+                <!-- 添加圓管示意圖 -->
+                <div class="tube-image-container">
+                    <div class="tube-image">
+                        <img src="../../images/tube-image.png" alt="管斷面示意圖">
+                        <div class="tube-dimension-label" id="material-label">A36</div>
+                        <div class="tube-dimension diameter-dimension">
+                            <span id="b-dimension-value">4.86</span>
+                        </div>
+                        <div class="tube-dimension thickness-dimension">
+                            <span id="c-dimension-value">0.25</span>
+                        </div>
+                    </div>
+                    <div class="unit-label-bottom">單位：cm</div>
+                </div>
+                
+                <!-- 支撐結構示意圖 -->
+                <div class="support-image-container">
+                    <img src="../../images/support-structure.png" alt="支撐結構示意圖">
+                    <div class="support-dimension load-dimension">
+                        <span id="load-value">500</span> kgf/cm<sup>2</sup>
+                    </div>
+                    <div class="support-dimension height-dimension">
+                        <span id="height-value">320</span>
+                    </div>
+                    <div class="support-dimension spacing-dimension">
+                        <span id="spacing-value">70</span>
+                    </div>
+                    <div class="spacing-unit">
+                        <div class="spacing-value">
+                            <span class="spacing-label">大引間隔 & 支撐間距</span>
+                            <div class="spacing-inputs">
+                                <span id="spacing-input-value">70</span>
+                                <span class="spacing-multiply">×</span>
+                                <span id="spacing-calculation">95</span>
+                            </div>
+                            <span class="spacing-unit-label">單位：cm</span>
+                        </div>
+                    </div>
+                </div>
+                
                 <!-- 檢核結果框 - 移到中間下方 -->
                 <div class="result-section">
                     <span class="check-title">大引間隔 & 支撐間距</span>
                     <div class="check-formula">
-                        <span class="formula-value" id="value-e">(E)</span>
+                        <span class="formula-value" id="value-e">70</span>
                         <span class="formula-operator">×</span>
-                        <span class="formula-value" id="value-f">80</span>
+                        <span class="formula-value" id="value-f">95</span>
                         <span class="unit-label">單位：cm</span>
                     </div>
                 </div>
@@ -233,9 +259,10 @@
     
     <footer>
         <p><a href="#" class="changelog-link">更新日誌</a></p>
-        <p><a href="mailto:cpeydnote@gmail.com" class="contact-us">聯絡我們</a></p>
-        <p>版權所有© 2025 Vicolator</p>
+        <p><a href="mailto:support@chcalculator.com" class="contact-us">聯絡我們</a></p>
+        <p>版權所有© 2025 CHCALCULATOR</p>
     </footer>
+    
     <div id="changelog-popup" class="popup">
         <div class="popup-content">
             <span class="close-popup">&times;</span>
