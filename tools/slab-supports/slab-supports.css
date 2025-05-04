@@ -509,6 +509,13 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
     .result-section, .support-image-container {
         order: unset;
     }
+    
+    /* 調整支撐結構示意圖上的標籤大小 */
+    .beam-interval-display,
+    .support-height-display,
+    .work-load-display {
+        font-size: 1.1rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -562,6 +569,26 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
     .result-section {
         width: 100%;
     }
+    
+    /* 調整支撐結構示意圖上的數值標籤 */
+    .beam-interval-display {
+        left: 8%;
+        font-size: 1rem;
+    }
+    
+    .support-height-display {
+        font-size: 1rem;
+    }
+    
+    .work-load-display {
+        font-size: 0.9rem;
+        top: 8%;
+        left: 25%;
+    }
+    
+    .support-unit-label {
+        font-size: 0.8rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -573,5 +600,21 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
     .formula-value, .formula-operator {
         width: 100%;
         text-align: center;
+    }
+    
+    /* 最小屏幕上的支撐結構示意圖調整 */
+    .beam-interval-display {
+        left: 5%;
+        font-size: 0.9rem;
+    }
+    
+    .support-height-display {
+        font-size: 0.9rem;
+    }
+    
+    .work-load-display {
+        font-size: 0.8rem;
+        top: 5%;
+        left: 20%;
     }
 }
