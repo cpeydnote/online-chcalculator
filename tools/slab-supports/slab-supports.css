@@ -165,16 +165,28 @@
     gap: 2rem; /* 修改：縮小間隔從3rem到2rem */
     margin-bottom: 2rem;
     margin-top: 1px; /* 添加：向下移動1px */
+    align-items: flex-start; /* 新增：確保左右兩欄從頂部對齊 */
 }
 
 .left-section {
     flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .right-section {
     flex: 1;
     display: flex;
     flex-direction: column;
+}
+
+/* 確保左右欄位的輸入組每個高度一致 */
+.left-section .input-group,
+.right-section .input-group {
+    min-height: 50px; /* 統一每個輸入組的最小高度 */
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
 }
 
 /* 輸入欄位和結果區布局 */
@@ -225,6 +237,24 @@
 
 .value-display {
     color: #333;
+    font-size: 0.9rem;
+}
+
+/* 統一所有輸入框樣式 */
+.left-section .uniform-input,
+.right-section .uniform-input,
+.left-section input[type="text"],
+.right-section input[type="text"],
+.left-section input[type="number"],
+.right-section input[type="number"] {
+    width: 100px !important;
+    text-align: right;
+    background-color: #f9f9f9;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin: 2px 0;
     font-size: 0.9rem;
 }
 
@@ -283,6 +313,9 @@ select {
     padding: 0.5rem 1rem;
     background-color: #F2F2F2;
     border-radius: 4px;
+    min-width: 100px; /* 設定最小寬度與輸入框一致 */
+    text-align: right; /* 改為右對齊，與輸入框一致 */
+    font-size: 0.9rem; /* 與輸入框字體大小一致 */
 }
 
 .formula-operator {
@@ -313,7 +346,7 @@ select {
 
 .tube-dimension {
     position: absolute;
-    color: #FF3333;
+    color: #A38058; /* 修改：從紅色 #FF3333 改為 #A38058 */
     font-size: 0.8rem;
 }
 
@@ -336,11 +369,12 @@ select {
     font-size: 0.8rem;
 }
 
-.unit-label-bottom {
+.tube-image-container .unit-label-bottom {
     font-size: 0.8rem;
     color: #666;
-    text-align: center;
+    text-align: right; /* 改為右對齊 */
     margin-top: 0.5rem;
+    padding-right: 23px; /* 向右移動 3px */
 }
 
 /* 支撐結構示意圖 */
@@ -353,6 +387,13 @@ select {
 .support-image-container img {
     max-width: 100%;
     height: auto;
+}
+
+/* 支撐結構示意圖單位標籤 */
+.support-image-container .unit-label-bottom,
+.support-unit-label {
+    font-size: 0.8rem; /* 與 G. Tube 下方的單位標籤保持一致 */
+    color: #666;
 }
 
 /* 即將推出的頁面提示 */
@@ -454,11 +495,6 @@ select {
     margin: 2px 0;
 }
 
-.uniform-input, input[type="number"] {
-    width: 100px !important;
-    text-align: right;
-}
-
 /* 下拉選單樣式統一 */
 select, .mobile-type-dropdown, .mobile-standard-dropdown {
     color: #666;
@@ -542,13 +578,22 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
         width: 55%; /* 調整輸入框容器寬度 */
     }
     
-    .uniform-input, input[type="number"] {
-        width: 70px !important; /* 調整輸入框寬度 */
+    /* 統一手機版輸入框樣式 */
+    .left-section .uniform-input,
+    .right-section .uniform-input,
+    .left-section input[type="text"],
+    .right-section input[type="text"],
+    .left-section input[type="number"],
+    .right-section input[type="number"] {
+        width: 100px !important; /* 統一寬度 */
         padding: 6px 8px;
+        font-size: 0.9rem; /* 統一字體大小 */
+        text-align: right;
     }
     
-    .unit {
-        font-size: 0.8rem;
+    .left-section .unit,
+    .right-section .unit {
+        font-size: 0.8rem; /* 統一單位文字大小 */
     }
     
     /* 重新安排示意圖位置 */
@@ -598,10 +643,12 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
         justify-content: center;
     }
     
+    /* 檢核區域調整 */
     .formula-value {
+        min-width: 100px; /* 保持與桌面版一致 */
         padding: 0.5rem 0.8rem;
-        min-width: 70px;
-        text-align: center;
+        text-align: right;
+        font-size: 0.9rem;
     }
     
     /* 小型設備上縮小漢堡選單 */
@@ -624,13 +671,20 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
 }
 
 @media (max-width: 480px) {
-    .input-group label {
+    /* 統一小螢幕輸入框樣式 */
+    .left-section .uniform-input,
+    .right-section .uniform-input,
+    .left-section input[type="text"],
+    .right-section input[type="text"],
+    .left-section input[type="number"],
+    .right-section input[type="number"] {
+        width: 90px !important; /* 小螢幕略微縮小 */
+        padding: 5px 7px;
         font-size: 0.85rem;
     }
     
-    .uniform-input, input[type="number"] {
-        width: 65px !important;
-        padding: 5px 7px;
+    .input-group label {
+        font-size: 0.85rem;
     }
     
     .unit {
@@ -666,16 +720,17 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
         font-size: 0.7rem;
     }
     
-    /* 結果區域進一步調整 */
+    /* 檢核區域進一步調整 */
     .check-title {
         font-size: 0.9rem;
         padding-left: 10px;
     }
     
+    /* 檢核區域進一步調整 */
     .formula-value {
+        min-width: 90px; /* 與小螢幕輸入框保持一致 */
         padding: 0.4rem 0.6rem;
-        min-width: 60px;
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
     
     .formula-operator {
