@@ -12,13 +12,13 @@
     <header class="desktop-header">
         <a href="../../index.html" class="logo-link">
             <div class="logo">
-                <img src="../../images/logo.png" alt="Violator">
+                <img src="../../images/logo.png" alt="Vicolator">
                 <span>Vicolator</span>
             </div>
         </a>
         <div class="nav-path">
-            <span><a href="../../index.html" class="nav-link">首頁</a> / 模板支撐</span>
-        </div>
+    <span><a href="../../index.html" class="nav-link">首頁</a> / 模板支撐</span>
+</div>
         <div class="auth-buttons">
             <a href="../../terms.html" class="terms-btn">使用須知</a>
             <button class="login-btn">登入</button>
@@ -30,8 +30,8 @@
     <header class="mobile-header">
         <a href="../../index.html" class="mobile-logo-link">
             <div class="mobile-logo">
-                <img src="../../images/logo.png" alt="Violator">
-                <span>Violator</span>
+                <img src="../../images/logo.png" alt="Vicolator">
+                <span>Vicolator</span>
             </div>
         </a>
         <!-- 漢堡選單按鈕 -->
@@ -57,6 +57,7 @@
                     <div class="mobile-type-section">
                         <div class="mobile-type-label">類型</div>
                         <select class="mobile-type-dropdown" id="mobile-type-dropdown">
+                            <option value="" disabled selected>請選擇類型</option>
                             <option value="rc-plate">RC板</option>
                             <option value="rc-beam">RC梁</option>
                             <option value="steel-plate">鋼承板</option>
@@ -67,6 +68,7 @@
                     <div class="mobile-standard-section">
                         <div class="mobile-standard-label">規範</div>
                         <select class="mobile-standard-dropdown" id="mobile-standard-dropdown">
+                            <option value="" disabled selected>請選擇規範</option>
                             <option value="t99-asd">T99_ASD</option>
                             <option value="aisc">AISC 360-27</option>
                         </select>
@@ -99,6 +101,7 @@
                             <label for="steel-pipe-spec">鋼管規格</label>
                             <div class="input-field-container">
                                 <select id="steel-pipe-spec">
+                                    <option value="" disabled selected>請選擇規格</option>
                                     <option value="A36">CNS 5644_A36</option>
                                     <option value="STK500">CNS 5644_STK500</option>
                                 </select>
@@ -106,40 +109,50 @@
                         </div>
                         
                         <div class="input-group">
-                            <label for="yield-strength">降伏強度 F<sub>y</sub></label>
+                            <label for="spec-a">降伏強度 F<sub>y</sub></label>
                             <div class="input-field-container">
                                 <div class="input-with-unit">
-                                    <span class="value-display uniform-input" id="spec-a">2.5</span>
+                                    <span class="value-display uniform-input" id="spec-a">請選擇規格</span>
                                 </div>
                                 <span class="unit">tf/cm<sup>2</sup></span>
                             </div>
                         </div>
                         
                         <div class="input-group">
-                            <label for="outer-radius">外徑 r</label>
+                            <label for="spec-b">外徑 r</label>
                             <div class="input-field-container">
                                 <div class="input-with-unit">
-                                    <span class="value-display uniform-input" id="spec-b">4.86</span>
+                                    <span class="value-display uniform-input" id="spec-b">請選擇規格</span>
                                 </div>
                                 <span class="unit">cm</span>
                             </div>
                         </div>
                         
                         <div class="input-group">
-                            <label for="thickness">管厚 t</label>
+                            <label for="spec-c">管厚 t</label>
                             <div class="input-field-container">
                                 <div class="input-with-unit">
-                                    <span class="value-display uniform-input" id="spec-c">0.25</span>
+                                    <span class="value-display uniform-input" id="spec-c">請選擇規格</span>
                                 </div>
                                 <span class="unit">cm</span>
                             </div>
+                        </div>
+                        
+                        <div class="tube-image-container">
+                            <div class="tube-image">
+                                <img src="../../images/G. Tube Image.png" alt="管斷面示意圖">
+                                <div class="tube-dimension b-dimension" id="b-dimension-value"></div>
+                                <div class="tube-dimension c-dimension" id="c-dimension-value"></div>
+                                <div class="tube-dimension-label" id="material-label"></div>
+                            </div>
+                            <div class="unit-label-bottom">單位：cm</div>
                         </div>
                         
                         <div class="input-group">
                             <label for="test-strength">(選)試驗強度 P<sub>test</sub></label>
                             <div class="input-field-container">
                                 <div class="input-with-unit">
-                                    <input type="number" id="test-strength" class="uniform-input" value="24">
+                                    <input type="text" id="test-strength" class="uniform-input" placeholder="請輸入數值">
                                 </div>
                                 <span class="unit">tf</span>
                             </div>
@@ -153,7 +166,7 @@
                             <label for="beam-interval">大引(下角材)間隔</label>
                             <div class="input-field-container">
                                 <div class="input-with-unit">
-                                    <input type="number" id="beam-interval" class="uniform-input" value="70">
+                                    <input type="text" id="beam-interval" class="uniform-input" placeholder="請輸入數值">
                                 </div>
                                 <span class="unit">cm</span>
                             </div>
@@ -163,7 +176,7 @@
                             <label for="work-load">施工活載重</label>
                             <div class="input-field-container">
                                 <div class="input-with-unit">
-                                    <input type="number" id="work-load" class="uniform-input" value="500">
+                                    <input type="text" id="work-load" class="uniform-input" placeholder="請輸入數值">
                                 </div>
                                 <span class="unit">kgf/cm<sup>2</sup></span>
                             </div>
@@ -173,7 +186,7 @@
                             <label for="plate-thickness">板厚</label>
                             <div class="input-field-container">
                                 <div class="input-with-unit">
-                                    <input type="number" id="plate-thickness" class="uniform-input" value="18">
+                                    <input type="text" id="plate-thickness" class="uniform-input" placeholder="請輸入數值">
                                 </div>
                                 <span class="unit">cm</span>
                             </div>
@@ -183,61 +196,34 @@
                             <label for="support-height">支撐淨高</label>
                             <div class="input-field-container">
                                 <div class="input-with-unit">
-                                    <input type="number" id="support-height" class="uniform-input" value="320">
+                                    <input type="text" id="support-height" class="uniform-input" placeholder="請輸入數值">
                                 </div>
                                 <span class="unit">cm</span>
                             </div>
                         </div>
-                    </div>
-                </div>
-                
-                <!-- 添加圓管示意圖 -->
-                <div class="tube-image-container">
-                    <div class="tube-image">
-                        <img src="../../images/tube-image.png" alt="管斷面示意圖">
-                        <div class="tube-dimension-label" id="material-label">A36</div>
-                        <div class="tube-dimension diameter-dimension">
-                            <span id="b-dimension-value">4.86</span>
-                        </div>
-                        <div class="tube-dimension thickness-dimension">
-                            <span id="c-dimension-value">0.25</span>
-                        </div>
-                    </div>
-                    <div class="unit-label-bottom">單位：cm</div>
-                </div>
-                
-                <!-- 支撐結構示意圖 -->
-                <div class="support-image-container">
-                    <img src="../../images/support-structure.png" alt="支撐結構示意圖">
-                    <div class="support-dimension load-dimension">
-                        <span id="load-value">500</span> kgf/cm<sup>2</sup>
-                    </div>
-                    <div class="support-dimension height-dimension">
-                        <span id="height-value">320</span>
-                    </div>
-                    <div class="support-dimension spacing-dimension">
-                        <span id="spacing-value">70</span>
-                    </div>
-                    <div class="spacing-unit">
-                        <div class="spacing-value">
-                            <span class="spacing-label">大引間隔 & 支撐間距</span>
-                            <div class="spacing-inputs">
-                                <span id="spacing-input-value">70</span>
-                                <span class="spacing-multiply">×</span>
-                                <span id="spacing-calculation">95</span>
-                            </div>
-                            <span class="spacing-unit-label">單位：cm</span>
+                        
+                        <!-- 支撐結構示意圖 -->
+                        <div class="support-image-container">
+                            <img src="../../images/G. Support.png" alt="支撐結構示意圖">
+                            <!-- 添加用於顯示大引間隔的元素 -->
+                            <div class="beam-interval-display"></div>
+                            <!-- 添加用於顯示支撐淨高的元素 -->
+                            <div class="support-height-display"></div>
+                            <!-- 添加用於顯示施工活載重的元素 -->
+                            <div class="work-load-display"></div>
+                            <!-- 添加單位標籤 -->
+                            <div class="support-unit-label">單位：cm</div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- 檢核結果框 - 移到中間下方 -->
+
+                <!-- 檢核結果框 -->
                 <div class="result-section">
                     <span class="check-title">大引間隔 & 支撐間距</span>
                     <div class="check-formula">
-                        <span class="formula-value" id="value-e">70</span>
+                        <span class="formula-value" id="value-e"></span>
                         <span class="formula-operator">×</span>
-                        <span class="formula-value" id="value-f">95</span>
+                        <span class="formula-value" id="value-f"></span>
                         <span class="unit-label">單位：cm</span>
                     </div>
                 </div>
@@ -259,10 +245,9 @@
     
     <footer>
         <p><a href="#" class="changelog-link">更新日誌</a></p>
-        <p><a href="mailto:support@Violator.com" class="contact-us">聯絡我們</a></p>
-        <p>版權所有© 2025 Violator</p>
+        <p><a href="mailto:cpeydnote@gmail.com" class="contact-us">聯絡我們</a></p>
+        <p>版權所有© 2025 Vicolator</p>
     </footer>
-    
     <div id="changelog-popup" class="popup">
         <div class="popup-content">
             <span class="close-popup">&times;</span>
