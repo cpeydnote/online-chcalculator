@@ -16,15 +16,15 @@
     content: '';
     position: absolute;
     bottom: 0;
-    left: 0; /* 修改：延長分隔線長度，從左側對齊按鈕 */
-    right: 0; /* 修改：延長分隔線長度，從右側對齊按鈕 */
+    left: 0;
+    right: 0;
     height: 1px;
     background-color: #E6E6E6;
 }
 
 .left-tab-buttons {
     display: flex;
-    margin-left: -1px; /* 修改：左側按鈕往左移動15px (從8px改為-7px) */
+    margin-left: -1px;
 }
 
 .tab-btn {
@@ -35,13 +35,13 @@
     cursor: pointer;
     font-size: 0.9rem;
     margin-right: 0.5rem;
-    font-family: 'irohamaru-Regular', sans-serif;
+    font-family: sans-serif;
     transition: background-color 0.2s, transform 0.1s;
 }
 
 .tab-btn.active {
-    background-color: #D9E1F0; /* 修改：更深的背景顏色 */
-    font-weight: normal; /* 修改：移除粗體 */
+    background-color: #D9E1F0;
+    font-weight: normal;
 }
 
 .tab-btn:active {
@@ -51,7 +51,7 @@
 
 .right-tab-buttons {
     display: flex;
-    margin-right: -1px; /* 修改：右側按鈕往右移動15px (從8px改為-7px) */
+    margin-right: -1px;
 }
 
 .right-tab-buttons .tab-btn {
@@ -61,7 +61,7 @@
 
 /* 使用須知按鈕樣式 */
 .terms-btn {
-    font-family: 'irohamaru-Regular', sans-serif;
+    font-family: sans-serif;
     padding: 8px 20px;
     border-radius: 5px;
     font-size: 1rem;
@@ -80,13 +80,12 @@
 }
 
 /* 計算器內容區域 */
-/* 1. 添加左右邊距，讓內容不會完全貼著邊緣 */
 .calculator-content {
     padding-left: 16px;
     padding-right: 16px;
-    max-width: 80%; /* 新增：限制內容區域的最大寬度 */
-    margin-left: auto; /* 新增：水平置中 */
-    margin-right: auto; /* 新增：水平置中 */
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .calculator-content.hidden {
@@ -123,7 +122,7 @@
     border-radius: 4px;
     background-color: #f9f9f9;
     font-size: 1rem;
-    color: #666; /* 修改：顏色從藍色改為灰色 */
+    color: #666;
     font-weight: normal;
 }
 
@@ -147,11 +146,11 @@
     border-radius: 4px;
     background-color: #f9f9f9;
     font-size: 1rem;
-    color: #666; /* 修改：顏色從藍色改為灰色 */
+    color: #666;
     font-weight: normal;
 }
 
-/* 數據區域分隔線 - 修改：細化分隔線並向下移動1px */
+/* 數據區域分隔線 */
 .data-section-divider {
     height: 1px;
     background-color: #E6E6E6;
@@ -159,35 +158,19 @@
     margin-top: 1px;
 }
 
-/* 輸入欄位布局 - 新的兩欄布局 */
+/* 輸入欄位布局 - 兩欄布局 */
 .content-layout {
     display: flex;
-    gap: 2rem; /* 修改：縮小間隔從3rem到2rem */
-    margin-bottom: 2rem;
-    margin-top: 1px; /* 添加：向下移動1px */
-}
-
-.left-section {
-    flex: 1;
-}
-
-.right-section {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-/* 輸入欄位和結果區布局 */
-.input-columns {
-    display: flex;
     gap: 2rem;
+    margin-bottom: 2rem;
+    margin-top: 1px;
 }
 
-.left-column, .right-column {
+.left-section, .right-section {
     flex: 1;
 }
 
-/* 輸入組件樣式 */
+/* 輸入欄位樣式 */
 .input-group {
     margin-bottom: 1.2rem;
     display: flex;
@@ -232,6 +215,11 @@
 .uniform-input {
     width: 100px !important;
     text-align: right;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #F9F9F9;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 select {
@@ -245,60 +233,13 @@ select {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-/* 結果區域 - 修改：從右上方移到中間下方 */
-.result-section {
-    border: 1px solid #E6E6E6;
-    border-radius: 8px;
-    padding: 1rem;
-    margin-bottom: 2rem;
-    background-color: #F9F9F9;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    /* 移除了原來的位置指定 */
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    clear: both;
-    order: 3; /* 使用 order 確保結果區域在支撐淨高之後 */
-}
-
-.check-title {
-    display: block;
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    font-weight: bold;
-    color: #666;
-    text-align: left;
-    padding-left: 20px; /* 標題稍微偏左 */
-}
-
-.check-formula {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* 公式置中 */
-    gap: 1rem;
-    font-size: 1rem;
-}
-
-.formula-value {
-    padding: 0.5rem 1rem;
-    background-color: #F2F2F2;
-    border-radius: 4px;
-}
-
-.formula-operator {
-    font-weight: bold;
-}
-
-.unit-label {
-    font-size: 0.8rem;
-    color: #666;
-    margin-left: 0.5rem; /* 單位靠近數值 */
-}
-
 /* 管斷面示意圖 */
 .tube-image-container {
-    margin: 1.5rem 0;
+    margin: 2rem auto;
     text-align: center;
+    width: 80%;
+    max-width: 300px;
+    position: relative;
 }
 
 .tube-image {
@@ -307,33 +248,33 @@ select {
 }
 
 .tube-image img {
-    width: 180px;
+    width: 100%;
     height: auto;
+}
+
+.tube-dimension-label {
+    position: absolute;
+    top: 10%;
+    right: 15%;
+    font-size: 1rem;
+    color: #333;
 }
 
 .tube-dimension {
     position: absolute;
-    color: #FF3333;
-    font-size: 0.8rem;
+    color: #996633;
+    font-size: 1rem;
 }
 
-.b-dimension {
+.diameter-dimension {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.c-dimension {
-    left: 24%;
+.thickness-dimension {
     top: 50%;
-}
-
-.tube-dimension-label {
-    position: absolute;
-    right: 15%;
-    top: 15%;
-    color: #333;
-    font-size: 0.8rem;
+    left: 22%;
 }
 
 .unit-label-bottom {
@@ -345,14 +286,130 @@ select {
 
 /* 支撐結構示意圖 */
 .support-image-container {
-    margin: 1rem 0;
+    margin: 2rem auto;
     text-align: center;
-    order: 1; /* 使用 order 重新排序 */
+    width: 80%;
+    max-width: 400px;
+    position: relative;
 }
 
 .support-image-container img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
+}
+
+.support-dimension {
+    position: absolute;
+    color: #996633;
+    font-size: 1rem;
+}
+
+.load-dimension {
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.height-dimension {
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.spacing-dimension {
+    top: 50%;
+    left: 15%;
+    transform: translateY(-50%);
+}
+
+.spacing-unit {
+    width: 80%;
+    margin: 1.5rem auto;
+    text-align: center;
+    padding: 1rem;
+    background-color: rgba(242, 242, 242, 0.5);
+    border-radius: 8px;
+}
+
+.spacing-label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.spacing-inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.spacing-inputs span {
+    padding: 0.5rem 1rem;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.spacing-multiply {
+    font-weight: bold;
+}
+
+.spacing-unit-label {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* 檢核結果框 */
+.result-section {
+    border: 1px solid #E6E6E6;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 2rem auto;
+    background-color: #F9F9F9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.check-title {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: #666;
+    text-align: center;
+}
+
+.check-formula {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1rem;
+}
+
+.formula-value {
+    padding: 0.5rem 1rem;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    min-width: 60px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.formula-operator {
+    font-weight: bold;
+}
+
+.unit-label {
+    font-size: 0.8rem;
+    color: #666;
+    margin-left: 0.5rem;
 }
 
 /* 即將推出的頁面提示 */
@@ -363,7 +420,7 @@ select {
     font-size: 1.2rem;
 }
 
-/* 移動版選單樣式 - 修改為與首頁一致 */
+/* 移動版選單樣式 */
 .mobile-menu {
     display: none;
     position: absolute;
@@ -380,7 +437,7 @@ select {
 .mobile-menu.show {
     display: flex;
     flex-direction: column;
-    gap: 10px; /* 使用與首頁相同的間距方式 */
+    gap: 10px;
 }
 
 .mobile-menu button, .mobile-menu a {
@@ -388,27 +445,25 @@ select {
     text-align: center;
     padding: 8px 15px;
     border-radius: 5px;
-    font-family: 'irohamaru-Regular', sans-serif;
+    font-family: sans-serif;
     font-size: 1rem;
     border: none;
     cursor: pointer;
     background-color: #f5f5f5;
     transition: all 0.2s ease;
-    color: #333; /* 基本顏色 */
+    color: #333;
     text-decoration: none;
-    /* 移除 margin-bottom */
 }
 
-/* 添加訂閱按鈕特定樣式 */
 .mobile-menu .subscribe-btn {
-    color: #BC832B; /* 與首頁一致的金色 */
+    color: #BC832B;
 }
 
 .mobile-menu button:hover, .mobile-menu a:hover {
     background-color: #ebebeb;
 }
 
-/* 漢堡選單按鈕樣式 - 更新為與首頁一致 */
+/* 漢堡選單按鈕樣式 */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -431,7 +486,6 @@ select {
     transition: all 0.3s ease-in-out;
 }
 
-/* 修改轉換為 ✕ 時的樣式 */
 .menu-toggle.active .bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
 }
@@ -444,34 +498,39 @@ select {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-/* 統一輸入框樣式並添加陰影 */
-.uniform-input, input[type="number"], select, .mobile-type-dropdown, .mobile-standard-dropdown {
-    background-color: #f9f9f9;
-    border: none;
-    border-radius: 4px;
-    padding: 8px 12px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    margin: 2px 0;
+/* 彈出視窗樣式 */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
 }
 
-.uniform-input, input[type="number"] {
-    width: 100px !important;
-    text-align: right;
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 80%;
+    width: 400px;
 }
 
-/* 下拉選單樣式統一 */
-select, .mobile-type-dropdown, .mobile-standard-dropdown {
-    color: #666;
-    font-weight: normal;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23666' viewBox='0 0 12 12'%3E%3Cpath d='M6 9L1 4h10z'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 8px center;
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
 }
 
-/* 保持響應式設計部分不變 */
+/* 響應式設計 */
 @media (max-width: 992px) {
     .content-layout {
         flex-direction: column;
@@ -488,38 +547,34 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
     .mobile-dropdown-wrapper {
         display: flex;
         justify-content: space-between;
+        margin-bottom: 1rem;
     }
     
-    .mobile-type-section {
+    .mobile-type-section, .mobile-standard-section {
         flex: 1;
-        margin-right: 0.5rem;
+        padding: 0 0.5rem;
+        border: none;
     }
     
-    .mobile-standard-section {
-        flex: 1;
-        margin-left: 0.5rem;
-    }
-    
-    /* 顯示漢堡選單按鈕 */
     .menu-toggle {
         display: flex;
     }
     
-    /* 在響應式設計下，重置 order 屬性 */
-    .result-section, .support-image-container {
-        order: unset;
+    .calculator-content {
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+    
+    .tube-image-container, .support-image-container {
+        width: 90%;
+    }
+    
+    .result-section {
+        width: 90%;
     }
 }
 
 @media (max-width: 768px) {
-    .input-columns {
-        flex-direction: column;
-    }
-    
-    .tube-image img {
-        width: 150px;
-    }
-    
     .input-group {
         flex-direction: column;
         align-items: flex-start;
@@ -534,44 +589,28 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
         width: 100%;
     }
     
-    /* 確保在較小螢幕上也有適當的邊距 */
-    .calculator-content {
-        padding-left: 20px;
-        padding-right: 20px;
+    .check-formula {
+        flex-direction: row;
     }
     
-    /* 小型設備上縮小漢堡選單 */
-    .menu-toggle {
-        width: 22px;
-        height: 16px;
+    .mobile-dropdown-wrapper {
+        flex-direction: row;
     }
     
-    .menu-toggle .bar {
-        height: 2px;
-    }
-    
-    .menu-toggle.active .bar:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
-    }
-    
-    .menu-toggle.active .bar:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
-    }
-    
-    /* 小屏幕上結果區域的寬度 */
-    .result-section {
-        width: 100%;
+    .mobile-type-section, .mobile-standard-section {
+        padding: 0 0.25rem;
     }
 }
 
 @media (max-width: 480px) {
-    .check-formula {
-        flex-direction: column;
-        gap: 0.5rem;
+    .mobile-dropdown-wrapper {
+        flex-direction: row;
     }
     
-    .formula-value, .formula-operator {
-        width: 100%;
-        text-align: center;
+    .support-dimension {
+        font-size: 0.9rem;
     }
-}
+    
+    .formula-value {
+        min-width: 50px;
+        padding: 0.5rem;
