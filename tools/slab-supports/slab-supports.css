@@ -84,6 +84,9 @@
 .calculator-content {
     padding-left: 16px;
     padding-right: 16px;
+    max-width: 80%; /* 新增：限制內容區域的最大寬度 */
+    margin-left: auto; /* 新增：水平置中 */
+    margin-right: auto; /* 新增：水平置中 */
 }
 
 .calculator-content.hidden {
@@ -159,7 +162,7 @@
 /* 輸入欄位布局 - 新的兩欄布局 */
 .content-layout {
     display: flex;
-    gap: 3rem;
+    gap: 2rem; /* 修改：縮小間隔從3rem到2rem */
     margin-bottom: 2rem;
     margin-top: 1px; /* 添加：向下移動1px */
 }
