@@ -590,7 +590,7 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
         width: 55%; /* 調整輸入框容器寬度 */
         display: flex;
         justify-content: flex-end; /* 內容靠右對齊 */
-        padding-right: 10px; /* 減少右側內邊距 */
+        padding-right: 4px; /* 減少右側內邊距 */
     }
     
     /* 輸入框本身靠右但縮短寬度 */
@@ -602,8 +602,8 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
     #work-load,
     #plate-thickness,
     #support-height {
-        width: 75px !important; /* 縮短寬度 */
-        margin-right: 3px; /* 減少輸入框和單位間距 */
+        width: 100px !important; /* 縮短寬度 */
+        margin-right: 2px; /* 減少輸入框和單位間距 */
         padding: 6px 8px;
     }
     
