@@ -338,7 +338,7 @@ select {
 }
 
 .unit-label {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     color: #666;
     margin-left: 0.5rem; /* 單位靠近數值 */
 }
@@ -361,19 +361,19 @@ select {
 
 .tube-dimension {
     position: absolute;
-    color: #FF3333;
+    color: #5c3c22;
     font-size: 0.8rem;
 }
 
 .b-dimension {
-    top: 50%;
-    left: 50%;
+    top: 60%;
+    left: 30%;
     transform: translate(-50%, -50%);
 }
 
 .c-dimension {
-    left: 24%;
-    top: 50%;
+    left: 0%;
+    top: 30%;
 }
 
 .tube-dimension-label {
@@ -385,7 +385,7 @@ select {
 }
 
 .unit-label-bottom {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     color: #666;
     text-align: center;
     margin-top: 0.5rem;
@@ -401,6 +401,45 @@ select {
 .support-image-container img {
     max-width: 100%;
     height: auto;
+}
+
+/* 新增：支撐示意圖樣式 */
+.support-image {
+    position: relative;
+    display: inline-block;
+}
+
+/* 支撐結構示意圖上的數值標示 */
+.work-load-display, .support-height-display, .beam-interval-display {
+    position: absolute;
+    color: #B89B76; /* 咖啡色，與圖片相符 */
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.work-load-display {
+    top: 8%;
+    left: 40%;
+    transform: translateX(-50%);
+}
+
+.support-height-display {
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.beam-interval-display {
+    bottom: 35%;
+    left: 10%;
+}
+
+.support-unit-label {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 0.7rem;
+    color: #333;
 }
 
 /* 即將推出的頁面提示 */
@@ -732,7 +771,7 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
     }
     
     .unit-label {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         color: #666;
         margin-left: 0; /* 移除左邊距 */
         margin-top: 0.5rem; /* 增加上邊距 */
@@ -854,4 +893,18 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
         font-size: 0.7rem;
         margin-top: 0.4rem;
     }
+}
+
+/* 修改替換文字（Placeholder）顏色 - 使用淺灰色 */
+::placeholder {
+  color: #d6d6d6; /* 淺灰色 */
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: #d6d6d6;
+}
+
+::-ms-input-placeholder {
+  color: #d6d6d6;
 }
