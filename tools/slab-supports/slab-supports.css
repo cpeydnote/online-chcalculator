@@ -375,7 +375,7 @@ select {
 
 /* 恢復管厚位置 */
 .c-dimension {
-    left: 10%;
+    left: -1%;
     top: 35%;
 }
 
@@ -446,7 +446,7 @@ select {
     position: absolute;
     bottom: 20%;
     left: auto; /* 取消左側定位 */
-    right: 98%; /* 設定右側定位 */
+    right: 95%; /* 設定右側定位 */
     transform: translateX(100%); /* 向右移動自身寬度的100% */
     text-align: right; /* 文字靠右對齊 */
     white-space: nowrap; /* 防止文字換行 */
