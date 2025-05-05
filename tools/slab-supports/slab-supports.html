@@ -230,10 +230,139 @@
             </div>
             
             <div class="calculator-content hidden" id="rc-beam-content">
-                <div class="coming-soon">
-                    <p>RC梁功能正在開發中，敬請期待！</p>
+    <div class="content-layout">
+        <!-- 左側欄 -->
+        <div class="left-section">
+            <div class="input-group">
+                <label for="steel-pipe-spec-beam">鋼管規格</label>
+                <div class="input-field-container">
+                    <select id="steel-pipe-spec-beam">
+                        <option value="" disabled selected>請選擇規格</option>
+                        <option value="A36">CNS 5644_A36</option>
+                        <option value="STK500">CNS 5644_STK500</option>
+                    </select>
                 </div>
             </div>
+            
+            <div class="input-group">
+                <label for="spec-a-beam">降伏強度 F<sub>y</sub></label>
+                <div class="input-field-container">
+                    <div class="input-with-unit">
+                        <span class="value-display uniform-input" id="spec-a-beam"></span>
+                    </div>
+                    <span class="unit">tf/cm<sup>2</sup></span>
+                </div>
+            </div>
+            
+            <div class="input-group">
+                <label for="spec-b-beam">外徑 r</label>
+                <div class="input-field-container">
+                    <div class="input-with-unit">
+                        <span class="value-display uniform-input" id="spec-b-beam"></span>
+                    </div>
+                    <span class="unit">cm</span>
+                </div>
+            </div>
+            
+            <div class="input-group">
+                <label for="spec-c-beam">管厚 t</label>
+                <div class="input-field-container">
+                    <div class="input-with-unit">
+                        <span class="value-display uniform-input" id="spec-c-beam"></span>
+                    </div>
+                    <span class="unit">cm</span>
+                </div>
+            </div>
+            
+            <div class="tube-image-container">
+                <div class="tube-image">
+                    <img src="../../images/G. Tube Image.png" alt="管斷面示意圖">
+                    <div class="tube-dimension b-dimension" id="b-dimension-value-beam"></div>
+                    <div class="tube-dimension c-dimension" id="c-dimension-value-beam"></div>
+                    <div class="tube-dimension-label" id="material-label-beam"></div>
+                </div>
+                <div class="unit-label-bottom">單位：cm</div>
+            </div>
+            
+            <div class="input-group">
+                <label for="test-strength-beam">(選)試驗強度 P<sub>test</sub></label>
+                <div class="input-field-container">
+                    <div class="input-with-unit">
+                        <input type="text" id="test-strength-beam" class="uniform-input" placeholder="請輸入數值">
+                    </div>
+                    <span class="unit">tf</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 右側欄 -->
+        <div class="right-section">
+            <!-- 右側輸入欄，注意這裡將大引間隔改為負擔支數 -->
+            <div class="input-group">
+                <label for="beam-support-count">負擔支數</label>
+                <div class="input-field-container">
+                    <div class="input-with-unit">
+                        <input type="text" id="beam-support-count" class="uniform-input" placeholder="請輸入數值">
+                    </div>
+                    <span class="unit">支</span>
+                </div>
+            </div>
+            
+            <div class="input-group">
+                <label for="work-load-beam">施工活載重</label>
+                <div class="input-field-container">
+                    <div class="input-with-unit">
+                        <input type="text" id="work-load-beam" class="uniform-input" placeholder="請輸入數值">
+                    </div>
+                    <span class="unit">kgf/cm<sup>2</sup></span>
+                </div>
+            </div>
+            
+            <div class="input-group">
+                <label for="plate-thickness-beam">板厚</label>
+                <div class="input-field-container">
+                    <div class="input-with-unit">
+                        <input type="text" id="plate-thickness-beam" class="uniform-input" placeholder="請輸入數值">
+                    </div>
+                    <span class="unit">cm</span>
+                </div>
+            </div>
+            
+            <div class="input-group">
+                <label for="support-height-beam">支撐淨高</label>
+                <div class="input-field-container">
+                    <div class="input-with-unit">
+                        <input type="text" id="support-height-beam" class="uniform-input" placeholder="請輸入數值">
+                    </div>
+                    <span class="unit">cm</span>
+                </div>
+            </div>
+            
+            <!-- 支撐結構示意圖 - 注意這裡使用G. Support_Beam.png -->
+            <div class="support-image-container">
+                <div class="support-image">
+                    <img src="../../images/G. Support_Beam.png" alt="梁支撐示意圖">
+                    <div class="work-load-display" id="work-load-display-beam"></div>
+                    <div class="support-height-display" id="support-height-display-beam"></div>
+                    <div class="beam-interval-display" id="beam-support-count-display"></div>
+                    <div class="plate-thickness-display" id="plate-thickness-display-beam"></div>
+                </div>
+                <div class="support-unit-label">單位：cm</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 檢核結果框 -->
+    <div class="result-section">
+        <span class="check-title">負擔支數 & 支撐間距</span>
+        <div class="check-formula">
+            <span class="formula-value" id="value-e-beam"></span>
+            <span class="formula-operator">×</span>
+            <span class="formula-value" id="value-f-beam"></span>
+            <span class="unit-label">單位：cm</span>
+        </div>
+    </div>
+</div>
             
             <div class="calculator-content hidden" id="steel-plate-content">
                 <div class="coming-soon">
