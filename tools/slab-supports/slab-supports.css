@@ -396,7 +396,7 @@ select {
     text-align: center; /* 保持文字居中對齊 */
     margin-top: 0.5rem;
     margin-left: auto; /* 自動左邊距 */
-    margin-right: 5px; /* 固定右邊距，使整體向右偏移 */
+    margin-right: 2px; /* 固定右邊距，使整體向右偏移 */
     width: 95%; /* 設定寬度，確保有足夠空間顯示文字 */
 }
 
@@ -687,7 +687,7 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
     .unit {
         font-size: 0.8rem;
         text-align: right;
-        min-width: 50px; /* 增加最小寬度，確保所有單位對齊 */
+        min-width: 60px; /* 增加最小寬度，確保所有單位對齊 */
         display: inline-block;
         position: absolute; /* 使用絕對定位 */
         right: 0; /* 靠右對齊 */
@@ -695,12 +695,12 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
     
     /* 調整輸入框容器以適應絕對定位的單位 */
     .input-field-container {
-        width: 55%;
-        display: flex;
-        justify-content: flex-end;
-        padding-right: 50px; /* 為單位預留空間 */
-        position: relative; /* 作為單位的定位上下文 */
-    }
+    width: 65%; /* 從55%增加到65% */
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 60px; /* 從50px增加到60px */
+    position: relative;
+}
     
     /* 輸入框本身靠右但縮短寬度 */
     .uniform-input, 
@@ -810,6 +810,12 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
         text-align: center; /* 居中對齊 */
         order: 3; /* 確保它在公式後面 */
     }
+    .mobile-type-dropdown,
+.mobile-standard-dropdown,
+select {
+    font-size: 0.85rem; /* 從原本的 1rem 縮小 */
+    padding: 0.7rem; /* 稍微調整內邊距 */
+}
     
     /* 小型設備上縮小漢堡選單 */
     .menu-toggle {
@@ -838,14 +844,15 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
     /* 調整單位對齊 - 小螢幕版本 */
     .unit {
         font-size: 0.75rem;
-        min-width: 45px; /* 小螢幕上稍微縮小單位寬度 */
+        min-width: 55px; /* 小螢幕上稍微縮小單位寬度 */
         right: 0;
     }
     
     /* 調整輸入框容器以適應絕對定位的單位 */
     .input-field-container {
-        padding-right: 45px; /* 為單位預留空間 - 稍微減少 */
-    }
+    width: 70%; /* 增加寬度 */
+    padding-right: 60px; /* 增加右側內邊距 */
+}
     
     /* 更新小螢幕上的輸入框樣式 */
     .uniform-input, 
@@ -924,6 +931,12 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
         font-size: 0.7rem;
         margin-top: 0.4rem;
     }
+    .mobile-type-dropdown,
+.mobile-standard-dropdown,
+select {
+    font-size: 0.8rem;
+    padding: 0.65rem;
+}
 }
 
 /* 修改替換文字（Placeholder）顏色 - 使用淺灰色 */
