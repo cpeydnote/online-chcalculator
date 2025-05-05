@@ -392,8 +392,11 @@ select {
 .unit-label-bottom {
     font-size: 0.7rem;
     color: #666;
-    text-align: center;
+    text-align: center; /* 保持文字居中對齊 */
     margin-top: 0.5rem;
+    margin-left: auto; /* 自動左邊距 */
+    margin-right: 20px; /* 固定右邊距，使整體向右偏移 */
+    width: 95%; /* 設定寬度，確保有足夠空間顯示文字 */
 }
 
 /* 支撐結構示意圖 */
