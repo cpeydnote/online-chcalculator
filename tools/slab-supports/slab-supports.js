@@ -401,33 +401,30 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // 函數：更新支撐結構示意圖上的數值
-    function updateSupportImage() {
-        // 在HTML中需要添加以下元素：
-        // 1. 用於顯示大引間隔的元素，ID為beam-interval-display
-        // 2. 用於顯示支撐淨高的元素，ID為support-height-display
-        
-        // 尋找顯示大引間隔的元素
-        const beamIntervalDisplay = document.querySelector('.support-image-container .beam-interval-display');
-        if (beamIntervalDisplay) {
-            if (beamInterval && beamInterval.value) {
-                beamIntervalDisplay.textContent = beamInterval.value;
-                beamIntervalDisplay.style.display = 'block';
-            } else {
-                beamIntervalDisplay.style.display = 'none';
-            }
+function updateSupportImage() {
+    // 尋找顯示大引間隔的元素
+    const beamIntervalDisplay = document.querySelector('.support-image-container .beam-interval-display');
+    if (beamIntervalDisplay) {
+        if (beamInterval && beamInterval.value) {
+            beamIntervalDisplay.textContent = beamInterval.value;
+            beamIntervalDisplay.style.display = 'block';
+        } else {
+            beamIntervalDisplay.style.display = 'none';
         }
-        
-        // 尋找顯示支撐淨高的元素
-        const supportHeightDisplay = document.querySelector('.support-image-container .support-height-display');
-        if (supportHeightDisplay) {
-            if (supportHeight && supportHeight.value) {
-                supportHeightDisplay.textContent = supportHeight.value;
-                supportHeightDisplay.style.display = 'block';
-            } else {
-                supportHeightDisplay.style.display = 'none';
-            }
+    }
+    
+    // 尋找顯示支撐淨高的元素
+    const supportHeightDisplay = document.querySelector('.support-image-container .support-height-display');
+    if (supportHeightDisplay) {
+        if (supportHeight && supportHeight.value) {
+            supportHeightDisplay.textContent = supportHeight.value;
+            supportHeightDisplay.style.display = 'block';
+        } else {
+            supportHeightDisplay.style.display = 'none';
         }
-        // 新增：尋找顯示施工活載重的元素
+    }
+    
+    // 尋找顯示施工活載重的元素
     const workLoadDisplay = document.querySelector('.support-image-container .work-load-display');
     if (workLoadDisplay) {
         if (workLoad && workLoad.value) {
@@ -437,7 +434,18 @@ document.addEventListener('DOMContentLoaded', function() {
             workLoadDisplay.style.display = 'none';
         }
     }
+    
+    // 新增：尋找顯示板厚的元素
+    const plateThicknessDisplay = document.querySelector('.support-image-container .plate-thickness-display');
+    if (plateThicknessDisplay) {
+        if (plateThickness && plateThickness.value) {
+            plateThicknessDisplay.textContent = plateThickness.value;
+            plateThicknessDisplay.style.display = 'block';
+        } else {
+            plateThicknessDisplay.style.display = 'none';
+        }
     }
+}
     
     // 函數：切換主要內容區域
     function setActiveContent(contentId) {
