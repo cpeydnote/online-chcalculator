@@ -427,6 +427,15 @@ select {
     transform: translateX(-50%);
 }
 
+.plate-thickness-display {
+    position: absolute;
+    top: 15%;
+    right: 10%;
+    color: #B89B76;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
 .support-height-display {
     top: 55%;
     left: 50%;
