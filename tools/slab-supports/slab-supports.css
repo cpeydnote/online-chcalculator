@@ -379,13 +379,14 @@ select {
     top: 35%;
 }
 
-/* 恢復材料標籤位置 */
+/* 修改材料標籤位置，使其向右延伸 */
 .tube-dimension-label {
     position: absolute;
-    right: 0%;
+    left: 0%; /* 改用左側定位 */
     top: 0%;
     color: #333;
     font-size: 0.8rem;
+    text-align: left; /* 確保文字靠左對齊 */
 }
 
 .unit-label-bottom {
