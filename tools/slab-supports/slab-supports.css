@@ -430,9 +430,9 @@ select {
 
 .plate-thickness-display {
     position: absolute;
-    top: 25%;
+    top: 22%;
     right: auto; /* 移除右側定位 */
-    left: 3%; /* 添加左側定位 */
+    left: 95%; /* 添加左側定位 */
     color: #B89B76;
     font-weight: bold;
     font-size: 0.9rem;
@@ -450,7 +450,7 @@ select {
     position: absolute;
     bottom: 20%;
     left: auto; /* 取消左側定位 */
-    right: 99%; /* 保留原本的右側定位 */
+    right: 96%; /* 保留原本的右側定位 */
     text-align: right; /* 確保文字靠右對齊 */
     white-space: nowrap; /* 防止文字換行 */
     color: #B89B76;
