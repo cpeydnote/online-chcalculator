@@ -34,8 +34,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.menu-toggle');
     const mobileMenu = document.querySelector('.mobile-menu');
     
-    // 設定初始值
-    updatePipeSpecValues('A36');
+    // 設定初始值為空白（不預先選擇規格）
+    updatePipeSpecValues('');
     
     // 設置輸入欄位預設提示文字
     setPlaceholders();
@@ -110,9 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 鋼管規格選擇變更事件
     if (steelPipeSpec) {
         steelPipeSpec.addEventListener('change', function() {
-            if (this.value) {
-                updatePipeSpecValues(this.value);
-            }
+            updatePipeSpecValues(this.value);
         });
     }
     
@@ -306,10 +304,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const specBElement = document.getElementById('spec-b');
         const specCElement = document.getElementById('spec-c');
         
-        // 更新規格數值
-        if (specAElement) specAElement.textContent = specA || '請選擇規格';
-        if (specBElement) specBElement.textContent = specB || '請選擇規格';
-        if (specCElement) specCElement.textContent = specC || '請選擇規格';
+        // 更新規格數值 - 直接顯示值或空白，移除「請選擇規格」預設文字
+        if (specAElement) specAElement.textContent = specA;
+        if (specBElement) specBElement.textContent = specB;
+        if (specCElement) specCElement.textContent = specC;
         
         // 更新 G. Tube 圖上的數值
         if (bDimensionValue) {
@@ -401,51 +399,51 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // 函數：更新支撐結構示意圖上的數值
-function updateSupportImage() {
-    // 尋找顯示大引間隔的元素
-    const beamIntervalDisplay = document.querySelector('.support-image-container .beam-interval-display');
-    if (beamIntervalDisplay) {
-        if (beamInterval && beamInterval.value) {
-            beamIntervalDisplay.textContent = beamInterval.value;
-            beamIntervalDisplay.style.display = 'block';
-        } else {
-            beamIntervalDisplay.style.display = 'none';
+    function updateSupportImage() {
+        // 尋找顯示大引間隔的元素
+        const beamIntervalDisplay = document.querySelector('.support-image-container .beam-interval-display');
+        if (beamIntervalDisplay) {
+            if (beamInterval && beamInterval.value) {
+                beamIntervalDisplay.textContent = beamInterval.value;
+                beamIntervalDisplay.style.display = 'block';
+            } else {
+                beamIntervalDisplay.style.display = 'none';
+            }
+        }
+        
+        // 尋找顯示支撐淨高的元素
+        const supportHeightDisplay = document.querySelector('.support-image-container .support-height-display');
+        if (supportHeightDisplay) {
+            if (supportHeight && supportHeight.value) {
+                supportHeightDisplay.textContent = supportHeight.value;
+                supportHeightDisplay.style.display = 'block';
+            } else {
+                supportHeightDisplay.style.display = 'none';
+            }
+        }
+        
+        // 尋找顯示施工活載重的元素
+        const workLoadDisplay = document.querySelector('.support-image-container .work-load-display');
+        if (workLoadDisplay) {
+            if (workLoad && workLoad.value) {
+                workLoadDisplay.textContent = workLoad.value + ' kgf/cm²';
+                workLoadDisplay.style.display = 'block';
+            } else {
+                workLoadDisplay.style.display = 'none';
+            }
+        }
+        
+        // 新增：尋找顯示板厚的元素
+        const plateThicknessDisplay = document.querySelector('.support-image-container .plate-thickness-display');
+        if (plateThicknessDisplay) {
+            if (plateThickness && plateThickness.value) {
+                plateThicknessDisplay.textContent = plateThickness.value;
+                plateThicknessDisplay.style.display = 'block';
+            } else {
+                plateThicknessDisplay.style.display = 'none';
+            }
         }
     }
-    
-    // 尋找顯示支撐淨高的元素
-    const supportHeightDisplay = document.querySelector('.support-image-container .support-height-display');
-    if (supportHeightDisplay) {
-        if (supportHeight && supportHeight.value) {
-            supportHeightDisplay.textContent = supportHeight.value;
-            supportHeightDisplay.style.display = 'block';
-        } else {
-            supportHeightDisplay.style.display = 'none';
-        }
-    }
-    
-    // 尋找顯示施工活載重的元素
-    const workLoadDisplay = document.querySelector('.support-image-container .work-load-display');
-    if (workLoadDisplay) {
-        if (workLoad && workLoad.value) {
-            workLoadDisplay.textContent = workLoad.value + ' kgf/cm²';
-            workLoadDisplay.style.display = 'block';
-        } else {
-            workLoadDisplay.style.display = 'none';
-        }
-    }
-    
-    // 新增：尋找顯示板厚的元素
-    const plateThicknessDisplay = document.querySelector('.support-image-container .plate-thickness-display');
-    if (plateThicknessDisplay) {
-        if (plateThickness && plateThickness.value) {
-            plateThicknessDisplay.textContent = plateThickness.value;
-            plateThicknessDisplay.style.display = 'block';
-        } else {
-            plateThicknessDisplay.style.display = 'none';
-        }
-    }
-}
     
     // 函數：切換主要內容區域
     function setActiveContent(contentId) {
