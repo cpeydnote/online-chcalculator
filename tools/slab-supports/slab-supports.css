@@ -382,7 +382,7 @@ select {
 /* 修改材料標籤位置，使其向右延伸 */
 .tube-dimension-label {
     position: absolute;
-    left: 0%; /* 改用左側定位 */
+    left: 30%; /* 改用左側定位 */
     top: 0%;
     color: #333;
     font-size: 0.8rem;
@@ -936,6 +936,10 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
   color: #d6d6d6;
 }
 /* 修改鋼管規格下拉選單預設顯示文字的顏色 */
+#steel-pipe-spec option:first-child {
+    color: #d6d6d6; /* 更淺的灰色，與 placeholder 一致 */
+}
+
 #steel-pipe-spec {
     color: #d6d6d6; /* 當顯示預設「請選擇規格」時的顏色 */
 }
@@ -945,9 +949,15 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
     color: #666; /* 恢復到一般文字顏色 */
 }
 
+/* 確保空白的數值欄位也有適當的顯示效果 */
 .value-display.uniform-input:empty {
-    min-height: 20px; /* 設定最小高度 */
+    min-height: 40px !important; /* 與其他輸入框一致的高度 */
+    height: 40px !important; /* 強制高度 */
     background-color: #f9f9f9; /* 與其他輸入框相同的背景色 */
     display: inline-block; /* 確保空元素也能顯示 */
     width: 160px !important; /* 與其他輸入框相同的寬度 */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* 與其他輸入框相同的陰影 */
+    border-radius: 4px; /* 與其他輸入框相同的圓角 */
+    margin: 2px 0; /* 與其他輸入框相同的外邊距 */
+    box-sizing: border-box; /* 確保 padding 不會增加元素總高度 */
 }
