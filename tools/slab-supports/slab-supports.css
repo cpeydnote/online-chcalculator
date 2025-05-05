@@ -329,7 +329,7 @@ select {
     min-height: 40px; /* 新增：確保最小高度與輸入框一致 */
     display: flex; /* 新增：使用 flex 布局 */
     align-items: center; /* 新增：垂直居中 */
-    justify-content: flex-end; /* 新增：右對齊內容 */
+    justify-content: center; /* 新增：對齊內容 */
     box-sizing: border-box; /* 新增：確保 padding 不會增加元素總高度 */
 }
 
@@ -771,7 +771,7 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
         padding: 0.5rem 0.8rem;
         min-width: 90px; /* 縮小寬度 */
         width: 90px !important; /* 強制設定寬度 */
-        text-align: right; /* 改為右對齊，與輸入框一致 */
+        text-align: center; /* 改為右對齊，與輸入框一致 */
         font-size: 0.9rem; /* 與輸入框字體大小一致 */
         background-color: #F2F2F2;
         border-radius: 4px;
@@ -779,7 +779,7 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
         min-height: 40px; /* 確保最小高度與輸入框一致 */
         display: flex; /* 使用 flex 布局 */
         align-items: center; /* 垂直居中 */
-        justify-content: flex-end; /* 右對齊內容 */
+        justify-content: center; /* 右對齊內容 */
         box-sizing: border-box; /* 確保 padding 不會增加元素總高度 */
     }
     
@@ -887,14 +887,14 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
         padding: 0.4rem 0.6rem;
         min-width: 80px;
         width: 80px !important;
-        text-align: right;
+        text-align: center;
         font-size: 0.9rem;
         background-color: #F2F2F2;
         border-radius: 4px;
         min-height: 35px;
         display: flex;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: center;
         box-sizing: border-box;
     }
     
