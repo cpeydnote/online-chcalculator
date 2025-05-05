@@ -596,11 +596,19 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
         margin-right: auto;
     }
     
-    /* 調整單位對齊 */
+    /* 調整單位對齊 - 確保所有單位對齊 */
     .unit {
         text-align: right;
-        min-width: 60px; /* 固定最小寬度 */
+        min-width: 70px; /* 增加最小寬度 */
         display: inline-block;
+        position: absolute; /* 使用絕對定位 */
+        right: 0; /* 統一靠右對齊 */
+    }
+    
+    /* 調整輸入框容器以適應絕對定位的單位 */
+    .input-field-container {
+        position: relative; /* 作為單位的定位上下文 */
+        padding-right: 75px; /* 為單位預留足夠空間 */
     }
     
     /* 使內容區域置中 */
