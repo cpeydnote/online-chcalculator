@@ -382,7 +382,7 @@ select {
 /* 修改材料標籤位置，使其向右延伸 */
 .tube-dimension-label {
     position: absolute;
-    left: 75%; /* 改用左側定位 */
+    left: 85%; /* 改用左側定位 */
     top: 0%;
     color: #333;
     font-size: 0.8rem;
