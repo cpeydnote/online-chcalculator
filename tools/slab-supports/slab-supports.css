@@ -674,6 +674,13 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
         margin-left: auto;
         margin-right: auto;
     }
+    /* 專門針對鋼管規格的下拉選單 */
+    #steel-pipe-spec, #steel-pipe-spec-beam {
+        width: 100%; /* 確保寬度撐滿父容器 */
+        padding-right: 30px; /* 增加右側內邊距，為下拉箭頭預留空間 */
+        min-width: 160px; /* 設定最小寬度 */
+    }
+}
     
     .input-columns {
         flex-direction: column;
@@ -878,6 +885,12 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
         font-size: 0.75rem;
         min-width: 55px; /* 小螢幕上稍微縮小單位寬度 */
         right: 0;
+    }
+
+    /* 在小螢幕手機上進一步優化 */
+    #steel-pipe-spec, #steel-pipe-spec-beam {
+        min-width: 140px; /* 調整最小寬度 */
+        padding-right: 25px; /* 調整右側內邊距 */
     }
     
     /* 調整輸入框容器以適應絕對定位的單位 */
