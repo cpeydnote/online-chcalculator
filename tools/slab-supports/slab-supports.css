@@ -344,6 +344,11 @@ select {
 }
 
 /* 管斷面示意圖 */
+.tube-image-container {
+    margin: 1.5rem 0;
+    text-align: center; /* 確保圖片居中 */
+}
+
 .tube-image {
     position: relative;
     display: inline-block;
@@ -354,29 +359,31 @@ select {
     height: auto;
 }
 
+/* 恢復到原始設定 */
 .tube-dimension {
     position: absolute;
-    color: #FF3333;
+    color: #422d12;
     font-size: 0.8rem;
 }
 
+/* 恢復外徑位置 */
 .b-dimension {
-    top: 30%; /* 從 50% 改為 30% */
-    left: 70%; /* 從 50% 改為 70% */
-    transform: none; /* 移除置中轉換 */
-    text-align: left; /* 文字靠左對齊 */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
+/* 恢復管厚位置 */
 .c-dimension {
-    left: 15%; /* 從 24% 改為 15% */
-    top: 60%; /* 從 50% 改為 60% */
-    text-align: left; /* 文字靠左對齊 */
+    left: 24%;
+    top: 50%;
 }
 
+/* 恢復材料標籤位置 */
 .tube-dimension-label {
     position: absolute;
-    right: 10%; /* 從 15% 改為 10% */
-    top: 5%; /* 從 15% 改為 5% */
+    right: 15%;
+    top: 15%;
     color: #333;
     font-size: 0.8rem;
 }
