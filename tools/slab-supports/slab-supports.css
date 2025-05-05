@@ -768,24 +768,36 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
     
     /* 調整支撐結構示意圖上的數值標籤 */
     .beam-interval-display {
-        left: 12%; 
+        left: -15%; 
         right: auto; /* 取消右側定位 */
         font-size: 1rem;
-        top: 50%;
+        top: 65%;
         bottom: auto;
     }
     
     .support-height-display {
         font-size: 1rem;
-        top: 40%;
+        top: 60%;
     }
     
     .work-load-display {
         font-size: 1rem;
-        top: 8%;
-        left: 30%;
+        top: -10%;
+        left: 70%;
     }
-    
+
+    .plate-thickness-display {
+        position: absolute;
+        top: 15%; /* 調整頂部位置 */
+        right: 5%; /* 調整右側位置 */
+        left: auto;
+        color: #B89B76;
+        font-weight: bold;
+        font-size: 0.9rem;
+        text-align: right; /* 文字靠右對齊 */
+        white-space: nowrap; /* 防止文字換行 */
+    }
+}
     /* 結果區域樣式調整 */
     .result-section {
         width: 100%;
