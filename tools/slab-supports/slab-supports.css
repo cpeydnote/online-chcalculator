@@ -943,3 +943,10 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
 #steel-pipe-spec:not([value=""]) {
     color: #666; /* 恢復到一般文字顏色 */
 }
+
+.value-display.uniform-input:empty {
+    min-height: 20px; /* 設定最小高度 */
+    background-color: #f9f9f9; /* 與其他輸入框相同的背景色 */
+    display: inline-block; /* 確保空元素也能顯示 */
+    width: 160px !important; /* 與其他輸入框相同的寬度 */
+}
