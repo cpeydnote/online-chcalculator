@@ -331,6 +331,7 @@ select {
     align-items: center; /* 新增：垂直居中 */
     justify-content: center; /* 新增：對齊內容 */
     box-sizing: border-box; /* 新增：確保 padding 不會增加元素總高度 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* 添加更明顯的陰影 */
 }
 
 .formula-operator {
@@ -774,7 +775,7 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
         order: 5; /* 放在最後 */
         margin-top: 0.5rem;
         border-radius: 6px;
-        background-color: #f2f2f2;
+        background-color: #F9F9F9;
     }
     
     .check-formula {
