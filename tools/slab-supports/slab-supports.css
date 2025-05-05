@@ -368,15 +368,15 @@ select {
 
 /* 恢復外徑位置 */
 .b-dimension {
-    top: 50%;
-    left: 50%;
+    top: 35%;
+    left: 65%;
     transform: translate(-50%, -50%);
 }
 
 /* 恢復管厚位置 */
 .c-dimension {
-    left: 24%;
-    top: 50%;
+    left: 10%;
+    top: 35%;
 }
 
 /* 恢復材料標籤位置 */
