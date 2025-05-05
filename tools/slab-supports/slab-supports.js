@@ -427,6 +427,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 supportHeightDisplay.style.display = 'none';
             }
         }
+        // 新增：尋找顯示施工活載重的元素
+    const workLoadDisplay = document.querySelector('.support-image-container .work-load-display');
+    if (workLoadDisplay) {
+        if (workLoad && workLoad.value) {
+            workLoadDisplay.textContent = workLoad.value + ' kgf/cm²';
+            workLoadDisplay.style.display = 'block';
+        } else {
+            workLoadDisplay.style.display = 'none';
+        }
+    }
     }
     
     // 函數：切換主要內容區域
