@@ -422,18 +422,18 @@ select {
 }
 
 .work-load-display {
-    top: 1%;
+    top: -3%;
     left: 50%;
     transform: translateX(-50%);
 }
 
 .plate-thickness-display {
     position: absolute;
-    top: 15%;
-    right: 10%;
+    top: 20%;
+    right: 2%;
     color: #B89B76;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
 }
 
 .support-height-display {
@@ -443,8 +443,16 @@ select {
 }
 
 .beam-interval-display {
+    position: absolute;
     bottom: 20%;
-    left: 1%;
+    left: auto; /* 取消左側定位 */
+    right: 98%; /* 設定右側定位 */
+    transform: translateX(100%); /* 向右移動自身寬度的100% */
+    text-align: right; /* 文字靠右對齊 */
+    white-space: nowrap; /* 防止文字換行 */
+    color: #B89B76;
+    font-weight: bold;
+    font-size: 0.9rem;
 }
 
 .support-unit-label {
