@@ -395,7 +395,7 @@ select {
     text-align: center; /* 保持文字居中對齊 */
     margin-top: 0.5rem;
     margin-left: auto; /* 自動左邊距 */
-    margin-right: 20px; /* 固定右邊距，使整體向右偏移 */
+    margin-right: 15px; /* 固定右邊距，使整體向右偏移 */
     width: 95%; /* 設定寬度，確保有足夠空間顯示文字 */
 }
 
