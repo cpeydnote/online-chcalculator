@@ -369,13 +369,13 @@ select {
 /* 恢復外徑位置 */
 .b-dimension {
     top: 35%;
-    left: 65%;
+    left: 64%;
     transform: translate(-50%, -50%);
 }
 
 /* 恢復管厚位置 */
 .c-dimension {
-    left: -1%;
+    left: -5%;
     top: 35%;
 }
 
@@ -429,11 +429,14 @@ select {
 
 .plate-thickness-display {
     position: absolute;
-    top: 20%;
-    right: 2%;
+    top: 25%;
+    right: auto; /* 移除右側定位 */
+    left: 3%; /* 添加左側定位 */
     color: #B89B76;
     font-weight: bold;
     font-size: 0.9rem;
+    text-align: left; /* 確保文字靠左對齊 */
+    white-space: nowrap; /* 防止文字換行 */
 }
 
 .support-height-display {
@@ -446,13 +449,13 @@ select {
     position: absolute;
     bottom: 20%;
     left: auto; /* 取消左側定位 */
-    right: 95%; /* 設定右側定位 */
-    transform: translateX(100%); /* 向右移動自身寬度的100% */
-    text-align: right; /* 文字靠右對齊 */
+    right: 99%; /* 保留原本的右側定位 */
+    text-align: right; /* 確保文字靠右對齊 */
     white-space: nowrap; /* 防止文字換行 */
     color: #B89B76;
     font-weight: bold;
     font-size: 0.9rem;
+    min-width: 50px; /* 給予最小寬度 */
 }
 
 .support-unit-label {
@@ -743,9 +746,11 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
     
     /* 調整支撐結構示意圖上的數值標籤 */
     .beam-interval-display {
-        left: 12%;
-        top: 50%;
+        left: 12%; 
+        right: auto; /* 取消右側定位 */
         font-size: 1rem;
+        top: 50%;
+        bottom: auto;
     }
     
     .support-height-display {
