@@ -344,11 +344,6 @@ select {
 }
 
 /* 管斷面示意圖 */
-.tube-image-container {
-    margin: 1.5rem 0;
-    text-align: center;
-}
-
 .tube-image {
     position: relative;
     display: inline-block;
@@ -361,25 +356,27 @@ select {
 
 .tube-dimension {
     position: absolute;
-    color: #5c3c22;
+    color: #FF3333;
     font-size: 0.8rem;
 }
 
 .b-dimension {
-    top: 60%;
-    left: 30%;
-    transform: translate(-50%, -50%);
+    top: 30%; /* 從 50% 改為 30% */
+    left: 70%; /* 從 50% 改為 70% */
+    transform: none; /* 移除置中轉換 */
+    text-align: left; /* 文字靠左對齊 */
 }
 
 .c-dimension {
-    left: 0%;
-    top: 30%;
+    left: 15%; /* 從 24% 改為 15% */
+    top: 60%; /* 從 50% 改為 60% */
+    text-align: left; /* 文字靠左對齊 */
 }
 
 .tube-dimension-label {
     position: absolute;
-    right: 15%;
-    top: 15%;
+    right: 10%; /* 從 15% 改為 10% */
+    top: 5%; /* 從 15% 改為 5% */
     color: #333;
     font-size: 0.8rem;
 }
@@ -435,11 +432,11 @@ select {
 }
 
 .support-unit-label {
-    position: absolute;
-    top: 5%;
-    right: 5%;
+    position: static; /* 改為靜態定位 */
     font-size: 0.7rem;
-    color: #333;
+    color: #666;
+    text-align: center;
+    margin-top: 0.5rem; /* 添加上邊距 */
 }
 
 /* 即將推出的頁面提示 */
