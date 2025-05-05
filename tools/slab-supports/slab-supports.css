@@ -777,13 +777,13 @@ select, .mobile-type-dropdown, .mobile-standard-dropdown {
     
     .support-height-display {
         font-size: 0.9rem;
-        top: 52%;
+        top: 54%;
     }
     
     .work-load-display {
         font-size: 0.9rem;
         top: -6%;
-        left: 50%;
+        left: 40%;
         white-space: nowrap; /* 防止文字換行 */
     }
 
