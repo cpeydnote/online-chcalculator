@@ -692,7 +692,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const beamSupportCountDisplay = document.querySelector('#rc-beam-content .support-image-container .beam-interval-display');
         if (beamSupportCountDisplay) {
             if (beamSupportCount && beamSupportCount.value) {
-                beamSupportCountDisplay.textContent = beamSupportCount.value + ' 支';
+                beamSupportCountDisplay.textContent = beamSupportCount.value + '支';
                 beamSupportCountDisplay.style.display = 'block';
             } else {
                 beamSupportCountDisplay.style.display = 'none';
