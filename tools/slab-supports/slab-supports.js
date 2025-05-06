@@ -619,7 +619,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // 更新負擔支數顯示
         if (beamSupportCount && beamSupportCount.value) {
             // 用戶有輸入值，顯示在結果區
-            if (valueEBeam) valueEBeam.textContent = beamSupportCount.value;
+            if (valueEBeam) valueEBeam.textContent = beamSupportCount.value + ' 支';
         } else {
             // 用戶沒有輸入值，不顯示任何內容
             if (valueEBeam) valueEBeam.textContent = '';
